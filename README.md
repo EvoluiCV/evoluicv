@@ -233,4 +233,12 @@ Veja o [`CONTRIBUTING.md`](./CONTRIBUTING.md) para fluxo de issues, PRs, estilo 
 
 ## 📄 Licença
 
-[MIT](./LICENSE) © 2026 Luanderson Pimenta Mendes
+Licenciado sob [GNU AGPLv3](./LICENSE) © 2026 Luanderson Pimenta Mendes.
+
+> ⚠️ **AGPLv3 implica:** se você hospedar uma versão modificada deste software como serviço acessível pela rede, deve disponibilizar o código-fonte modificado aos usuários do serviço. Uso pessoal/interno e contribuições não são afetados.
+
+### Modelo open-core
+
+Este repositório (`evoluicv`) contém o **núcleo open source** — Analyzer básico para self-host. Funcionalidades premium da plataforma SaaS hospedada (análise expandida com ATS Match / Interview Prep / LinkedIn Repositioning, memória persistente cross-device, federação LinkedIn, editor de CV, exports, billing) ficam em repositório privado e não são distribuídas sob AGPLv3.
+
+Use [evoluicv.luanderson.dev.br](https://evoluicv.luanderson.dev.br/) para experiência completa, ou self-host este repo para uso individual com sua própria chave OpenAI.

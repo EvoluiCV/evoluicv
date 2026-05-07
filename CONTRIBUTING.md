@@ -86,9 +86,15 @@ Resposta em até 72h.
 
 ---
 
-## Licença
+## Licença e DCO
 
-Ao contribuir, você concorda que sua contribuição será licenciada sob a [MIT License](./LICENSE).
+Ao contribuir, você concorda que sua contribuição será licenciada sob [GNU AGPLv3](./LICENSE).
+
+Cada commit deve ser assinado via [DCO](https://developercertificate.org/) (`git commit -s`) — atesta que você tem direito de submeter o código sob a licença do projeto.
+
+### Sobre AGPLv3
+
+A AGPLv3 é uma licença copyleft forte: forks que rodam como serviço de rede precisam abrir o código modificado. Isso protege a comunidade contra apropriação fechada do projeto. Uso pessoal, contribuições e self-host privado não são afetados.
 
 ---
 
