@@ -217,13 +217,24 @@ evoluicv/
 
 ---
 
+## 🤝 Contribuindo
+
+O Evolui CV é open source. Contribuições são bem-vindas — desde correções pontuais até novas funcionalidades.
+
+Um guia formal de contribuição (`CONTRIBUTING.md`) será publicado em breve, junto com o template de issues e o fluxo de PR. Enquanto isso:
+
+- Abra uma _issue_ antes de PRs grandes para alinhar escopo.
+- Mantenha PRs focados (≤ 400 linhas quando possível).
+- Siga o estilo de código existente.
+
+---
+
 ## 👨‍💻 Autor
 
-**Luanderson Pimenta Mendes**
-Backend Software Engineer
+**Luanderson Pimenta Mendes** — Backend Software Engineer
 
 ---
 
 ## 📄 Licença
 
-Projeto pessoal — todos os direitos reservados.
+A licença open source definitiva será publicada junto com o `CONTRIBUTING.md`. Até lá, todos os direitos reservados ao autor.

@@ -1,5 +1,9 @@
-# Local-only docs (not published)
+# Internal docs — live in private repo EvoluiCV/evoluicv-docs
 CLAUDE.md
+PRODUCT.md
+ROADMAP.md
+MVP-CLAUDE.md
+docs/
 .claude/
 
 # OS
