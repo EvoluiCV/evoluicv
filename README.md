@@ -221,11 +221,7 @@ evoluicv/
 
 O Evolui CV é open source. Contribuições são bem-vindas — desde correções pontuais até novas funcionalidades.
 
-Um guia formal de contribuição (`CONTRIBUTING.md`) será publicado em breve, junto com o template de issues e o fluxo de PR. Enquanto isso:
-
-- Abra uma _issue_ antes de PRs grandes para alinhar escopo.
-- Mantenha PRs focados (≤ 400 linhas quando possível).
-- Siga o estilo de código existente.
+Veja o [`CONTRIBUTING.md`](./CONTRIBUTING.md) para fluxo de issues, PRs, estilo de código e reporte de vulnerabilidades.
 
 ---
 
@@ -237,4 +233,4 @@ Um guia formal de contribuição (`CONTRIBUTING.md`) será publicado em breve, j
 
 ## 📄 Licença
 
-A licença open source definitiva será publicada junto com o `CONTRIBUTING.md`. Até lá, todos os direitos reservados ao autor.
+[MIT](./LICENSE) © 2026 Luanderson Pimenta Mendes
