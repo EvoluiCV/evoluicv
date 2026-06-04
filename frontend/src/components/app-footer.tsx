@@ -24,7 +24,7 @@ export function AppFooter() {
 						<GithubIcon />
 					</Link>
 					<Link
-						href='https://linkedin.com/in/luanderson-pimenta-mendes'
+						href='https://linkedin.com/in/luanderson-dev'
 						target='_blank'
 						rel='noopener noreferrer'
 						className='text-muted-foreground transition-colors hover:text-foreground'
