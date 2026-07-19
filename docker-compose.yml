@@ -4,6 +4,8 @@ services:
       context: ./backend
     image: evoluicv-backend:local
     container_name: evoluicv-backend
+    ports:
+      - "${API_PORT:-8080}:8080"
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY:?defina OPENAI_API_KEY no .env ou no ambiente}
       JAVA_OPTS: ${JAVA_OPTS:-}
