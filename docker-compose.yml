@@ -4,8 +4,6 @@ services:
       context: ./backend
     image: evoluicv-backend:local
     container_name: evoluicv-backend
-    ports:
-      - "8080:8080"
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY:?defina OPENAI_API_KEY no .env ou no ambiente}
       JAVA_OPTS: ${JAVA_OPTS:-}
@@ -24,7 +22,7 @@ services:
     image: evoluicv-frontend:local
     container_name: evoluicv-frontend
     ports:
-      - "3000:3000"
+      - "${WEB-PORT:3000}:3000"
     environment:
       NODE_ENV: production
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8080}
