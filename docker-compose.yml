@@ -16,8 +16,6 @@ services:
       context: ./frontend
       args:
         NEXT_PUBLIC_API_URL: ""
-        NEXT_PUBLIC_POSTHOG_KEY: ${NEXT_PUBLIC_POSTHOG_KEY}
-        NEXT_PUBLIC_POSTHOG_HOST: ${NEXT_PUBLIC_POSTHOG_HOST:-https://us.i.posthog.com}
         BACKEND_INTERNAL_URL: "http://backend:8080"
     image: evoluicv-frontend:local
     container_name: evoluicv-frontend
