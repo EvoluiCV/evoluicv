@@ -1,30 +1,67 @@
+# evoluicv — compose único para staging e produção (ADR-001).
+# deploy-run.sh exporta COMPOSE_PROJECT_NAME (evoluicv | evoluicv-staging) e IMAGE_TAG (SHA).
+# NPM e Prometheus SEMPRE por container_name (evoluicv[-staging]-frontend / -backend).
+# Chaves de serviço (evoluicv-api / evoluicv-web) são aliases iguais nos dois ambientes:
+# nunca usar como upstream e nunca igualar a um container_name (ADR-001 D1b).
+networks:
+  proxy:
+    external: true
+
 services:
-  backend:
+  evoluicv-api:
     build:
       context: ./backend
-    image: evoluicv-backend:local
-    container_name: evoluicv-backend
-    expose:
-      - "8080"
+      args:
+        CACHE_SCOPE: ${COMPOSE_PROJECT_NAME}
+    image: ${COMPOSE_PROJECT_NAME}-backend:${IMAGE_TAG}
+    container_name: ${COMPOSE_PROJECT_NAME}-backend
     environment:
-      OPENAI_API_KEY: ${OPENAI_API_KEY:?defina OPENAI_API_KEY no .env ou no ambiente}
-      JAVA_OPTS: ${JAVA_OPTS:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?defina OPENAI_API_KEY no secret do ambiente}
+      JAVA_OPTS: ${JAVA_OPTS:--XX:MaxRAMPercentage=75}
+    networks:
+      - default
+    healthcheck:
+      # Temurin (Ubuntu) tem bash e não tem curl/wget
+      test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/127.0.0.1/8080 && printf 'GET /actuator/health HTTP/1.0\r\nHost: localhost\r\n\r\n' >&3 && grep -q '\"status\":\"UP\"' <&3"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 90s
+    deploy:
+      resources:
+        limits:
+          memory: ${BACKEND_MEM_LIMIT:-1536M}
+          cpus: "${BACKEND_CPUS:-2}"
     restart: unless-stopped
 
-  frontend:
+  evoluicv-web:
     build:
       context: ./frontend
       args:
         NEXT_PUBLIC_API_URL: ""
-        BACKEND_INTERNAL_URL: "http://backend:8080"
-    image: evoluicv-frontend:local
-    container_name: evoluicv-frontend
-    ports:
-      - "${WEB_PORT:-3000}:3000"
+        CACHE_SCOPE: ${COMPOSE_PROJECT_NAME}
+    image: ${COMPOSE_PROJECT_NAME}-frontend:${IMAGE_TAG}
+    container_name: ${COMPOSE_PROJECT_NAME}-frontend
     environment:
       NODE_ENV: production
       NEXT_PUBLIC_API_URL: ""
-      BACKEND_INTERNAL_URL: http://backend:8080
+      BACKEND_INTERNAL_URL: http://evoluicv-api:8080
+    networks:
+      - default
+      - proxy
     depends_on:
-      - backend
+      evoluicv-api:
+        condition: service_healthy
+    healthcheck:
+      # /api/health do Next faz proxy para o backend (valida BACKEND_INTERNAL_URL)
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:3000/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: ${FRONTEND_MEM_LIMIT:-512M}
+          cpus: "${FRONTEND_CPUS:-1}"
     restart: unless-stopped

@@ -1,0 +1,75 @@
+# evoluicv — pipeline (ADR-001). Build da imagem acontece NO HOST via deploy-run.sh.
+# Secrets (valores sem aspas): deploy_ssh_key_staging[push], staging_env_file[push],
+# deploy_ssh_key_production[deployment], production_env_file[deployment].
+when:
+  - event: pull_request
+  - event: push
+    branch: [develop, main]
+  - event: deployment
+
+steps:
+  test-backend:
+    image: eclipse-temurin:25-jdk@sha256:010ab2b79329b951bf052dbf515843ab345ae4e4f0ef72287d85c9fa54da275f
+    # cache Maven: volume global maven-cache:/root/.m2 do agente
+    commands:
+      - cd backend
+      - sh mvnw -B -ntp test
+
+  test-frontend:
+    image: node:22-alpine@sha256:c610fcdfb1d5b4740dd70c284ed3cb16bb857e0f7166196e36a5501df7a3aa32
+    environment:
+      NEXT_TELEMETRY_DISABLED: "1"
+    commands:
+      - cd frontend
+      - yarn install --frozen-lockfile --non-interactive
+      - yarn lint
+      - ./node_modules/.bin/tsc --noEmit
+      - yarn build
+
+  deploy-staging:
+    image: woodpecker-deploy-ssh@sha256:8f677e1cad22063df29b4ca9ff631b0b83bac40cee96368beb831e6dde2d118c
+    environment:
+      DEPLOY_SSH_KEY_STAGING:
+        from_secret: deploy_ssh_key_staging
+      STAGING_ENV_FILE:
+        from_secret: staging_env_file
+    commands:
+      - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+      - echo "172.30.0.1 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILneVTDCm/esdggSzg+5LJ1HvP8zNyrzROXLCVSF3c+l" > ~/.ssh/known_hosts
+      - printf '%s\n' "$DEPLOY_SSH_KEY_STAGING" > ~/.ssh/id && chmod 600 ~/.ssh/id
+      - printf '%s' "$STAGING_ENV_FILE" | ssh -i ~/.ssh/id -o BatchMode=yes -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o StrictHostKeyChecking=yes deploy-staging@172.30.0.1 "evoluicv $CI_COMMIT_SHA"
+    when:
+      - event: push
+        branch: develop
+
+  smoke-staging:
+    image: curlimages/curl@sha256:58adaa4e8dca9c988bae2aba4ab3434a0bb2da16bbe3f92dec39ec7785166777
+    commands:
+      - sh scripts/ci/smoke.sh https://evoluicv-staging.luanderson.dev.br full
+    when:
+      - event: push
+        branch: develop
+
+  deploy-production:
+    image: woodpecker-deploy-ssh@sha256:8f677e1cad22063df29b4ca9ff631b0b83bac40cee96368beb831e6dde2d118c
+    environment:
+      DEPLOY_SSH_KEY_PRODUCTION:
+        from_secret: deploy_ssh_key_production
+      PRODUCTION_ENV_FILE:
+        from_secret: production_env_file
+    commands:
+      - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+      - echo "172.30.0.1 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILneVTDCm/esdggSzg+5LJ1HvP8zNyrzROXLCVSF3c+l" > ~/.ssh/known_hosts
+      - printf '%s\n' "$DEPLOY_SSH_KEY_PRODUCTION" > ~/.ssh/id && chmod 600 ~/.ssh/id
+      - printf '%s' "$PRODUCTION_ENV_FILE" | ssh -i ~/.ssh/id -o BatchMode=yes -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o StrictHostKeyChecking=yes deploy-production@172.30.0.1 "evoluicv $CI_COMMIT_SHA"
+    when:
+      - event: deployment
+        evaluate: 'CI_PIPELINE_DEPLOY_TARGET == "production"'
+
+  smoke-production:
+    image: curlimages/curl@sha256:58adaa4e8dca9c988bae2aba4ab3434a0bb2da16bbe3f92dec39ec7785166777
+    commands:
+      - sh scripts/ci/smoke.sh https://evoluicv.luanderson.dev.br readonly
+    when:
+      - event: deployment
+        evaluate: 'CI_PIPELINE_DEPLOY_TARGET == "production"'
