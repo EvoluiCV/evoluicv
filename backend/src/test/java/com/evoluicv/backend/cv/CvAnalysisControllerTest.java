@@ -12,6 +12,7 @@ import com.evoluicv.backend.error.GlobalExceptionHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
@@ -23,11 +24,16 @@ import java.util.List;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = CvAnalysisController.class)
+// RateLimitingFilter is a @Component (Filter), so @WebMvcTest picks it up and shares
+// its buckets across the whole cached test context; disable it here, it has no test of its own yet.
+@AutoConfigureMockMvc(addFilters = false)
 @Import({CvAnalysisService.class, GlobalExceptionHandler.class})
 class CvAnalysisControllerTest {
 
@@ -139,5 +145,20 @@ class CvAnalysisControllerTest {
                         .content(body))
                 .andExpect(status().isUnprocessableEntity())
                 .andExpect(jsonPath("$.error").value("empty_cv"));
+    }
+
+    @Test
+    void retorna400QuandoMultipartSemProfessionalGoal() throws Exception {
+        mockMvc.perform(multipart("/api/cv/analyze")
+                        .param("cvText", LONG_CV.repeat(3)))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("bad_request"));
+    }
+
+    @Test
+    void retorna405QuandoMetodoNaoSuportado() throws Exception {
+        mockMvc.perform(get("/api/cv/analyze"))
+                .andExpect(status().isMethodNotAllowed())
+                .andExpect(jsonPath("$.error").value("method_not_allowed"));
     }
 }

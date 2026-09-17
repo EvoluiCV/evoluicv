@@ -125,18 +125,23 @@ NEXT_PUBLIC_API_URL
 
 ## 🚀 Como Rodar
 
-### 🐳 Docker (Recomendado)
+### 🐳 Docker (mesmo compose do CI/CD)
+
+O `docker-compose.yml` da raiz é o mesmo compose usado pelo pipeline de CI/CD para build e deploy de staging e produção (runbook de operação na documentação privada do projeto). Pontos que mudam o "rodar local" em relação a versões antigas deste README:
+
+- As chaves de serviço do compose são `evoluicv-api` (backend) e `evoluicv-web` (frontend) — propositalmente diferentes do `container_name` de cada ambiente, para não colidir no DNS entre produção e staging (ver ADR-001, decisão D1b).
+- Não existe mais variável de porta publicada nem `ports:` no compose — em staging/produção o acesso é sempre pelo domínio público via proxy reverso, nunca por `localhost`.
+- O compose é parametrizado por `COMPOSE_PROJECT_NAME` (nome do ambiente) e `IMAGE_TAG` (tag/SHA da imagem), além de `OPENAI_API_KEY`.
 
 ```bash
 export OPENAI_API_KEY=sk-...
-
-docker-compose up --build
+export COMPOSE_PROJECT_NAME=evoluicv
+export IMAGE_TAG=local
+docker network create proxy   # rede externa exigida pelo compose; só na 1ª vez
+docker compose up --build
 ```
 
-Acessos:
-
-- Frontend: [http://localhost:3000](http://localhost:3000)
-- Backend: [http://localhost:8080](http://localhost:8080)
+Como não há porta publicada, o acesso local a esse compose é pela rede do Docker (não por `localhost:3000`/`:8080`). Para o dia a dia de desenvolvimento, prefira a seção **Rodando Localmente** abaixo.
 
 ---
 
@@ -165,6 +170,19 @@ cd frontend
 yarn install
 yarn dev
 ```
+
+---
+
+## 🔀 Fluxo de Deploy (CI/CD)
+
+O deploy é automatizado por um pipeline Woodpecker self-hosted, seguindo git-flow:
+
+- **`develop`** — todo push dispara testes e, se verdes, **deploy automático em staging** ([evoluicv-staging.luanderson.dev.br](https://evoluicv-staging.luanderson.dev.br)).
+- **`main`** — só recebe PR vindo de `develop` (release). O deploy em **produção** ([evoluicv.luanderson.dev.br](https://evoluicv.luanderson.dev.br)) **não é automático**: exige clicar em **Deploy** no pipeline verde de `main`, no Woodpecker.
+- **`feature/*` / `fix/*`** — saem de `develop`, testados via pipeline de `pull_request`, sem deploy.
+- **`hotfix/*`** — saem de `main`, PR para `main`, deploy manual, depois back-merge em `develop`.
+
+O runbook de operação (pipeline, secrets, rollback e procedimento de corte) vive na documentação privada do projeto (`EvoluiCV/evoluicv-docs`), não neste repositório.
 
 ---
 
