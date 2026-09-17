@@ -36,7 +36,7 @@ steps:
     commands:
       - mkdir -p ~/.ssh && chmod 700 ~/.ssh
       - echo "172.30.0.1 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILneVTDCm/esdggSzg+5LJ1HvP8zNyrzROXLCVSF3c+l" > ~/.ssh/known_hosts
-      - printf '%s\n' "$DEPLOY_SSH_KEY_STAGING" > ~/.ssh/id && chmod 600 ~/.ssh/id
+      - (umask 077; printf '%s\n' "$DEPLOY_SSH_KEY_STAGING" > ~/.ssh/id)
       - printf '%s' "$STAGING_ENV_FILE" | ssh -i ~/.ssh/id -o BatchMode=yes -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o StrictHostKeyChecking=yes deploy-staging@172.30.0.1 "evoluicv $CI_COMMIT_SHA"
     when:
       - event: push
@@ -60,7 +60,7 @@ steps:
     commands:
       - mkdir -p ~/.ssh && chmod 700 ~/.ssh
       - echo "172.30.0.1 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILneVTDCm/esdggSzg+5LJ1HvP8zNyrzROXLCVSF3c+l" > ~/.ssh/known_hosts
-      - printf '%s\n' "$DEPLOY_SSH_KEY_PRODUCTION" > ~/.ssh/id && chmod 600 ~/.ssh/id
+      - (umask 077; printf '%s\n' "$DEPLOY_SSH_KEY_PRODUCTION" > ~/.ssh/id)
       - printf '%s' "$PRODUCTION_ENV_FILE" | ssh -i ~/.ssh/id -o BatchMode=yes -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o StrictHostKeyChecking=yes deploy-production@172.30.0.1 "evoluicv $CI_COMMIT_SHA"
     when:
       - event: deployment
