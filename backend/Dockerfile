@@ -1,20 +1,20 @@
 # syntax=docker/dockerfile:1.7
 
 # ---- builder ----
-FROM eclipse-temurin:25-jdk@sha256:010ab2b79329b951bf052dbf515843ab345ae4e4f0ef72287d85c9fa54da275f AS builder
+FROM maven:3.9.14-eclipse-temurin-25@sha256:304ea1e9675d07612c36d5d70d8bd1dbd8aac64c307253bbde4e488857f90faa AS builder
 WORKDIR /app
 ARG CACHE_SCOPE=local
 
-# Copia wrapper e pom primeiro para cachear dependências
+# Copia pom primeiro para cachear dependências
 COPY .mvn .mvn
-COPY mvnw pom.xml ./
+COPY pom.xml ./
 RUN --mount=type=cache,id=evoluicv-m2-${CACHE_SCOPE},target=/root/.m2,sharing=locked \
-    chmod +x mvnw && ./mvnw -B -q dependency:go-offline
+    mvn -B -q dependency:go-offline
 
 # Build
 COPY src ./src
 RUN --mount=type=cache,id=evoluicv-m2-${CACHE_SCOPE},target=/root/.m2,sharing=locked \
-    ./mvnw -B -q -DskipTests package
+    mvn -B -q -DskipTests package
 
 # ---- runner ----
 FROM eclipse-temurin:25-jre@sha256:611e326900ba9edcedfb246ede24efc66a911fa496ac623db9f33cae88a2d83b AS runner
