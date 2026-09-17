@@ -9,11 +9,15 @@ when:
 
 steps:
   test-backend:
-    image: eclipse-temurin:25-jdk@sha256:010ab2b79329b951bf052dbf515843ab345ae4e4f0ef72287d85c9fa54da275f
-    # cache Maven: volume global maven-cache:/root/.m2 do agente
+    image: maven:3.9.14-eclipse-temurin-25@sha256:304ea1e9675d07612c36d5d70d8bd1dbd8aac64c307253bbde4e488857f90faa
+    # cache Maven: volume global maven-cache:/root/.m2 do agente (imagem roda como root, MAVEN_CONFIG=/root/.m2)
+    # Errata E3: mvnw 3.3.4 sem unzip baixa o .tar.gz e valida contra o sha256 do .zip (falha fechada).
+    # Imagem maven oficial traz mvn direto, sem precisar do wrapper. A guard abaixo pega drift silencioso
+    # entre maven-wrapper.properties e a versão do Maven fixada nesta imagem, já que o CI deixa de exercitar o mvnw.
     commands:
       - cd backend
-      - sh mvnw -B -ntp test
+      - 'grep -q "apache-maven-3.9.14-bin.zip" .mvn/wrapper/maven-wrapper.properties || { echo "maven-wrapper.properties divergiu da imagem Maven do CI (Errata E3)"; exit 1; }'
+      - mvn -B -ntp test
 
   test-frontend:
     image: node:22-alpine@sha256:c610fcdfb1d5b4740dd70c284ed3cb16bb857e0f7166196e36a5501df7a3aa32
