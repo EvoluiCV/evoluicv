@@ -19,9 +19,11 @@ c=$(code "$BASE/"); [ "$c" = "200" ] || fail "GET / -> $c"
 echo "ok GET / 200"
 
 if [ "$MODE" = "full" ]; then
-  # entradas confirmadas por BE/QA contra o controller (Fase 1.6)
-  c=$(code -X POST -F 'cvText= ' -F 'professionalGoal=smoke' "$BASE/api/cv/analyze")
-  [ "$c" = "422" ] || fail "POST analyze cv vazio -> $c (esperado 422)"
+  # entradas confirmadas por BE/QA contra o controller (Fase 1.6; BUG-1 do QA: cvText
+  # curto/não-branco também deve reprovar por tamanho mínimo, não só por estar vazio).
+  # No máximo 2 POSTs por execução (rate limiter global, P-EVO-1).
+  c=$(code -X POST -F 'cvText=curto demais' -F 'professionalGoal=smoke' "$BASE/api/cv/analyze")
+  [ "$c" = "422" ] || fail "POST analyze cv curto -> $c (esperado 422)"
   c=$(code -X POST -F 'cvText=texto de smoke test' "$BASE/api/cv/analyze")
   [ "$c" = "400" ] || fail "POST analyze sem professionalGoal -> $c (esperado 400)"
   echo "ok POST validações 422/400"
