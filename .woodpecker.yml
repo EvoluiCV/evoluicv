@@ -64,6 +64,7 @@ steps:
       - printf '%s' "$PRODUCTION_ENV_FILE" | ssh -i ~/.ssh/id -o BatchMode=yes -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts -o StrictHostKeyChecking=yes deploy-production@172.30.0.1 "evoluicv $CI_COMMIT_SHA"
     when:
       - event: deployment
+        branch: main
         evaluate: 'CI_PIPELINE_DEPLOY_TARGET == "production"'
 
   smoke-production:
@@ -72,4 +73,5 @@ steps:
       - sh scripts/ci/smoke.sh https://evoluicv.luanderson.dev.br readonly
     when:
       - event: deployment
+        branch: main
         evaluate: 'CI_PIPELINE_DEPLOY_TARGET == "production"'
