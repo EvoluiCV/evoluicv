@@ -23,6 +23,8 @@ import java.util.List;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -139,5 +141,20 @@ class CvAnalysisControllerTest {
                         .content(body))
                 .andExpect(status().isUnprocessableEntity())
                 .andExpect(jsonPath("$.error").value("empty_cv"));
+    }
+
+    @Test
+    void retorna400QuandoMultipartSemProfessionalGoal() throws Exception {
+        mockMvc.perform(multipart("/api/cv/analyze")
+                        .param("cvText", LONG_CV.repeat(3)))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("bad_request"));
+    }
+
+    @Test
+    void retorna405QuandoMetodoNaoSuportado() throws Exception {
+        mockMvc.perform(get("/api/cv/analyze"))
+                .andExpect(status().isMethodNotAllowed())
+                .andExpect(jsonPath("$.error").value("method_not_allowed"));
     }
 }
