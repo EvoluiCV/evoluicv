@@ -31,7 +31,7 @@ steps:
       - yarn build
 
   deploy-staging:
-    image: woodpecker-deploy-ssh@sha256:44274fac6c7d7a17628f24726287166f03703ac6c14f53ab4c7a00c0f294af95
+    image: woodpecker-deploy-ssh@sha256:f47f7b77109bfc64389eab5cc99d4d36529101c243117b61d0fd9b65c44d7b8a
     environment:
       DEPLOY_SSH_KEY_STAGING:
         from_secret: deploy_ssh_key_staging
@@ -55,7 +55,7 @@ steps:
         branch: develop
 
   deploy-production:
-    image: woodpecker-deploy-ssh@sha256:44274fac6c7d7a17628f24726287166f03703ac6c14f53ab4c7a00c0f294af95
+    image: woodpecker-deploy-ssh@sha256:f47f7b77109bfc64389eab5cc99d4d36529101c243117b61d0fd9b65c44d7b8a
     environment:
       DEPLOY_SSH_KEY_PRODUCTION:
         from_secret: deploy_ssh_key_production
