@@ -32,6 +32,16 @@ services:
         limits:
           memory: ${BACKEND_MEM_LIMIT:-1536M}
           cpus: "${BACKEND_CPUS:-2}"
+    # Privilege-reducing hardening (required by the platform compose policy,
+    # P-PLAT-6). /tmp is a tmpfs because the root filesystem is read-only
+    # (Spring writes multipart uploads there).
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
 
   evoluicv-web:
@@ -64,4 +74,14 @@ services:
         limits:
           memory: ${FRONTEND_MEM_LIMIT:-512M}
           cpus: "${FRONTEND_CPUS:-1}"
+    # Privilege-reducing hardening (required by the platform compose policy,
+    # P-PLAT-6). /tmp is a tmpfs because the root filesystem is read-only
+    # (Spring writes multipart uploads there).
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
