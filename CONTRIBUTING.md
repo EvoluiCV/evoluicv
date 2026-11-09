@@ -24,7 +24,7 @@ Veja [`README.md`](./README.md) para instruções de setup do frontend e backend
 
 ### 3. Branch e commit
 
-- Crie branch a partir de `main`: `feature/<slug-curto>` ou `fix/<slug-curto>`.
+- Crie branch a partir de `develop`: `feature/<issue>-<slug-curto>` ou `fix/<issue>-<slug-curto>`, e abra o PR para `develop`. `main` só recebe releases.
 - Use [Conventional Commits](https://www.conventionalcommits.org/):
   - `feat:` nova funcionalidade
   - `fix:` correção de bug
