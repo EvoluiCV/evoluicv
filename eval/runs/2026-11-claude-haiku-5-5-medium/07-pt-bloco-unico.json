@@ -1,0 +1,237 @@
+{
+	"caseId": "07-pt-bloco-unico",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:21:48.587Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 34703,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 38,
+			"summary": "O CV demonstra experiência real e relevante em suporte de TI, com escala de 40 lojas e stack compatível com a vaga de Analista de Suporte Pleno. Porém, o texto está desorganizado, em ordem cronológica invertida e sem métricas, o que faz o candidato parecer executor de tarefas rotineiras em vez de profissional com resultados mensuráveis. Com reestruturação, bullets quantificados e certificação de entrada, o perfil pode competir de forma consistente por vagas Pleno.",
+			"strengths": [
+				"Seis anos de experiência em suporte de TI, com progressão de técnico de campo para suporte N2 e depois analista.",
+				"Experiência prática em Active Directory, Windows Server, configuração de redes e servidores, backup e impressoras.",
+				"Atuação atual com responsabilidade sobre 40 lojas, o que indica escala operacional relevante.",
+				"Uso do GLPI para atendimento e inventário de equipamentos, ferramenta comum em ambientes corporativos.",
+				"Formação técnica em informática e graduação em redes de computadores em andamento, alinhadas à área.",
+				"Disponibilidade para viagens e CNH B, relevantes para suporte em múltiplas unidades."
+			],
+			"issues": [
+				{
+					"section": "Cabeçalho / Contato — Ausente",
+					"problem": "O CV não possui links para LinkedIn, GitHub ou portfólio. Para analista de suporte, o perfil no LinkedIn e uma página de certificações ou scripts publicados aumentam a verificabilidade do candidato.",
+					"why": "Recrutadores de TI verificam o LinkedIn antes de chamar. Sem ele, a credibilidade das afirmações técnicas fica dependente apenas de sua palavra, o que enfraquece a candidatura para uma vaga Pleno.",
+					"suggestion": "Inclua no cabeçalho linhas como 'linkedin.com/in/marcos-albuquerque' e 'github.com/marcosalbuquerque' (se tiver scripts PowerShell publicados). Mantenha o perfil do LinkedIn atualizado com a mesma cronologia do CV.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Resumo / Sobre mim",
+					"problem": "O texto inicial é um parágrafo corrido sem título nem objetivo claro. Não há um resumo profissional que declare cargo, especialidade e foco. A primeira frase apenas informa tempo de experiência ('trabalho com suporte de ti a 6 anos').",
+					"why": "Na leitura rápida de 8 segundos, o recrutador não encontra cargo, especialidade e stack. Para uma vaga Pleno, o resumo precisa comunicar senioridade e foco imediatamente, e não apenas tempo de casa.",
+					"suggestion": "Substitua por um resumo de 2 a 3 linhas, por exemplo: 'Analista de Suporte de TI com 6 anos de experiência em suporte N1/N2, administração de Active Directory e Windows Server, gestão de 40 lojas via GLPI e infraestrutura de redes TCP/IP. Foco em disponibilidade de ambiente e padronização de equipamentos.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Estrutura geral do documento",
+					"problem": "O CV não tem seções separadas nem formatação de cargos. Experiências, formação e habilidades estão misturadas em um único bloco de texto corrido, sem datas em formato padrão, cargos destacados ou empresas em linhas próprias.",
+					"why": "Sistemas ATS dependem de cabeçalhos reconhecíveis para extrair cargos, empresas e datas. Um bloco corrido pode ser lido de forma incorreta ou não ser indexado, reduzindo a chance de o CV aparecer nas buscas.",
+					"suggestion": "Organize em seções: Resumo, Experiência Profissional, Formação Acadêmica, Habilidades Técnicas, Certificações e Idiomas. Em cada experiência use o formato 'Cargo | Empresa | Cidade | mm/aaaa – mm/aaaa' seguido de bullets.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência Profissional",
+					"problem": "A ordem cronológica não é respeitada no texto. A descrição começa pela primeira empresa (InfoCenter, 2018) e termina na atual (Rede Farma Nordeste, 2022 até hoje), ou seja, do mais antigo para o mais recente.",
+					"why": "A cronologia inversa é o padrão esperado por recrutadores e ATS. Começar pelo histórico antigo esconde a experiência mais relevante para a vaga Pleno atual.",
+					"suggestion": "Inverta a ordem: primeiro Rede Farma Nordeste (2022 – atual), depois InfoCenter Serviços (2018 – 2022). Use o mesmo padrão de datas em ambas.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Rede Farma Nordeste e InfoCenter Serviços",
+					"problem": "As descrições de atividades são vagas e não têm métricas. Frases como 'cuidava do backup e das impressoras', 'atendo os chamados no glpi', 'faço inventário dos equipamentos' e 'treino os funcionarios novos' descrevem tarefas, não resultados.",
+					"why": "Para um Pleno, o recrutador espera evidência de impacto. Sem métricas, o candidato parece executar tarefas rotineiras, o que o posiciona abaixo da expectativa de autonomia e resultado do cargo.",
+					"suggestion": "Reescreva com verbo de ação, tecnologia e número. Exemplo: 'Administrei o suporte N1/N2 de 40 lojas via GLPI, atendendo em média X chamados/mês e reduzindo o tempo médio de resolução de Y para Z horas.' Ao inventariar, indique: 'Mantive inventário de N equipamentos no GLPI com 100% de rastreabilidade de patrimônio.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Rede Farma Nordeste",
+					"problem": "Não há menção a métricas de SLA, tempo de resolução, volume de chamados, número de usuários atendidos por equipe ou indicadores de disponibilidade, apesar de o candidato atuar sobre 40 lojas.",
+					"why": "A escala de 40 lojas é o ativo mais forte do CV, mas está invisível. Sem números, o recrutador não consegue dimensionar a responsabilidade assumida.",
+					"suggestion": "Inclua pelo menos três indicadores concretos, como: 'Atendimento a aproximadamente N usuários em 40 lojas', 'SLA de primeiro atendimento de X horas', 'Taxa de resolução no primeiro contato de Y%'. Use apenas números reais.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Rede Farma Nordeste",
+					"problem": "Não há menção clara a processos de documentação, padronização ou melhoria. O treinamento de funcionários aparece sem escopo, público ou resultado.",
+					"why": "Para Analista Pleno, documentação e capacidade de reduzir chamados repetitivos são diferenciais que demonstram visão de processo e não apenas execução.",
+					"suggestion": "Reescreva: 'Elaborei e apliquei treinamentos de integração em sistemas corporativos para colaboradores novos, reduzindo chamados recorrentes de dúvida operacional em X%.' Se houver base de conhecimento ou procedimentos escritos, cite-os.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Habilidades",
+					"problem": "A stack técnica aparece apenas como lista solta no fim do texto ('conheço windows linux basico redes tcp ip active directory office 365 glpi e um pouco de powershell'), sem ligação com as conquistas nas experiências.",
+					"why": "ATS pontua palavras-chave em contexto. Competências isoladas em lista têm peso menor do que quando aparecem associadas a uma entrega mensurável.",
+					"suggestion": "Crie uma seção 'Habilidades Técnicas' agrupada por categoria (Sistemas Operacionais: Windows Server, Windows 10/11, Linux básico; Redes: TCP/IP, configuração de roteadores e switches, DHCP/DNS; Diretório e Identidade: Active Directory, GPO; Produtividade: Microsoft 365; Ferramentas: GLPI, PowerShell básico). Em seguida, repita essas tecnologias dentro dos bullets de experiência.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Habilidades",
+					"problem": "A descrição de Linux é 'básico' e PowerShell é 'um pouco', o que enfraquece o perfil para um Pleno de suporte que lida com servidores e automação.",
+					"why": "Ferramentas de automação são o diferencial que separa o suporte N2 do Pleno. Uma descrição fraca nesses pontos reduz a percepção de evolução técnica.",
+					"suggestion": "Se tiver uso real, descreva: 'PowerShell para automação de inventário e criação em lote de usuários no AD'. Se não usou, remova ou explique o nível real de uso. Evite autoavaliações vagas.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência e Habilidades — Ausente",
+					"problem": "Não há menção ao uso de ferramentas de IA ou de eficiência, como scripts de automação, Copilot, base de conhecimento ou LLMs aplicados a suporte.",
+					"why": "Para vagas de suporte atuais, eficiência com IA e automação é palavra-chave valorizada em triagem e demonstra atualização.",
+					"suggestion": "Se o candidato usa ou já usou IA no dia a dia, cite: 'Utilizo IA generativa para padronizar respostas de chamados e elaborar procedimentos, reduzindo o tempo de documentação'. Só inclua se for verdadeiro.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência — Ausente",
+					"problem": "Não há menção a ciclo completo de infraestrutura de suporte: monitoramento, backup com política definida, gestão de mudanças, ITIL ou processos de segurança (ex.: gestão de senhas, antivírus, atualização de sistemas).",
+					"why": "Para Analista Pleno, o recrutador busca visão de ponta a ponta. Um CV centrado em chamados passa a impressão de suporte reativo, sem participação em estabilidade e segurança.",
+					"suggestion": "Acrescente bullets que cubram monitoramento (ex.: 'Monitorei disponibilidade de servidores via ferramenta X'), backup ('Executei rotinas de backup Veeam/Windows Server Backup com teste de restauração mensal') e segurança ('Apliquei políticas de senha e bloqueio via GPO em N estações'). Se houver ITIL, cite a certificação.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Formação Acadêmica",
+					"problem": "O CV cita 'curso técnico em informática' e 'faculdade de redes de computadores' sem datas de conclusão do técnico e com previsão de término em 2025 para a graduação, sem indicar status atual de forma padronizada.",
+					"why": "Datas e status claros evitam dúvidas na triagem e facilitam a leitura por ATS que extrai escolaridade.",
+					"suggestion": "Formate: 'Tecnólogo/Bacharelado em Redes de Computadores — Faculdade Sertão Digital (em andamento, previsão de conclusão: 2025)' e 'Técnico em Informática — Instituto Técnico do Ceará (concluído em AAAA)'.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Certificações — Ausente",
+					"problem": "Não há certificações técnicas listadas, como MCP, Microsoft 365 Fundamentals, ITIL, CompTIA A+ ou Network+, apesar do perfil de suporte e infraestrutura.",
+					"why": "Certificações reconhecidas reforçam o conhecimento técnico declarado, especialmente para um candidato cujo perfil tem base informal em redes e servidores.",
+					"suggestion": "Se tiver certificações, crie a seção com nome, emissor e ano. Se não tiver, considere CompTIA A+ ou Microsoft 365 Fundamentals como próximos passos concretos, pois são reconhecidos por recrutadores de suporte.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Sobre mim / Resumo",
+					"problem": "Os textos de soft skills ('sou responsável e pontual e gosto de ajudar as pessoas') são genéricos e não comprovados por exemplos.",
+					"why": "Clichês de comportamento não diferenciam candidatos e não passam confiança. Métricas de satisfação ou de disponibilidade comunicam o mesmo valor com credibilidade.",
+					"suggestion": "Remova os adjetivos e prove com fato: 'Atendimento N1/N2 com pontuação média de satisfação de X/5 nas pesquisas de chamados.' ou 'Responsável pelo planejamento de manutenções preventivas em 40 lojas sem interrupção de operação.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Dados pessoais / Informações adicionais",
+					"problem": "A informação 'disponibilidade para viagens e CNH B' está no texto corrido, sem destaque.",
+					"why": "Para vagas de suporte com atuação em filiais, disponibilidade para viagens é critério de triagem e merece visibilidade.",
+					"suggestion": "Inclua no cabeçalho: 'Disponibilidade para viagens | CNH categoria B'.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Idiomas — Ausente",
+					"problem": "Não há idiomas declarados. Para suporte de TI com documentação e ferramentas em inglês, a ausência de informação sobre inglês pode limitar a triagem.",
+					"why": "Documentação de fabricantes e manuais de sistemas costumam estar em inglês, e muitos processos de triagem filtram por idioma.",
+					"suggestion": "Declare o nível real, como 'Inglês: leitura técnica (intermediário)' se for o caso. Não inclua nível que não possa comprovar em entrevista.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Formatação geral",
+					"problem": "O CV não possui formatação visual nem hierarquia. O texto está em um único parágrafo, sem títulos, sem bullets e com acentuação ausente, o que sugere pouca atenção a detalhes.",
+					"why": "Erros de acentuação e parágrafo único reduzem a credibilidade na leitura inicial e dificultam o escaneamento humano e automatizado.",
+					"suggestion": "Use um modelo limpo de uma coluna, fonte legível (Calibri ou Arial 10–11pt), títulos de seção em negrito, bullets para as entregas e revisão ortográfica completa com acentos corretos (ex.: 'técnico', 'Ceará', 'funcionários', 'Tecnólogo').",
+					"severity": "MEDIUM"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o cabeçalho e o resumo profissional com cargo, especialidade (suporte N1/N2, Active Directory, Windows Server, redes) e alcance (40 lojas), em no máximo três linhas.",
+				"Reorganizar o CV em seções claras e inverter a ordem cronológica, colocando Rede Farma Nordeste (2022 – atual) antes de InfoCenter Serviços (2018 – 2022).",
+				"Reescrever cada experiência em bullets com verbo de ação, tecnologia na mesma frase e pelo menos um número real por bullet (volume de chamados, quantidade de equipamentos, usuários atendidos, tempo de resolução ou SLA).",
+				"Levantar e inserir métricas reais da operação em 40 lojas, como número de chamados mensais, tempo médio de resolução, índice de disponibilidade e número de equipamentos inventariados.",
+				"Incluir links de LinkedIn e, se houver, GitHub ou portfólio com scripts PowerShell, além de disponibilidade para viagens e CNH B no cabeçalho.",
+				"Criar seção de Habilidades Técnicas agrupada por categoria e repetir essas tecnologias nos bullets de experiência para fortalecer a leitura por ATS.",
+				"Obter certificação de entrada reconhecida (CompTIA A+, Microsoft 365 Fundamentals ou similar) e listá-la, reforçando o perfil técnico para a vaga Pleno."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo / Sobre mim",
+					"current": "trabalho com suporte de ti a 6 anos",
+					"proposed": "Analista de Suporte de TI Pleno com 6 anos de experiência em suporte N1/N2, administração de Active Directory e Windows Server, gestão de 40 lojas via GLPI e infraestrutura de redes TCP/IP. Foco em disponibilidade de ambiente e padronização de equipamentos.",
+					"rationale": "Resumo profissional que declara cargo, senioridade, stack e alcance na primeira linha, permitindo leitura em 8 segundos.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência Profissional",
+					"current": "Experiência em ordem cronológica invertida: InfoCenter Serviços (2018) antes de Rede Farma Nordeste (2022 até hoje)",
+					"proposed": "Rede Farma Nordeste | Analista de Suporte | Fortaleza, CE | 2022 – atual, seguida de InfoCenter Serviços | Suporte N2 | 2018 – 2022",
+					"rationale": "Cronologia inversa é o padrão esperado por ATS e recrutadores e coloca a experiência mais relevante em destaque.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Rede Farma Nordeste",
+					"current": "atendo os chamados no glpi faço inventario dos equipamentos e treino os funcionarios novos nos sistemas",
+					"proposed": "Administrei o suporte N1/N2 de 40 lojas via GLPI, atendendo em média [X] chamados/mês e reduzindo o tempo médio de resolução de [Y] para [Z] horas. Mantive inventário de [N] equipamentos com [X]% de rastreabilidade patrimonial.",
+					"rationale": "Aplica o método XYZ (ação, ferramenta e resultado mensurável) para transformar tarefas rotineiras em impacto demonstrável.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — Rede Farma Nordeste",
+					"current": "",
+					"proposed": "Usuários atendidos: aproximadamente [N] em 40 lojas | SLA de primeiro atendimento: [X] horas | Taxa de resolução no primeiro contato: [Y]%",
+					"rationale": "A escala de 40 lojas é o principal diferencial do CV e precisa de métricas concretas para ser dimensionada pelo recrutador.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho / Contato",
+					"current": "",
+					"proposed": "Linkedin: linkedin.com/in/[seu-perfil] | GitHub: github.com/[seu-usuario] (se houver scripts PowerShell publicados) | Disponibilidade para viagens | CNH categoria B",
+					"rationale": "Links de LinkedIn e portfólio aumentam a verificabilidade técnica, e disponibilidade para viagens com CNH B é critério de triagem em suporte.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — InfoCenter Serviços",
+					"current": "cuidava do backup e das impressoras",
+					"proposed": "Executei rotinas de backup no Windows Server com teste de restauração [periodicidade] e administrei [N] impressoras de rede, reduzindo chamados de impressão em [X]%.",
+					"rationale": "Substitui a descrição passiva por ação, tecnologia e resultado, cobrindo também segurança e continuidade.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Habilidades",
+					"current": "conheço windows linux basico redes tcp ip active directory office 365 glpi e um pouco de powershell",
+					"proposed": "Habilidades Técnicas — Sistemas: Windows Server, Windows 10/11, Linux (básico); Redes: TCP/IP, DHCP, DNS, configuração de switches e roteadores; Diretório e Identidade: Active Directory, GPO; Produtividade: Microsoft 365; Ferramentas: GLPI, PowerShell (automação de [tarefa])",
+					"rationale": "Agrupa as competências por categoria para leitura por ATS e prepara a repetição dessas palavras-chave nos bullets de experiência.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — Rede Farma Nordeste",
+					"current": "",
+					"proposed": "Monitorei disponibilidade de servidores e links via [ferramenta]. Apliquei políticas de senha e bloqueio via GPO em [N] estações, reduzindo incidentes de segurança em [X]%.",
+					"rationale": "Demonstra visão de ciclo completo de infraestrutura (monitoramento e segurança), diferencial esperado para o nível Pleno.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Sobre mim / Resumo",
+					"current": "sou responsavel e pontual e gosto de ajudar as pessoas",
+					"proposed": "",
+					"rationale": "Clichês comportamentais genéricos que não diferenciam o candidato; devem ser substituídos por fatos comprovados nas experiências.",
+					"impact": "LOW"
+				},
+				{
+					"action": "ADD",
+					"section": "Certificações",
+					"current": "",
+					"proposed": "Certificações: [Nome da certificação, ex.: CompTIA A+ ou Microsoft 365 Fundamentals] — [Emissor] — [Ano]",
+					"rationale": "Certificação reconhecida por recrutadores de suporte reforça o conhecimento técnico declarado e melhora a triagem por palavras-chave.",
+					"impact": "MEDIUM"
+				}
+			]
+		}
+	}
+}

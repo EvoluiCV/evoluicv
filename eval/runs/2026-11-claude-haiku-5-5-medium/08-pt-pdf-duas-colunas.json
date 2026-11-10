@@ -1,0 +1,209 @@
+{
+	"caseId": "08-pt-pdf-duas-colunas",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:22:33.452Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 31857,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 42,
+			"summary": "O CV demonstra uma trajetória sólida em produto digital, com alguns indicadores úteis como a conversão de 18% e a atuação em design system, mas ainda não comunica senioridade nem aderência ao setor fintech. A ausência de métricas nas experiências anteriores, de links verificáveis e de qualquer evidência em pagamentos ou serviços financeiros reduz significativamente a competitividade para a vaga alvo.",
+			"strengths": [
+				"Experiência de 7 anos em produto digital com progressão de designer gráfico para designer de produto sênior.",
+				"Métrica de impacto clara no checkout: aumento de conversão de 18%.",
+				"Atuação em design system usado por 5 squads, evidenciando visão de escala.",
+				"Práticas de pesquisa com usuários com volume definido (30 entrevistas por trimestre).",
+				"Experiência em testes A/B e métricas de produto, relevante para decisões orientadas por dados."
+			],
+			"issues": [
+				{
+					"section": "Resumo",
+					"problem": "O resumo abre com 'Designer de Produto' sem declarar senioridade, stack de ferramentas ou foco em fintech, e a frase 'Conduzo pesquisa, prototipação e handoff para squads' é genérica.",
+					"why": "O objetivo é Product Designer Sênior em fintech. Recrutadores fazem leitura dinâmica de poucos segundos e não encontram sinal de senioridade nem de domínio do setor. Um resumo sem especialidade declarada faz o CV parecer genérico e reduz a chance de triagem positiva.",
+					"suggestion": "Reescreva como: 'Product Designer Sênior com 7 anos em produtos digitais de alto volume, especialista em pagamentos, onboarding e checkout, com foco em pesquisa com usuários, design systems em Figma e métricas de conversão.' Mencione o setor fintech explicitamente, mesmo que sua experiência atual seja em varejo, relacionando-a a transações e jornadas financeiras se for verdade.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Ausente",
+					"problem": "Não há nenhuma experiência em fintech, pagamentos, crédito, meios de pagamento ou serviços financeiros. Toda a trajetória é em varejo e design gráfico.",
+					"why": "Para vagas sênior em fintech, a empresa busca repertório regulatório, de risco e de jornadas financeiras. Sem esse sinal, o candidato é filtrado por falta de aderência ao setor, mesmo com boa experiência em produto.",
+					"suggestion": "Se você tiver qualquer projeto ou contexto relacionado a pagamentos (checkout com Pix, cartão, carteira digital, parcelamento, antifraude, conciliação), descreva-o explicitamente com termos do setor. Caso não tenha, faça projetos autorais ou estudos de caso de fintech na seção de portfólio e cite-os no resumo.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Competências",
+					"problem": "A seção de competências é uma lista solta de palavras (Figma, Design System, Pesquisa com usuários, Testes de usabilidade, Prototipação, Métricas de produto) sem aparecer ao longo das experiências.",
+					"why": "Sistemas ATS e recrutadores valorizam competências contextualizadas em experiências reais. Lista solta sem evidência parece autodeclaração e enfraquece a credibilidade.",
+					"suggestion": "Mantenha a lista como resumo de palavras-chave, mas distribua essas ferramentas e métodos nas bullets de cada experiência. Ex.: 'Criei design system em Figma usado por 5 squads, reduzindo em 30% o tempo de entrega de telas.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Competências e Experiência",
+					"problem": "Faltam ferramentas e práticas de ciclo completo ligadas a produto digital como ferramentas de analytics, testes A/B com métricas, colaboração com engenharia, acessibilidade e ferramentas de handoff como Storybook ou Zeplin.",
+					"why": "Product Designers sênior em fintech precisam mostrar que decidem com dados e que entregam com engenharia. Essa ausência sugere perfil mais executor de telas do que estratégico.",
+					"suggestion": "Inclua, quando verdadeiro, ferramentas como Amplitude, Mixpanel, Hotjar, Maze, Dovetail, Jira, além de menções a acessibilidade (WCAG) e colaboração com times de engenharia (ex.: 'trabalhei com engenheiros front-end para validar componentes no Storybook').",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Compra Fácil App",
+					"problem": "As conquistas da experiência mais recente são poucas e pouco detalhadas. Apenas duas métricas aparecem (conversão de 18% e 5 squads). Não há métricas de impacto no negócio além de conversão, nem o tamanho da base de usuários.",
+					"why": "Sem métricas suficientes, o candidato não demonstra o valor de negócio que uma vaga sênior exige. Em fintech, métricas de conversão, retenção, risco e tempo de onboarding são especialmente valorizadas.",
+					"suggestion": "Use o método XYZ: 'Redesenhei o checkout do app Compra Fácil em Figma e Maze, elevando a conversão em 18% e reduzindo abandono em 12% em 3 meses com 200 mil usuários ativos.' Preencha com números reais do seu histórico.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Moda Sul E-commerce",
+					"problem": "A descrição das experiências anteriores é vaga: 'Responsável pelas telas do aplicativo de compras' e 'Participei de testes A/B da vitrine' não informam resultado, ferramenta nem papel decisório.",
+					"why": "Descrições vagas fazem o candidato parecer júnior ou executor. Para senioridade, é preciso demonstrar autoria de decisões e impacto mensurável.",
+					"suggestion": "Troque por verbos de ação com resultado: 'Desenvolvi as telas de vitrine e carrinho em Figma e Adobe XD, liderando 4 testes A/B que aumentaram o ticket médio em 9%.' Se os números não existirem, deixe claro o escopo: 'Atuei como designer principal das telas de vitrine para 150 mil acessos mensais.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Estúdio Pixel",
+					"problem": "O cargo 'Designer Gráfico' na Estúdio Pixel não tem relação com product design e ocupa um espaço considerável sem contexto sobre aprendizados transferíveis.",
+					"why": "Para a vaga sênior, experiências antigas e não correlatas consomem atenção do recrutador. Mantê-las longas diminui o foco no que importa para fintech.",
+					"suggestion": "Reduza para uma linha ou remova se o espaço for necessário para experiências relevantes. Se mantiver, enfatize aprendizados de identidade visual e design system que se conectem ao trabalho atual.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência",
+					"problem": "A ordem cronológica está correta (mais recente primeiro), mas as datas aparecem sem formatação clara e o cargo da experiência atual não tem empresa, setor e localização visualmente separados.",
+					"why": "Formatação inconsistente prejudica a leitura rápida e a extração correta de dados por sistemas ATS.",
+					"suggestion": "Padronize o formato: 'Designer de Produto Sênior | Compra Fácil App | jan/2021 – atual | Porto Alegre, RS (remoto ou híbrido, se aplicável)'.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Cabeçalho",
+					"problem": "O CV não contém link para LinkedIn e GitHub. O portfólio na Behance aparece no cabeçalho, mas a URL é de exemplo (behance.net/juliana-ribeiro-exemplo) e sem indicação de estudos de caso relevantes.",
+					"why": "Recrutadores de produto e de fintech verificam portfólio e LinkedIn antes de avançar. A ausência de links verificáveis e de estudos de caso reduz a credibilidade na triagem.",
+					"suggestion": "Inclua o URL real do LinkedIn (linkedin.com/in/seu-perfil) e do portfólio com estudos de caso específicos de produtos digitais. Para design, o GitHub é menos crítico, mas um link para protótipos públicos no Figma ou Framer também ajuda.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Formação",
+					"problem": "A formação em Design Gráfico (2012-2016) e a ausência de certificações relevantes para product design, UX research ou fintech deixam o perfil sem sinal de atualização recente.",
+					"why": "Para senioridade em fintech, formação recente em produto ou métricas reforça o posicionamento e combate a percepção de que a carreira ainda é majoritariamente de design gráfico.",
+					"suggestion": "Adicione cursos ou certificações recentes ligados a UX/Product Design, pesquisa, métricas de produto ou meios de pagamento (ex.: curso de UX em produtos financeiros, Nielsen Norman Group, certificação de Product Analytics). Se não existirem, considere concluir um curso focado no setor.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Competências",
+					"problem": "Não há menção a uso de IA e ferramentas de eficiência (LLMs, Copilot, automação de fluxos de pesquisa, geração assistida de protótipos), palavras-chave muito valorizadas em 2024-2025 para designers sênior.",
+					"why": "O mercado atual de fintech avalia capacidade de ganhar eficiência com IA. Ausência dessa menção pode posicionar o candidato como menos alinhado com as práticas emergentes.",
+					"suggestion": "Se você já usa essas ferramentas, inclua em competências e em uma bullet com resultado: 'Usei LLMs para sintetizar 200 respostas de pesquisa, reduzindo em 40% o tempo de análise qualitativa.'",
+					"severity": "LOW"
+				},
+				{
+					"section": "Idiomas",
+					"problem": "O idioma inglês aparece como 'avançado', mas o CV não traz evidência de uso profissional em inglês, e o espanhol como 'intermediário' é irrelevante para a vaga sem contexto de mercado LATAM.",
+					"why": "Vagas de fintech sênior frequentemente exigem inglês para times globais. A evidência prática reforça a declaração de fluência.",
+					"suggestion": "Se você atuou com times internacionais ou documentação em inglês, cite isso em uma bullet. Caso contrário, mantenha o inglês e remova ou reduza o espanhol se não for um diferencial real.",
+					"severity": "LOW"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o resumo com senioridade, especialidade e menção explícita a fintech, substituindo a frase genérica atual.",
+				"Reescrever as bullets da experiência atual e da Moda Sul usando verbos de ação, ferramentas e métricas de impacto no formato XYZ.",
+				"Incluir links reais de LinkedIn e Behance com estudos de caso de produtos digitais e, se possível, de fintech.",
+				"Adicionar projetos ou estudos de caso de pagamentos, crédito ou serviços financeiros, mesmo que autorais, e citá-los no CV.",
+				"Distribuir as competências de Figma, pesquisa e design system pelas experiências, com evidências de uso.",
+				"Incluir ferramentas de analytics, colaboração com engenharia e menções a IA e eficiência, quando verdadeiras.",
+				"Reduzir a experiência em design gráfico e revisar a formação com cursos recentes em produto ou UX."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo",
+					"current": "Designer de Produto Designer de produto com 7 anos em apps de varejo.",
+					"proposed": "Product Designer Sênior com 7 anos em produtos digitais de alto volume, com experiência em jornadas de checkout e pagamentos, foco em pesquisa com usuários, design systems em Figma e métricas de conversão, buscando atuação em fintech.",
+					"rationale": "Declara senioridade, stack principal e foco de atuação na primeira linha, alinhando o resumo ao objetivo de Product Designer Sênior em fintech.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Resumo / Portfólio",
+					"current": "",
+					"proposed": "Projeto autoral ou estudo de caso de fintech: [Nome do projeto] (checkout com Pix/cartão, carteira digital, onboarding financeiro ou antifraude), desenvolvido em [ferramentas], com resultado de [métrica].",
+					"rationale": "Ausência total de evidência em pagamentos ou serviços financeiros; um case específico do setor reduz a filtragem por falta de aderência.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Compra Fácil App",
+					"current": "Compra Fácil App - Designer de Produto Sênior 2021 - atual Figma Redesenhei o checkout do app e a conversão subiu 18%.",
+					"proposed": "Redesenhei o checkout do app Compra Fácil em Figma e [ferramenta de teste, ex.: Maze], elevando a conversão em 18% e reduzindo abandono em [X]% em [Y] meses para [Z] mil usuários ativos.",
+					"rationale": "Aplica o método XYZ (o que fez, ferramenta, impacto), adicionando escala e impacto adicional que comprovam a senioridade.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Compra Fácil App",
+					"current": "Criei o design system usado por 5 squads.",
+					"proposed": "Criei e mantive design system em Figma com [N] componentes, adotado por 5 squads e reduzindo em [X]% o tempo de entrega de telas, com validação de componentes junto a engenheiros front-end em [ferramenta, ex.: Storybook].",
+					"rationale": "Conecta a entrega ao resultado de eficiência e à colaboração com engenharia, sinais de ciclo completo exigidos de Product Designers sênior.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Moda Sul E-commerce",
+					"current": "Responsável pelas telas do aplicativo de compras. Participei de testes A/B da vitrine.",
+					"proposed": "Desenvolvi as telas de vitrine e carrinho em Figma e Adobe XD, atuando como designer principal para [X] mil acessos mensais e liderando [N] testes A/B que aumentaram o ticket médio em [Y]%.",
+					"rationale": "Substitui descrições passivas e vagas por verbo de ação, ferramenta, escopo e resultado, demonstrando autoria de decisões.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — Compra Fácil App",
+					"current": "",
+					"proposed": "Metodologia de pesquisa: Conduzi 30 entrevistas com clientes por trimestre, sintetizando achados com [ferramenta, ex.: Dovetail] para embasar decisões de [produto/funcionalidade], com impacto em [métrica].",
+					"rationale": "Transforma a lista de competências em evidência com resultado de negócio, reforçando a visão orientada por dados.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho",
+					"current": "",
+					"proposed": "LinkedIn: linkedin.com/in/[seu-perfil] | Portfólio: behance.net/[seu-usuario-real] com estudos de caso de produtos digitais e de fintech.",
+					"rationale": "Links verificáveis são esperados na triagem de vagas de produto; o URL atual é de exemplo e deve ser substituído.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Idiomas",
+					"current": "Espanhol intermediário",
+					"proposed": "",
+					"rationale": "Idioma sem relevância demonstrada para a vaga em fintech; liberar espaço para evidências de inglês em times globais.",
+					"impact": "LOW"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Estúdio Pixel",
+					"current": "Estúdio Pixel - Designer Gráfico 2016 - 2018 Peças para redes sociais e identidade visual.",
+					"proposed": "Designer Gráfico | Estúdio Pixel | 2016 - 2018 | Identidade visual e peças para redes sociais.",
+					"rationale": "Reduz o peso visual de uma experiência não correlata e padroniza o formato para leitura rápida e extração pelo ATS.",
+					"impact": "LOW"
+				},
+				{
+					"action": "ADD",
+					"section": "Competências",
+					"current": "",
+					"proposed": "Ferramentas de análise e práticas: Amplitude/Mixpanel, Hotjar, Maze, Jira, acessibilidade (WCAG) e [outras ferramentas verdadeiras].",
+					"rationale": "Inclui palavras-chave de ciclo completo e de decisão orientada por dados que o ATS e recrutadores de fintech buscam.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Formação",
+					"current": "",
+					"proposed": "Curso ou certificação recente em [UX/Product Design, pesquisa ou meios de pagamento], concluído em [ano], [instituição].",
+					"rationale": "Sinaliza atualização recente e combate a percepção de carreira majoritariamente em design gráfico.",
+					"impact": "MEDIUM"
+				}
+			]
+		}
+	}
+}

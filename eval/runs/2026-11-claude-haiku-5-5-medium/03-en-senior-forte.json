@@ -1,0 +1,189 @@
+{
+	"caseId": "03-en-senior-forte",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:19:02.848Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 26217,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 62,
+			"summary": "O CV demonstra engenharia de plataforma sólida, com métricas de impacto reais e liderança técnica acima da média para Senior, mas ainda se posiciona mais como Senior Engineer do que como Staff. Para atingir o nível pretendido, é preciso explicitar escopo organizacional, influência entre times e uma visão de estratégia técnica e confiabilidade, além de reforçar práticas de ciclo completo e presença pública de escrita técnica.",
+			"strengths": [
+				"Métricas de impacto fortes e concretas: 1,4 bilhão de eventos/dia, 99,99% de disponibilidade, redução de 27% em custo cloud e latência de 35 ms para 12 ms.",
+				"Uso explícito da tecnologia na mesma frase das conquistas (Go e Kafka, Kubernetes, gRPC, Kotlin e Spring).",
+				"Evidência de liderança técnica transversal: migração de 23 serviços, processo de RFC adotado por 9 times e mentoria de 6 engenheiros.",
+				"Histórico de 10 anos com progressão clara de Junior a Senior em empresas de produto e de streaming.",
+				"Links para LinkedIn e GitHub presentes no cabeçalho.",
+				"Formação em Ciência da Computação e domínio de inglês fluente, adequado para empresas de produto internacionais."
+			],
+			"issues": [
+				{
+					"section": "Summary",
+					"problem": "O resumo é genérico e não declara uma especialidade clara de Staff: 'Senior engineer with 10 years building high-throughput backend systems' não define foco técnico nem o tipo de impacto de plataforma que o candidato busca.",
+					"why": "Recrutadores de Staff procuram sinal de escopo técnico transversal e influência; um resumo genérico não diferencia o candidato de um Senior comum, e a leitura de 8 segundos não captura o nível pretendido.",
+					"suggestion": "Reescreva como posicionamento de Staff: 'Staff-level engineer focado em plataformas distribuídas de alta vazão (Go, Kafka, Kubernetes), com histórico de decisões de arquitetura que reduziram custo e latência em escala de bilhões de eventos/dia. Foco em definição técnica entre times de produto.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Ausente",
+					"problem": "Não há menção explícita a IA ou ferramentas de eficiência de engenharia (ex.: Copilot, LLMs, automação de produtividade de times).",
+					"why": "Empresas de produto atuais valorizam engenheiros que elevam a produtividade do time; a ausência deixa um sinal de eficiência não demonstrado.",
+					"suggestion": "Se o candidato usa IA no dia a dia, inclua uma linha concreta, por exemplo: 'Adotei GitHub Copilot e ferramentas com LLM para revisão de código e geração de testes, reduzindo o tempo de revisão de PRs em X%'. Só inclua se for verdadeiro e tiver resultado mensurável.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Cabeçalho / Ausente",
+					"problem": "Ausência de Portfólio ou página de projetos. Há LinkedIn e GitHub, mas nenhum link para documentos técnicos publicados (RFCs públicos, post-mortems, talks, artigos).",
+					"why": "Para Staff, a prova de influência técnica costuma estar em escrita e decisões documentadas; sem isso o recrutador depende apenas de afirmações.",
+					"suggestion": "Adicione um link para uma página com artefatos de arquitetura (RFCs anonimizados, post-mortems, palestras ou um repositório de referência de decisões técnicas). Ex.: 'Artigos e RFCs: dokafor-example.dev/writing'.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Streamly",
+					"problem": "Bullets de experiência não declaram a stack na mesma frase em alguns casos e não explicitam o papel individual versus o do time: 'Established the RFC process now used by 9 teams; mentored 6 engineers' não diz quais ferramentas nem o resultado técnico.",
+					"why": "Staff é avaliado por alavancagem organizacional; sem métrica de impacto e sem resultado observável, a conquista parece burocrática e não estratégica.",
+					"suggestion": "Reescreva: 'Instituí o processo de RFCs técnicos adotado por 9 times, reduzindo decisões de arquitetura conflitantes (informe a métrica real, ex.: X decisões revisadas por trimestre); mentorei 6 engenheiros, dois deles promovidos a Senior (se verdadeiro).'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Skills / Experiência",
+					"problem": "Bullet de Terraform e observabilidade aparece apenas na lista de Skills; não há evidência em experiência de uso de OpenTelemetry, Terraform, CI/CD ou testes na prática.",
+					"why": "ATS e recrutadores buscam palavras-chave contextualizadas no ciclo completo (observabilidade, IaC, CI/CD, testes); listas soltas têm peso menor e não provam profundidade.",
+					"suggestion": "Explicite nas conquistas: 'Padronizei instrumentação com OpenTelemetry em 23 serviços gRPC, reduzindo o MTTR de incidentes em X%' e 'Provisionei a infraestrutura multi-região com Terraform e pipelines GitLab CI/CD, com deploy diário'.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Shopfront",
+					"problem": "Contract testing (Pact) e testes em geral aparecem apenas uma vez e sem relação com a stack de plataforma atual; não há menção a testes de carga, chaos engineering ou estratégia de testes em sistemas distribuídos.",
+					"why": "Para Staff, a visão de qualidade e confiabilidade em sistemas distribuídos é critério de avaliação central e hoje está subrepresentada.",
+					"suggestion": "Acrescente uma linha sobre a estratégia de testes atual: 'Defini estratégia de testes em três camadas (unitário, contrato com Pact, carga com k6) para a plataforma de ingestão, mantendo a taxa de bugs em produção abaixo de X por release.'",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência — DataPoint Labs",
+					"problem": "Experiência inicial como Junior Developer tem apenas uma linha vaga, sem tecnologia de impacto ou resultado: 'Developed ETL jobs in Python for analytics dashboards.'",
+					"why": "Mantém a coerência com a leitura de senioridade; detalhes antigos e vagos consomem espaço que deveria destacar impacto recente.",
+					"suggestion": "Se for relevante, detalhe: 'Desenvolvi jobs ETL em Python com Airflow/Pandas para dashboards analíticos, reduzindo o tempo de atualização de X para Y horas (ou número real de usuários atendidos).' Caso contrário, reduza o espaço ocupado.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Skills",
+					"problem": "A seção de Skills é uma lista corrida sem agrupamento por domínio (linguagens, dados, cloud, plataforma, práticas), o que dificulta a leitura e a distribuição de palavras-chave.",
+					"why": "ATS ranqueia melhor termos organizados por contexto, e o recrutador entende rapidamente a amplitude técnica em uma leitura curta.",
+					"suggestion": "Agrupe em: Linguagens (Go, Kotlin, Java, Python); Dados (Kafka, PostgreSQL, Cassandra); Plataforma (Kubernetes, gRPC, Terraform, OpenTelemetry); Cloud (AWS, GCP); Práticas (CI/CD GitLab, RFCs, architecture reviews).",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência — Streamly",
+					"problem": "Falta de sinal de escopo de Staff: não há menção a iniciativas que atravessaram múltiplos times, decisões de build-vs-buy, ownership de domínios ou alinhamento com produto e negócio.",
+					"why": "Staff Engineer em empresas de produto é avaliado por influência além do próprio código; sem evidência de escopo transversal, o CV é lido como Senior e o candidato tende a ser eliminado na triagem para o nível.",
+					"suggestion": "Para cada iniciativa de maior porte, indique escopo organizacional explícito: 'Liderei a arquitetura da plataforma de ingestão multi-região, alinhando 4 times de produto e definindo a estratégia de custos com finanças, resultando em USD 410k/ano de economia.'",
+					"severity": "HIGH"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o resumo como posicionamento de Staff com especialidade, stack e tipo de impacto em uma ou duas frases.",
+				"Reescrever os bullets do Streamly incluindo escopo organizacional (times, decisões, alinhamento com produto) e stack na mesma frase, mantendo as métricas já existentes.",
+				"Adicionar link de portfólio ou página de escrita técnica com RFCs, post-mortems ou palestras.",
+				"Transformar as menções a Terraform, OpenTelemetry, CI/CD e Pact em conquistas com resultado mensurável dentro das experiências.",
+				"Agrupar a seção de Skills por domínio para melhorar leitura e distribuição de palavras-chave.",
+				"Quantificar a conquista do RFC process e do mentoria (número de decisões, promoções, adoção) e reduzir o espaço do cargo Junior se não for relevante.",
+				"Incluir uma linha verdadeira sobre uso de IA e ferramentas de eficiência se houver resultado mensurável."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo",
+					"current": "Senior engineer with 10 years building high-throughput backend systems. I own platform-level technical decisions, run architecture reviews, and care about developer experience and reliability.",
+					"proposed": "Staff Software Engineer com 10 anos construindo plataformas distribuídas de alta vazão (Go, Kafka, Kubernetes), com decisões de arquitetura que reduziram custo e latência em escala de bilhões de eventos/dia. Foco em definição técnica transversal entre times de produto e em confiabilidade.",
+					"rationale": "Declara senioridade, stack principal e foco de plataforma na primeira linha, diferenciando o candidato de um Senior comum para o nível Staff.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Streamly",
+					"current": "Established the RFC process now used by 9 teams; mentored 6 engineers.",
+					"proposed": "Instituí o processo de RFCs técnicos adotado por 9 times, reduzindo decisões de arquitetura conflitantes ([X] decisões revisadas por trimestre); mentorei 6 engenheiros, [N] deles promovidos a Senior.",
+					"rationale": "Aplica o Método XYZ e demonstra alavancagem organizacional com métrica de impacto, em vez de uma conquista burocrática.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — Streamly",
+					"current": "",
+					"proposed": "Liderei a arquitetura da plataforma de ingestão multi-região em Go e Kafka, alinhando [N] times de produto e definindo a estratégia de custos com [área de negócio/finanças], resultando em USD 410k/ano de economia.",
+					"rationale": "Evidencia escopo de Staff com influência entre times e alinhamento com negócio, sinal central ausente no CV atual.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho",
+					"current": "",
+					"proposed": "Portfólio de arquitetura: [link para página com RFCs anonimizados, post-mortems ou palestras, ex.: dokafor-example.dev/writing]",
+					"rationale": "Prova de influência técnica por meio de escrita e decisões documentadas, que recrutadores de Staff procuram e o CV não apresenta.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Streamly",
+					"current": "Cut cloud spend by 27% (about USD 410k per year) by moving batch workloads to spot instances with Kubernetes autoscaling.",
+					"proposed": "Reduzi o custo de cloud em 27% (cerca de USD 410k/ano) migrando cargas em batch para instâncias spot com autoscaling no Kubernetes na AWS/GCP [especifique], com [tecnologia de observabilidade usada para validar o impacto].",
+					"rationale": "Mantém as métricas existentes e acrescenta escopo de decisão de plataforma, tornando explícito o papel individual versus o do time.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Experiência — Streamly",
+					"current": "Terraform, OpenTelemetry, CI/CD with GitLab (apenas na seção Skills)",
+					"proposed": "Padronizei instrumentação com OpenTelemetry em 23 serviços gRPC, reduzindo o MTTR de incidentes em [X]%; provisionei a infraestrutura multi-região com Terraform e pipelines GitLab CI/CD, com deploy [frequência].",
+					"rationale": "Contextualiza palavras-chave de IaC, observabilidade e CI/CD em conquistas, o que pesa mais para ATS e para a avaliação de ciclo completo do que listas soltas.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — Shopfront",
+					"current": "",
+					"proposed": "Defini estratégia de testes em três camadas (unitário, contrato com Pact e carga com [ferramenta, ex.: k6]) para a plataforma de ingestão, mantendo [X] bugs em produção por release.",
+					"rationale": "Demonstra visão de qualidade e confiabilidade em sistemas distribuídos, critério central para Staff e hoje subrepresentado no CV.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Streamly",
+					"current": "Led the migration from REST to gRPC across 23 services, reducing median inter-service latency from 35 ms to 12 ms.",
+					"proposed": "Liderei a migração de REST para gRPC em 23 serviços, reduzindo a latência mediana entre serviços de 35 ms para 12 ms, em coordenação com [N] times e definindo o padrão de contratos de API.",
+					"rationale": "Acrescenta escopo transversal e papel de definição de padrão, sinais de Staff, mantendo a métrica já existente.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Habilidades",
+					"current": "Go, Kotlin, Java, Python, Kafka, gRPC, PostgreSQL, Cassandra, Kubernetes, Terraform, AWS, GCP, OpenTelemetry, CI/CD with GitLab.",
+					"proposed": "Linguagens: Go, Kotlin, Java, Python | Dados: Kafka, PostgreSQL, Cassandra | Plataforma: Kubernetes, gRPC, Terraform, OpenTelemetry | Cloud: AWS, GCP | Práticas: CI/CD (GitLab), RFCs, architecture reviews, testes de contrato (Pact).",
+					"rationale": "Agrupa a lista por domínio, o que melhora a leitura em poucos segundos e a distribuição de palavras-chave para o ATS.",
+					"impact": "LOW"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — DataPoint Labs",
+					"current": "Developed ETL jobs in Python for analytics dashboards.",
+					"proposed": "Desenvolvi jobs ETL em Python com [Airflow/Pandas] para dashboards analíticos, reduzindo o tempo de atualização de [X] para [Y] horas, atendendo [N] usuários.",
+					"rationale": "Adiciona tecnologia e resultado a um bullet vago; caso não seja relevante, a alternativa é reduzir o espaço ocupado por esse cargo.",
+					"impact": "LOW"
+				},
+				{
+					"action": "ADD",
+					"section": "Habilidades",
+					"current": "",
+					"proposed": "Uso de IA no dia a dia: [ferramenta, ex.: GitHub Copilot ou LLMs] para [revisão de código/geração de testes], reduzindo o tempo de revisão de PRs em [X]%.",
+					"rationale": "Sinaliza fluência em ferramentas de eficiência de engenharia valorizada por empresas de produto; incluir apenas se for verdadeiro e mensurável.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

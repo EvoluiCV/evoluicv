@@ -1,0 +1,210 @@
+{
+	"caseId": "04-en-junior-fraco",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:19:44.466Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 28603,
+	"body": {
+		"analysis": {
+			"language": "en",
+			"overallScore": 38,
+			"summary": "O CV apresenta a base técnica esperada para uma vaga júnior de frontend, com bootcamp recente e stack em React e JavaScript, mas está diluído por clichês, ausência de links verificáveis e descrições de projetos e experiência sem tecnologias explícitas ou métricas. Sem portfólio publicado e sem resultados quantificados, a candidatura compete em desvantagem com perfis que apresentam código e impacto comprovados. As correções de maior impacto são de conteúdo e evidência, e podem ser feitas em um dia.",
+			"strengths": [
+				"Formação técnica recente em bootcamp full stack (2024), relevante para vaga júnior de frontend.",
+				"Stack básica de frontend presente nas habilidades: HTML, CSS, JavaScript e React.",
+				"Projetos práticos concluídos (to-do app em React e site de clima com API), que servem como base para portfólio.",
+				"Experiência de atendimento ao cliente e rotina de trabalho em loja, que pode demonstrar comunicação e disciplina quando descrita com resultados.",
+				"Ordem cronológica inversa correta entre experiência e formação."
+			],
+			"issues": [
+				{
+					"section": "About me",
+					"problem": "Seção 'About me' genérica, com clichês como 'hard-working', 'passionate', 'team player' e 'fast learner', sem declarar especialidade, stack ou foco de atuação.",
+					"why": "Recrutadores e ATS filtram por termos específicos. 'Hard-working' e 'team player' não diferenciam o candidato e não aparecem em buscas por stack; na leitura de 8 segundos, o currículo não comunica que a pessoa é desenvolvedora frontend.'",
+					"suggestion": "Substitua por um resumo de 2 a 3 linhas com cargo, stack e objetivo. Exemplo: 'Desenvolvedora Frontend júnior com foco em interfaces responsivas em React e JavaScript, formada em bootcamp full stack (CodeRise Academy) e com projetos publicados no GitHub. Busco vaga de Junior Frontend Developer.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Cabeçalho (Ausente)",
+					"problem": "Ausência de links para LinkedIn, GitHub e portfólio. Para uma vaga júnior de frontend, não há como verificar código ou projetos.",
+					"why": "Em vagas de frontend, o GitHub e o portfólio são a principal prova de competência. Sem eles, a candidatura depende apenas de afirmações sem evidência.",
+					"suggestion": "Adicione no cabeçalho: linkedin.com/in/seu-perfil, github.com/seu-usuario e um portfólio com o to-do app e o weather app publicados (ex.: emilycarter.dev). Cada projeto deve ter link para demo e repositório.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Projects",
+					"problem": "A seção de projetos é vaga e não descreve tecnologias, funcionalidades, decisões técnicas nem resultados. 'Made a to-do app with React' e 'Did a weather website using an API' não mostram o que foi construído.",
+					"why": "O método XYZ exige a tecnologia explícita na mesma frase da entrega. Projetos vagos não comprovam a stack que o candidato lista nas skills e não diferenciam o perfil de outros bootcamps.",
+					"suggestion": "Descreva cada projeto com verbo de ação, tecnologias e resultado. Exemplo: 'Desenvolvi um app de tarefas em React com gerenciamento de estado via Context API, persistência em localStorage e testes com Jest, publicado na Vercel.' Para o app de clima: 'Construí um site de previsão do tempo consumindo a OpenWeatherAPI, com busca por cidade, tratamento de erros e layout responsivo com CSS Grid.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Projects e Experience",
+					"problem": "Ausência de métricas e resultados em qualquer seção. Nenhum projeto ou experiência apresenta número, escala ou impacto.",
+					"why": "Júniores competem com muitos perfis parecidos. Métricas são o que diferencia um candidato com experiência prática de um com apenas cursos concluídos.",
+					"suggestion": "Inclua números reais, mesmo que pequenos. Exemplos: 'Reduzi o tempo de carregamento da página em 35% com lazy loading de imagens (Lighthouse)', 'Projeto em grupo com 4 pessoas, entregue em 12 semanas, com 3 features implementadas por mim'. Se não houver métricas, use escopo: número de telas, componentes, usuários de teste.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experience — Corner Books",
+					"problem": "Experiência profissional descrita com linguagem vaga e sem relação com desenvolvimento. 'Helped customers', 'worked at the till' e 'Responsible for social media posts sometimes' não usam verbos de ação fortes nem apontam ganhos mensuráveis.",
+					"why": "Para vaga júnior de frontend, a experiência não técnica é secundária, mas precisa demonstrar disciplina, organização e uso de ferramentas digitais. Descrições vagas não fazem isso e desperdiçam espaço.",
+					"suggestion": "Reescreva focando em habilidades transferíveis e com números: 'Atendi em média 60 clientes por turno e reorganizei a seção de catálogo, reduzindo em 20% o tempo de busca de títulos.' Se houve automação de posts ou uso de ferramentas digitais, cite-as explicitamente (ex.: Canva, Meta Business Suite, planilhas de controle de estoque).",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Skills",
+					"problem": "Habilidades listadas em uma linha solta, sem níveis, sem contexto de uso e misturando competências técnicas com soft skills ('teamwork', 'communication') e ferramentas irrelevantes ('Microsoft Word').",
+					"why": "ATS e recrutadores buscam palavras-chave técnicas organizadas. Uma lista genérica não mostra profundidade e 'Microsoft Word' não agrega valor para a vaga.",
+					"suggestion": "Separe em categorias e remova itens irrelevantes. Exemplo: 'Frontend: HTML5, CSS3 (Flexbox, Grid), JavaScript (ES6+), React, Redux. Ferramentas: Git, GitHub, npm, Vite, Jest, Chrome DevTools. Backend básico: Node.js, Express. Idiomas: Inglês fluente.' Espalhe essas tecnologias também nos projetos.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Skills e Projects (Ausente)",
+					"problem": "Falta de evidência de ciclo completo de desenvolvimento: não há menção a Git, controle de versão, testes, deploy, CI/CD, acessibilidade ou performance.",
+					"why": "Empresas esperam que júniores já entendam o fluxo de entrega. A ausência desses termos sugere que o candidato só fez tutoriais guiados.",
+					"suggestion": "Mencione explicitamente Git/GitHub, deploy (Netlify, Vercel), testes (Jest, React Testing Library) e boas práticas (acessibilidade com semântica HTML e ARIA, responsividade mobile-first). Ex.: 'Publiquei o app via Netlify com pipeline de deploy automático a cada push no GitHub.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Projects",
+					"problem": "Projeto em grupo do bootcamp citado sem descrição: não se sabe qual era o produto, qual foi o papel do candidato nem o que foi entregue.",
+					"why": "Trabalho em equipe é um dos pontos de avaliação em entrevistas técnicas para júniores. Sem detalhar o papel, o projeto perde o valor como prova de colaboração real.",
+					"suggestion": "Especifique: 'Participei de equipe de 4 pessoas no desenvolvimento de [nome do projeto], responsável pelo componente de autenticação em React e integração com API REST, metodologia Scrum com sprints de 2 semanas.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Education",
+					"problem": "Seção 'Education' com o bootcamp listado sem detalhamento e a graduação em História sem conexão com a área. Não há destaque para a formação técnica.",
+					"why": "Para vaga júnior, a formação técnica recente é a principal credencial. Deixá-la sem contexto reduz a leitura de relevância no primeiro olhar.",
+					"suggestion": "Destaque o bootcamp com principais tecnologias e carga horária. Exemplo: 'Full Stack Web Development Bootcamp — CodeRise Academy (2024, 12 semanas): HTML, CSS, JavaScript, React, Node.js, Git.' Mantenha a graduação em História, mas em uma linha, sem comentários.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Education e Experience",
+					"problem": "Ordem cronológica está correta (experiência e formação do mais recente para o mais antigo), mas o bootcamp (2024) aparece antes da graduação, o que é adequado. Porém não há datas de início e fim detalhadas nem indicação de atividade atual.",
+					"why": "Datas padronizadas facilitam a leitura por ATS e permitem ao recrutador entender a linha do tempo recente, principalmente o intervalo entre o bootcamp e a candidatura.",
+					"suggestion": "Use o formato 'Mês/Ano – Mês/Ano' em todas as entradas e indique se a experiência de vendas terminou em 2024. Exemplo: 'Sales Assistant — Corner Books, jan/2022 – jun/2024'.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Hobbies",
+					"problem": "Hobbies (reading, hiking, baking) ocupam espaço sem relação com a vaga e não agregam ao perfil técnico.",
+					"why": "Espaço de currículo júnior é limitado e deve priorizar evidências técnicas. Hobbies irrelevantes diluem o foco na vaga de frontend.",
+					"suggestion": "Remova a seção ou substitua por algo relevante, como 'Contribuições open source', 'Participação em meetups de front-end' ou 'Estudo de acessibilidade web'. Se mantiver, limite a uma linha.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Cabeçalho e layout",
+					"problem": "Ausência de formatação profissional visível no texto: não há separação clara de seções com títulos padronizados como 'Experiência Profissional', 'Projetos' e 'Habilidades Técnicas' e o endereço do candidato não especifica disponibilidade de trabalho remoto ou híbrido.",
+					"why": "Títulos reconhecíveis ajudam o parser do ATS a mapear as seções corretamente, e a informação de disponibilidade reduz atritos no processo de triagem.",
+					"suggestion": "Use títulos padronizados em inglês (já que o CV está nesse idioma), inclua disponibilidade (ex.: 'Open to remote or hybrid roles in UK/EU') e garanta um layout de uma página com fonte legível.",
+					"severity": "LOW"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever a seção 'About me' como resumo de especialidade: cargo, stack (React, JavaScript) e objetivo Junior Frontend Developer, eliminando clichês.",
+				"Adicionar links de LinkedIn, GitHub e portfólio no cabeçalho, publicando o to-do app e o weather app com demos online.",
+				"Reescrever os dois projetos individuais com tecnologias explícitas, funcionalidades e pelo menos um resultado mensurável por projeto.",
+				"Detalhar o projeto em grupo do bootcamp com papel do candidato, tecnologias e metodologia.",
+				"Reorganizar a seção de Skills em categorias técnicas (Frontend, Ferramentas, Backend básico) e remover itens irrelevantes como Microsoft Word.",
+				"Incluir evidências de ciclo completo: Git/GitHub, deploy (Netlify ou Vercel) e testes com Jest ou React Testing Library.",
+				"Reescrever a experiência em Corner Books com números e ferramentas digitais, mostrando organização e disciplina.",
+				"Remover ou reduzir a seção de Hobbies e padronizar o formato de datas."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "About me",
+					"current": "Hard-working and passionate person who loves learning new things. I am a team player and a fast learner looking for an opportunity to start my career in tech.",
+					"proposed": "Junior Frontend Developer focused on responsive interfaces with React and JavaScript, trained through a full stack web development bootcamp (CodeRise Academy, 2024) and building projects published on GitHub. Seeking a Junior Frontend Developer role in [remote/hybrid location].",
+					"rationale": "Substitui clichês por cargo, stack e objetivo explícitos, melhorando a leitura em 8 segundos e a indexação por palavras-chave no ATS.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho",
+					"current": "",
+					"proposed": "LinkedIn: linkedin.com/in/[seu-perfil] | GitHub: github.com/[seu-usuario] | Portfolio: [seu-dominio.dev]",
+					"rationale": "Links verificáveis são a principal prova de competência em vagas de frontend e estão ausentes no cabeçalho.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Projects",
+					"current": "Made a to-do app with React.",
+					"proposed": "Developed a to-do app in React with state management via [Context API/Redux], localStorage persistence and [Jest/React Testing Library] tests, deployed on [Netlify/Vercel] ([demo link] | [repo link]).",
+					"rationale": "Aplica o Método XYZ ao explicitar tecnologias, funcionalidade e link de demo, comprovando a stack listada nas skills.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Projects",
+					"current": "Did a weather website using an API.",
+					"proposed": "Built a weather forecast site consuming the [OpenWeatherAPI] with city search, error handling and responsive layout using CSS [Grid/Flexbox] ([demo link] | [repo link]).",
+					"rationale": "Substitui descrição vaga por tecnologias específicas e funcionalidades verificáveis, alinhando-se ao método XYZ.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Projects",
+					"current": "Worked on a group project for the bootcamp.",
+					"proposed": "Collaborated in a team of [4] on [project name], building the [authentication component] in React and integrating a REST API, following Scrum with [2-week] sprints.",
+					"rationale": "Especifica o papel individual e a metodologia, transformando uma menção genérica em evidência de colaboração real.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Experience — Corner Books",
+					"current": "Helped customers, worked at the till and organised shelves. Responsible for social media posts sometimes.",
+					"proposed": "Served an average of [X] customers per shift, reorganised the catalogue section to reduce title search time by [X]%, and managed social media posts using [Canva/Meta Business Suite] to support [X] weekly publications.",
+					"rationale": "Usa verbos de ação e métricas com ferramentas digitais, transformando tarefas genéricas em evidências transferíveis de organização e disciplina.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Skills",
+					"current": "HTML, CSS, JavaScript, React, a bit of Node, teamwork, communication, Microsoft Word.",
+					"proposed": "Frontend: HTML5, CSS3 (Flexbox, Grid), JavaScript (ES6+), React. Tools: Git, GitHub, npm, [Vite], [Jest], Chrome DevTools. Backend (basic): Node.js, [Express]. Languages: English [level].",
+					"rationale": "Organiza as palavras-chave técnicas por categoria para o ATS e remove soft skills genéricas e ferramenta irrelevante.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Skills",
+					"current": "Microsoft Word.",
+					"proposed": "",
+					"rationale": "Ferramenta sem relação com a vaga de frontend, ocupa espaço e não agrega valor técnico.",
+					"impact": "LOW"
+				},
+				{
+					"action": "ADD",
+					"section": "Skills e Projects",
+					"current": "",
+					"proposed": "Ciclo completo: Git/GitHub para versionamento, deploy automático via [Netlify/Vercel] a cada push, testes com [Jest/React Testing Library] e boas práticas de acessibilidade (HTML semântico, ARIA) e responsividade mobile-first.",
+					"rationale": "Demonstra visão do ciclo completo de entrega, termo-chave que o ATS e recrutadores buscam em candidatos júnior.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Education",
+					"current": "CodeRise Academy (2024, 12 weeks)",
+					"proposed": "Full Stack Web Development Bootcamp, CodeRise Academy (Jan/2024 – [Mon/2024], 12 weeks): HTML, CSS, JavaScript, React, Node.js, Git.",
+					"rationale": "Destaca a formação técnica recente com as tecnologias principais, facilitando a relevância no primeiro olhar.",
+					"impact": "LOW"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Hobbies",
+					"current": "Reading, hiking, baking",
+					"proposed": "",
+					"rationale": "Hobbies sem relação com a vaga ocupam espaço limitado; o espaço deve priorizar evidências técnicas.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

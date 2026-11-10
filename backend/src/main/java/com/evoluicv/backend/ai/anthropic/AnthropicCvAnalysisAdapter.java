@@ -31,6 +31,13 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
 
     private static final Logger log = LoggerFactory.getLogger(AnthropicCvAnalysisAdapter.class);
 
+    /**
+     * As instruções estão em português e, sem este lembrete no fim da mensagem, o modelo tende a
+     * responder em português mesmo para CV em inglês (eval 2026-11, casos 03 e 04).
+     */
+    static final String LANGUAGE_RULE = """
+            IDIOMA DA RESPOSTA: estas instruções estão em português, mas isso NÃO define o idioma da resposta.             Escreva TODOS os campos de texto no idioma do CV.             If the CV is written in English, every text field of your answer must be in English.""";
+
     private final AnthropicClient client;
     private final AiProperties props;
     private final String recruiterPrompt;
@@ -55,7 +62,9 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
                 --- CV ---
                 %s
                 --- FIM DO CV ---
-                """.formatted(professionalGoal, targetRole, cvText);
+
+                %s
+                """.formatted(professionalGoal, targetRole, cvText, LANGUAGE_RULE);
         return call("analyst", props.analyst(), recruiterPrompt, user, CvAnalysis.class);
     }
 
@@ -75,7 +84,9 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
                 --- FIM DO CV ORIGINAL ---
 
                 Gere entre 5 e 12 sugestões pontuais de melhoria, priorizadas por impacto, no idioma informado. Cada sugestão deve ser cirúrgica e acionável, sem inventar informações.
-                """.formatted(language, professionalGoal, targetRole, analysisJson, cvText);
+
+                %s
+                """.formatted(language, professionalGoal, targetRole, analysisJson, cvText, LANGUAGE_RULE);
         return call("suggestions", props.suggestions(), suggestionsPrompt, user, ImprovementSuggestions.class);
     }
 
