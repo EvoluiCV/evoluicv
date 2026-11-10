@@ -16,7 +16,12 @@ services:
     image: ${COMPOSE_PROJECT_NAME}-backend:${IMAGE_TAG}
     container_name: ${COMPOSE_PROJECT_NAME}-backend
     environment:
-      OPENAI_API_KEY: ${OPENAI_API_KEY:?defina OPENAI_API_KEY no secret do ambiente}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:?defina ANTHROPIC_API_KEY no secret do ambiente}
+      # modelo/effort por agente; o padrão fica aqui porque variável vazia venceria o do application.yml
+      AI_ANALYST_MODEL: ${AI_ANALYST_MODEL:-claude-haiku-5-5}
+      AI_ANALYST_EFFORT: ${AI_ANALYST_EFFORT:-medium}
+      AI_SUGGESTIONS_MODEL: ${AI_SUGGESTIONS_MODEL:-claude-haiku-5-5}
+      AI_SUGGESTIONS_EFFORT: ${AI_SUGGESTIONS_EFFORT:-medium}
       JAVA_OPTS: ${JAVA_OPTS:--XX:MaxRAMPercentage=75}
       # cotas diárias de análise (zeram 00:00 America/Sao_Paulo); por IP 0 = sem limite por IP
       QUOTA_PER_IP_DAILY: ${QUOTA_PER_IP_DAILY:-3}

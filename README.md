@@ -5,7 +5,7 @@
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![Java 25](https://img.shields.io/badge/Java_25-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
 
 > Plataforma que transforma currículo em vantagem competitiva através de análise inteligente baseada em IA.
 
@@ -101,7 +101,7 @@ Monorepo dividido em dois serviços:
 
 - Spring Boot 3.5
 - Java 25
-- LangChain4j
+- SDK oficial da Anthropic (Claude Haiku 5.5)
 - Apache Tika
 
 ---
@@ -131,10 +131,10 @@ O `docker-compose.yml` da raiz é o mesmo compose usado pelo pipeline de CI/CD p
 
 - As chaves de serviço do compose são `evoluicv-api` (backend) e `evoluicv-web` (frontend) — propositalmente diferentes do `container_name` de cada ambiente, para não colidir no DNS entre produção e staging (ver ADR-001, decisão D1b).
 - Não existe mais variável de porta publicada nem `ports:` no compose — em staging/produção o acesso é sempre pelo domínio público via proxy reverso, nunca por `localhost`.
-- O compose é parametrizado por `COMPOSE_PROJECT_NAME` (nome do ambiente) e `IMAGE_TAG` (tag/SHA da imagem), além de `OPENAI_API_KEY`.
+- O compose é parametrizado por `COMPOSE_PROJECT_NAME` (nome do ambiente) e `IMAGE_TAG` (tag/SHA da imagem), além de `ANTHROPIC_API_KEY`.
 
 ```bash
-export OPENAI_API_KEY=sk-...
+export ANTHROPIC_API_KEY=sk-ant-...
 export COMPOSE_PROJECT_NAME=evoluicv
 export IMAGE_TAG=local
 docker network create proxy   # rede externa exigida pelo compose; só na 1ª vez
@@ -151,7 +151,7 @@ Como não há porta publicada, o acesso local a esse compose é pela rede do Doc
 
 ```bash
 cd backend
-export OPENAI_API_KEY=sk-...
+export ANTHROPIC_API_KEY=sk-ant-...
 ./mvnw spring-boot:run
 ```
 
@@ -230,7 +230,7 @@ evoluicv/
 | -------- | -------------------- |
 | Frontend | Next.js + React      |
 | Backend  | Spring Boot          |
-| IA       | OpenAI + LangChain4j |
+| IA       | Claude (Anthropic) via SDK oficial Java |
 | Parsing  | Apache Tika          |
 
 ---
@@ -259,4 +259,4 @@ Licenciado sob [GNU AGPLv3](./LICENSE) © 2026 Luanderson Pimenta Mendes.
 
 Este repositório (`evoluicv`) contém o **núcleo open source** — Analyzer básico para self-host. Funcionalidades premium da plataforma SaaS hospedada (análise expandida com ATS Match / Interview Prep / LinkedIn Repositioning, memória persistente cross-device, federação LinkedIn, editor de CV, exports, billing) ficam em repositório privado e não são distribuídas sob AGPLv3.
 
-Use [evoluicv.luanderson.dev.br](https://evoluicv.luanderson.dev.br/) para experiência completa, ou self-host este repo para uso individual com sua própria chave OpenAI.
+Use [evoluicv.luanderson.dev.br](https://evoluicv.luanderson.dev.br/) para experiência completa, ou self-host este repo para uso individual com sua própria chave da API da Anthropic.

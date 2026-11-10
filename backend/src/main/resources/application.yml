@@ -9,18 +9,18 @@ spring:
       max-file-size: 10MB
       max-request-size: 10MB
 
-langchain4j:
-  open-ai:
-    chat-model:
-      api-key: ${OPENAI_API_KEY:}
-      model-name: gpt-4o-mini
-      temperature: 0.2
-      response-format: json_schema
-      strict-json-schema: true
-      log-requests: false
-      log-responses: false
-
 evoluicv:
+  ai:
+    api-key: ${ANTHROPIC_API_KEY:}
+    # max-tokens inclui o raciocínio adaptativo do modelo, não só o JSON
+    analyst:
+      model: ${AI_ANALYST_MODEL:claude-haiku-5-5}
+      effort: ${AI_ANALYST_EFFORT:medium}
+      max-tokens: ${AI_ANALYST_MAX_TOKENS:16000}
+    suggestions:
+      model: ${AI_SUGGESTIONS_MODEL:claude-haiku-5-5}
+      effort: ${AI_SUGGESTIONS_EFFORT:medium}
+      max-tokens: ${AI_SUGGESTIONS_MAX_TOKENS:16000}
   quota:
     per-ip-daily: ${QUOTA_PER_IP_DAILY:3}
     global-daily: ${QUOTA_GLOBAL_DAILY:200}
@@ -29,7 +29,6 @@ evoluicv:
 logging:
   level:
     com.evoluicv.backend: INFO
-    dev.langchain4j: INFO
 
 management:
   endpoints:

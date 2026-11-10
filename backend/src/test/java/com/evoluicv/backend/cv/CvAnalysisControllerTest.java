@@ -1,7 +1,6 @@
 package com.evoluicv.backend.cv;
 
-import com.evoluicv.backend.ai.agent.ImprovementSuggestionsAgent;
-import com.evoluicv.backend.ai.agent.RecruiterAnalystAgent;
+import com.evoluicv.backend.ai.CvAnalysisPort;
 import com.evoluicv.backend.ai.model.CvAnalysis;
 import com.evoluicv.backend.ai.model.CvIssue;
 import com.evoluicv.backend.ai.model.ImprovementAction;
@@ -46,10 +45,7 @@ class CvAnalysisControllerTest {
     private ObjectMapper objectMapper;
 
     @MockitoBean
-    private RecruiterAnalystAgent recruiterAnalystAgent;
-
-    @MockitoBean
-    private ImprovementSuggestionsAgent improvementSuggestionsAgent;
+    private CvAnalysisPort cvAnalysisPort;
 
     @MockitoBean
     private CvTextExtractor cvTextExtractor;
@@ -101,8 +97,8 @@ class CvAnalysisControllerTest {
                 )
         ));
 
-        given(recruiterAnalystAgent.analyze(eq("Tech Lead fintech"), any(), any())).willReturn(analise);
-        given(improvementSuggestionsAgent.suggest(any(), any(), any(), any(), any())).willReturn(sugestoes);
+        given(cvAnalysisPort.analyze(eq("Tech Lead fintech"), any(), any())).willReturn(analise);
+        given(cvAnalysisPort.suggest(any(), any(), any(), any(), any())).willReturn(sugestoes);
 
         String body = objectMapper.writeValueAsString(new java.util.LinkedHashMap<>() {{
             put("cvText", LONG_CV.repeat(3));
@@ -121,6 +117,19 @@ class CvAnalysisControllerTest {
                 .andExpect(jsonPath("$.improvements.items[0].proposed").exists())
                 .andExpect(jsonPath("$.improvements.items[1].action").value("REWRITE"))
                 .andExpect(jsonPath("$.improvements.items[1].current").exists());
+    }
+
+    @Test
+    void recusaDaIaViraErro422Claro() throws Exception {
+        given(cvAnalysisPort.analyze(any(), any(), any())).willThrow(
+                new com.evoluicv.backend.ai.AiResponseException(
+                        com.evoluicv.backend.ai.AiResponseException.Reason.REFUSED, "recusado"));
+
+        mockMvc.perform(multipart("/api/cv/analyze")
+                        .param("cvText", LONG_CV.repeat(3))
+                        .param("professionalGoal", "Tech Lead"))
+                .andExpect(status().isUnprocessableEntity())
+                .andExpect(jsonPath("$.error").value("ai_refused"));
     }
 
     @Test
