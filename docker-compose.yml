@@ -18,6 +18,9 @@ services:
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY:?defina OPENAI_API_KEY no secret do ambiente}
       JAVA_OPTS: ${JAVA_OPTS:--XX:MaxRAMPercentage=75}
+      # cotas diárias de análise (zeram 00:00 America/Sao_Paulo); por IP 0 = sem limite por IP
+      QUOTA_PER_IP_DAILY: ${QUOTA_PER_IP_DAILY:-3}
+      QUOTA_GLOBAL_DAILY: ${QUOTA_GLOBAL_DAILY:-200}
     networks:
       - default
     healthcheck:

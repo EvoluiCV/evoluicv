@@ -1,8 +1,10 @@
 package com.evoluicv.backend.error;
 
+import com.evoluicv.backend.quota.DailyQuotaExceededException;
 import dev.langchain4j.exception.LangChain4jException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -61,6 +63,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UnsupportedCvFormatException.class)
     public ResponseEntity<Map<String, Object>> handleUnsupportedFormat(UnsupportedCvFormatException ex) {
         return body(HttpStatus.UNSUPPORTED_MEDIA_TYPE, "unsupported_format", ex.getMessage());
+    }
+
+    @ExceptionHandler(DailyQuotaExceededException.class)
+    public ResponseEntity<Map<String, Object>> handleDailyQuota(DailyQuotaExceededException ex) {
+        ResponseEntity<Map<String, Object>> response = body(HttpStatus.TOO_MANY_REQUESTS, "daily_quota_exceeded", ex.getMessage());
+        return ResponseEntity.status(response.getStatusCode())
+                .header(HttpHeaders.RETRY_AFTER, String.valueOf(ex.retryAfterSeconds()))
+                .body(response.getBody());
     }
 
     @ExceptionHandler(LangChain4jException.class)
