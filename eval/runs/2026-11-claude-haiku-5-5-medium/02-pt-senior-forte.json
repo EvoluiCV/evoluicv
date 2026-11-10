@@ -1,0 +1,252 @@
+{
+	"caseId": "02-pt-senior-forte",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:18:23.620Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 36591,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 62,
+			"summary": "O CV tem base técnica forte e conquistas quantificadas em pagamentos, o que é diferencial real para fintechs. Porém, ele se apresenta como engenheira sênior individual contributor e não comunica liderança técnica, decisões de arquitetura nem o cargo Tech Lead, que são os critérios centrais da vaga. Ajustar posicionamento, cabeçalho e bullets para evidenciar liderança e regulação deve elevar significativamente a competitividade.",
+			"strengths": [
+				"Experiência sólida em backend Java e Spring Boot com 9 anos de atuação e 4 anos específicos em pagamentos.",
+				"Conquistas quantificadas em performance e escala: vazão de 800 para 3.200 TPS, latência p99 de 420 ms para 180 ms e redução de 38% em incidentes.",
+				"Migração de monolito para microsserviços com Kafka em processador de PIX, projeto de alta complexidade no domínio de fintech.",
+				"Mentoria comprovada com resultados concretos, incluindo duas promoções de desenvolvedores plenos para sênior.",
+				"Ciclo completo de entrega evidenciado por CI/CD com GitHub Actions, testes de contrato e observabilidade com Prometheus e Grafana.",
+				"Certificação AWS Solutions Architect - Associate e stack de cloud alinhada ao mercado (EKS, SQS, RDS).",
+				"Presença de LinkedIn e GitHub no cabeçalho, facilitando a verificação do perfil."
+			],
+			"issues": [
+				{
+					"section": "Resumo",
+					"problem": "O resumo abre com um cabeçalho genérico ('Engenheira de software sênior com 9 anos em backend Java/Spring') que não declara o foco exigido para Tech Lead; não há menção a liderança técnica como eixo, nem a 'Tech Lead' ou a tipo de decisão que você toma.",
+					"why": "Recrutadores de Tech Lead buscam sinal imediato de liderança técnica e de escopo; o título 'Engenheira Sênior' sem essa ênfase perde a leitura de 8 segundos e não casa com a palavra-chave do cargo alvo.",
+					"suggestion": "Reescreva a primeira frase como posicionamento: 'Tech Lead Backend em fintech, com 9 anos em Java/Spring e 4 em processamento de pagamentos (PIX e cartão), liderando squads de 6 pessoas e decisões de arquitetura orientada a eventos.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Cabeçalho / Resumo",
+					"problem": "O cargo alvo 'Tech Lead Backend' não aparece em nenhum ponto do currículo, nem no título, nem no resumo, nem nas experiências. O título atual é 'Engenheira de Software Sênior'.",
+					"why": "Sistemas ATS filtram por cargo e por termos exatos da vaga; sem 'Tech Lead' o currículo pode ser descartado antes de qualquer avaliação de conteúdo.",
+					"suggestion": "Inclua 'Tech Lead Backend | Java, Spring e plataformas de pagamento' no cabeçalho e use a expressão 'Tech Lead' no resumo e no cargo de 'PagaLeve Fintech' se essa for de fato sua função formal ou de fato exercida; caso não tenha o título formal, use 'Engenheira Sênior (atuação como Tech Lead)' para não inflar o cargo.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — PagaLeve Fintech",
+					"problem": "O cargo registrado em 'PagaLeve Fintech' é 'Engenheira de Software Sênior', sem indicação de liderança técnica, embora as bullets descrevam liderança de migração e mentoria.",
+					"why": "Para Tech Lead, a senioridade de liderança precisa estar no cargo ou na descrição; sem isso o recrutador deduz que você é sênior individual contributor e questiona a transição de liderança.",
+					"suggestion": "Se a função de liderança técnica existiu, explicite no cabeçalho do bloco: 'PagaLeve Fintech — Engenheira Sênior / Tech Lead do domínio de Pagamentos (2021 - atual)'. Se não houve atribuição formal, deixe isso explícito na primeira bullet: 'Atuei como líder técnico da migração...'.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — PagaLeve Fintech",
+					"problem": "Não há nenhuma descrição de liderança de squad com escopo claro: 'lidero squads de 6 pessoas' aparece só no resumo, sem especificar se é line management, tech leadership ou escopo de produto, e não há menção a definição de roadmap, revisão de arquitetura, planejamento de sprints ou decisões de build vs. buy.",
+					"why": "Tech Lead é avaliado por liderança técnica e influência; o CV hoje mostra execução individual forte e mentoria, mas não mostra decisão de arquitetura conduzida nem coordenação entre times, que é o núcleo do cargo.",
+					"suggestion": "Adicione bullets de liderança concretas, por exemplo: 'Conduzi revisões de arquitetura e ADRs para 3 squads de backend, definindo padrões de contrato entre 7 microsserviços de PIX e reduzindo retrabalho de integração em X%.' Preencha X com dado real.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — PagaLeve Fintech",
+					"problem": "Os bullets de conquista não citam o papel de decisão da candidata em relação à equipe: 'Liderei a migração' e 'Implantei pipeline' são fortes, mas não dizem quantas pessoas participaram nem qual foi a sua responsabilidade específica versus a do time.",
+					"why": "Recrutadores de Tech Lead querem separar quem executa de quem conduz; sem esse dado a conquista parece feita individualmente.",
+					"suggestion": "Acrescente o tamanho do time e o seu papel: 'Liderei a migração do processador de PIX (equipe de 6 engenheiros) de monolito para 7 microsserviços em Spring Boot e Kafka, elevando a vazão de 800 para 3.200 TPS.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — PagaLeve Fintech",
+					"problem": "A descrição da migração do PIX não cita o período de execução nem a duração do projeto, o que impede avaliar prazo de entrega e complexidade.",
+					"why": "Duração é um dos sinais que diferenciam um projeto de migração de grande escala de uma entrega pontual, relevante para Tech Lead em fintech.",
+					"suggestion": "Acrescente o prazo: 'ao longo de 10 meses' ou similar, com dado real.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência — PagaLeve Fintech",
+					"problem": "As bullets de melhoria de performance e de incidentes não citam o mecanismo de medição dos resultados nem o período de comparação para a latência e a redução de incidentes em todos os contextos.",
+					"why": "Percentuais de variação ajudam o leitor rápido a dimensionar o ganho sem fazer conta.",
+					"suggestion": "Mantenha os números e explicite a métrica: 'reduzi a latência p99 de autorização de cartão de 420 ms para 180 ms (-57%) com cache em Redis e revisão de índices no PostgreSQL'.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência — LojaNet Varejo",
+					"problem": "Experiência anterior em 'LojaNet Varejo' é descrita com dois bullets de nível pleno sem nenhuma menção a liderança, arquitetura ou decisões técnicas, o que reforça a leitura de trajetória de execução e não de liderança.",
+					"why": "A trajetória precisa mostrar progressão rumo à liderança; hoje o histórico anterior não sustenta a narrativa de Tech Lead.",
+					"suggestion": "Se houve qualquer participação em decisões técnicas, revisões de código, onboarding ou definição de padrões, acrescente uma bullet. Ex.: 'Definição do padrão de jobs de conciliação em Spring Batch, adotado por 2 squads adicionais.'",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência — TecnoServ Consultoria",
+					"problem": "A experiência em 'TecnoServ Consultoria' (2015-2017) ocupa espaço sem métricas e com uma única bullet genérica sobre integrações SOAP/REST, sem tecnologias específicas ou resultados.",
+					"why": "Experiências muito antigas e sem métrica diluem o foco do currículo para um Tech Lead de fintech.",
+					"suggestion": "Ou remova a entrada, por ser antiga e pouco relevante para o cargo alvo, ou reduza a uma linha sem detalhes genéricos. Se mantiver, troque por algo como 'Desenvolvi integrações SOAP/REST com 5 instituições financeiras em Java, reduzindo tempo de homologação de X para Y dias.'",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência",
+					"problem": "Ordem cronológica inversa está correta, mas a seção de experiência não comunica a progressão de carreira de forma explícita, pois os títulos saltam de 'Júnior' para 'Pleno' para 'Sênior' sem indicar promoções internas.",
+					"why": "Mostrar a progressão ajuda o recrutador a validar a trajetória para liderança sem precisar inferir.",
+					"suggestion": "Se houve promoções na mesma empresa, liste-as separadamente dentro do mesmo bloco. Caso contrário, mantenha a cronologia atual.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Competências",
+					"problem": "As competências estão listadas em uma linha corrida sem agrupamento, e termos como Java 21, Spring Boot e Kafka não aparecem nas bullets de experiência com a versão ou o contexto de uso de forma consistente. Java 21 e Java 11 aparecem em momentos diferentes sem explicação.",
+					"why": "ATS e leitores humanos ganham clareza com agrupamento; a lista atual é difícil de escanear e não diferencia proficiência de conhecimento superficial.",
+					"suggestion": "Agrupe por categoria: Linguagens e frameworks (Java 21, Spring Boot), Mensageria e dados (Kafka, PostgreSQL, Redis), Cloud e DevOps (AWS EKS/SQS/RDS, Docker, Kubernetes, GitHub Actions), Arquitetura (DDD, arquitetura orientada a eventos, observabilidade com Prometheus/Grafana). Esclareça a migração de Java 11 para Java 21 em alguma bullet se for o caso.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — PagaLeve Fintech / Competências",
+					"problem": "Não há menção a testes automatizados além de 'testes de contrato' em uma bullet, nem a práticas de qualidade como cobertura, testes de carga ou revisão de código, o que enfraquece a demonstração de ciclo completo exigido por Tech Lead.",
+					"why": "Tech Lead precisa demonstrar que define padrões de qualidade para o time, não só que contribui com código.",
+					"suggestion": "Adicione uma bullet sobre estratégia de testes: 'Estabeleci estratégia de testes em três camadas (unitários, contrato com Pact e testes de carga com k6) para os microsserviços de PIX, reduzindo regressões em produção.' Use apenas ferramentas que você realmente usou.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Competências / Experiência",
+					"problem": "Não há menção a uso de IA ou ferramentas de aumento de produtividade como GitHub Copilot, LLMs ou automações de eficiência, o que o mercado atual valoriza em lideranças técnicas.",
+					"why": "Para Tech Lead em 2024-2025, a capacidade de adotar e padronizar ferramentas de produtividade com IA é um diferencial competitivo.",
+					"suggestion": "Se você usa Copilot, LLMs ou automações no dia a dia, cite com contexto: 'Adoção de GitHub Copilot e assistentes baseados em LLM no time, com ganho de produtividade medido em X.' Só inclua se for verdade e mensurado.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Cabeçalho",
+					"problem": "Não há link para portfólio e o GitHub informado não demonstra projetos ou contribuições de liderança técnica; o LinkedIn e o GitHub estão presentes, mas sem sinal de atividade relevante.",
+					"why": "Tech Lead é avaliado também pela forma como comunica decisões técnicas, e repositórios documentados são evidência direta disso.",
+					"suggestion": "Mantenha LinkedIn e GitHub, e certifique-se de que o GitHub tenha repositórios fixados que mostrem arquitetura, documentação de decisões (ADRs) ou um projeto de referência. Se não tiver portfólio, considere um README técnico de um projeto relevante.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Certificações",
+					"problem": "A certificação AWS Solutions Architect - Associate é relevante, mas está isolada e não há evidência de uso em produção da AWS além da lista de competências (EKS, SQS, RDS).",
+					"why": "Certificações sem contexto de uso não comprovam competência; a conexão com a produção fortalece a credibilidade.",
+					"suggestion": "Conecte a certificação a uso real: 'AWS Certified Solutions Architect - Associate (2023), aplicada na arquitetura de EKS e SQS da plataforma de pagamentos.' Não há certificações irrelevantes listadas, então mantenha esse foco.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Formação",
+					"problem": "Não há menção a certificações ou formação em gestão, liderança ou arquitetura de software além da graduação, o que pode ser esperado para o cargo, mas a formação em Sistemas de Informação (2011-2015) está desatualizada sem cursos complementares recentes.",
+					"why": "Para Tech Lead a formação formal tem peso menor que a experiência, mas a ausência de atualização recente pode ser questionada em processos mais formais.",
+					"suggestion": "Se houver especialização em arquitetura de software, DDD ou gestão de times, inclua. Se não, não force; a experiência prática pesa mais para Tech Lead.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Resumo / Ausente",
+					"problem": "O resumo não menciona explicitamente conhecimento de regulação e segurança do setor financeiro (PCI DSS, Bacen, LGPD) nem a experiência com requisitos de conformidade, que são centrais para Tech Lead em fintech.",
+					"why": "Fintechs avaliam Tech Leads pela capacidade de conduzir entregas dentro de restrições regulatórias; a ausência desse sinal pode eliminar a candidata em triagens específicas do setor.",
+					"suggestion": "Se você já trabalhou com PCI DSS, requisitos do Bacen ou LGPD, cite explicitamente: 'Experiência em projetos sujeitos a PCI DSS e regulação do Bacen para o PIX, incluindo auditoria de logs e segregação de dados sensíveis.' Não invente, só inclua o que foi real.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — PagaLeve Fintech / Ausente",
+					"problem": "Não há menção a gestão de incidentes, on-call, post-mortems ou práticas de SRE como liderança, embora o resumo cite SLO de 99,95% e a redução de incidentes de 38%.",
+					"why": "Tech Lead em fintech responde por confiabilidade; mostrar como você liderou o processo, e não só o resultado, diferencia o cargo.",
+					"suggestion": "Acrescente como você conduziu o processo: 'Estruturei rotina de post-mortems blameless e definição de SLOs para os serviços de autorização, mantendo 99,95% de disponibilidade.' Use apenas o que foi real.",
+					"severity": "MEDIUM"
+				}
+			],
+			"recommendedActions": [
+				"Inserir 'Tech Lead Backend' no cabeçalho e no resumo, e explicitar a liderança técnica no cargo ou na primeira bullet da PagaLeve Fintech.",
+				"Reescrever o resumo como posicionamento de Tech Lead em fintech, citando escopo de squads, arquitetura orientada a eventos e domínio de pagamentos.",
+				"Adicionar bullets de decisão de arquitetura, revisão técnica e coordenação entre times, com tamanho de equipe e papel próprio em cada conquista.",
+				"Incluir contexto de regulação e conformidade do setor financeiro (PCI DSS, Bacen, LGPD) apenas se for real, com exemplo concreto.",
+				"Agrupar as competências por categoria e conectar a certificação AWS a uso real em produção.",
+				"Revisar o GitHub com repositórios fixados que demonstrem arquitetura e documentação técnica, e remover ou reduzir a experiência de 2015-2017 para dar foco ao histórico recente."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo",
+					"current": "Engenheira de software sênior com 9 anos em backend Java/Spring, 4 deles em pagamentos. Lidero squads de 6 pessoas, desenho arquitetura orientada a eventos e mantenho o foco em confiabilidade (SLO de 99,95%).",
+					"proposed": "Tech Lead Backend em fintech, com 9 anos em Java/Spring e 4 em processamento de pagamentos (PIX e cartão). Lidero squad de [6] engenheiros, defino arquitetura orientada a eventos e conduzo a confiabilidade dos serviços com SLO de 99,95%.",
+					"rationale": "Posiciona a candidata como Tech Lead logo na primeira linha, alinhando o resumo ao cargo alvo e às palavras-chave de ATS.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho",
+					"current": "",
+					"proposed": "Tech Lead Backend | Java, Spring e plataformas de pagamento",
+					"rationale": "Inclui o cargo alvo exato no cabeçalho, requisito de filtro de ATS para a vaga.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — PagaLeve Fintech",
+					"current": "PagaLeve Fintech - Engenheira de Software Sênior (2021 - atual)",
+					"proposed": "PagaLeve Fintech - Engenheira de Software Sênior / Tech Lead do domínio de Pagamentos (2021 - atual)",
+					"rationale": "Explicita a liderança técnica no cargo, desde que corresponda à função exercida; caso não haja título formal, usar 'Engenheira Sênior (atuação como Tech Lead)'.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — PagaLeve Fintech",
+					"current": "",
+					"proposed": "Conduzi revisões de arquitetura e ADRs para [3] squads de backend, definindo padrões de contrato entre os microsserviços de PIX e reduzindo retrabalho de integração em [X]%.",
+					"rationale": "Demonstra decisão de arquitetura e influência entre times, núcleo esperado de um Tech Lead.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — PagaLeve Fintech",
+					"current": "Liderei a migração do processador de PIX de um monolito para 7 microsserviços em Spring Boot e Kafka, elevando a vazão de 800 para 3.200 transações por segundo.",
+					"proposed": "Liderei a migração do processador de PIX (equipe de [6] engenheiros, ao longo de [10] meses) de um monolito para 7 microsserviços em Spring Boot e Kafka, elevando a vazão de 800 para 3.200 TPS.",
+					"rationale": "Separa o papel de condução do tamanho do time e do prazo, aplicando o Método XYZ e dimensionando a complexidade.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Resumo",
+					"current": "",
+					"proposed": "Experiência em projetos sujeitos a PCI DSS e regulação do Bacen para o PIX, incluindo [auditoria de logs e segregação de dados sensíveis], conforme aplicável.",
+					"rationale": "Sinal de conformidade regulatória, requisito central para Tech Lead em fintech; incluir somente o que foi real.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — PagaLeve Fintech",
+					"current": "",
+					"proposed": "Estruturei rotina de post-mortems blameless e definição de SLOs para os serviços de autorização, mantendo 99,95% de disponibilidade.",
+					"rationale": "Mostra liderança de processo de confiabilidade, e não apenas o resultado, diferenciando o cargo de Tech Lead.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — PagaLeve Fintech",
+					"current": "",
+					"proposed": "Estabeleci estratégia de testes em três camadas (unitários, contrato com [ferramenta] e testes de carga com [ferramenta]) para os microsserviços de PIX, reduzindo regressões em produção em [X]%.",
+					"rationale": "Evidencia que a candidata define padrões de qualidade para o time, ampliando a visão do ciclo completo.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Competências",
+					"current": "Java 21, Spring Boot, Kafka, PostgreSQL, Redis, Docker, Kubernetes, AWS (EKS, SQS, RDS), GitHub Actions, observabilidade com Prometheus e Grafana, arquitetura orientada a eventos, DDD.",
+					"proposed": "Linguagens e frameworks: Java 21, Spring Boot | Mensageria e dados: Kafka, PostgreSQL, Redis | Cloud e DevOps: AWS (EKS, SQS, RDS), Docker, Kubernetes, GitHub Actions | Observabilidade e arquitetura: Prometheus, Grafana, arquitetura orientada a eventos, DDD",
+					"rationale": "Agrupar por categoria melhora a leitura humana e a indexação por ATS.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Certificações",
+					"current": "AWS Certified Solutions Architect - Associate (2023)",
+					"proposed": "AWS Certified Solutions Architect - Associate (2023), aplicada na arquitetura de EKS e SQS da plataforma de pagamentos.",
+					"rationale": "Conecta a certificação a uso real em produção, fortalecendo a credibilidade.",
+					"impact": "LOW"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Experiência — TecnoServ Consultoria",
+					"current": "TecnoServ Consultoria - Desenvolvedora Júnior (2015 - 2017) - Desenvolvi integrações SOAP/REST para clientes do setor financeiro.",
+					"proposed": "",
+					"rationale": "Experiência antiga e sem métricas dilui o foco no histórico recente de liderança em fintech.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,209 @@
+{
+	"caseId": "01-pt-junior-fraco",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:17:34.023Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 31367,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 28,
+			"summary": "O CV está genérico e não comunica foco técnico de backend: o resumo é feito de clichês, os projetos não mostram stack, funcionalidades ou resultados, e não há links para GitHub ou LinkedIn que permitam validar as habilidades declaradas. Com Java, SQL e Git já presentes, o candidato tem base suficiente para uma primeira vaga júnior, mas precisa transformar esses termos em evidências concretas e priorizar projetos de backend publicados.",
+			"strengths": [
+				"Formação em Análise e Desenvolvimento de Sistemas, com aderência direta à área de software.",
+				"Experiência em Java e SQL, mencionadas no CV, que são base sólida para vagas de backend.",
+				"Projeto prático em Java para cadastro de clientes, que demonstra contato com desenvolvimento de sistema real.",
+				"Conhecimento de Git, ferramenta essencial para fluxo de trabalho em equipe.",
+				"Experiência profissional anterior demonstra organização e comunicação, desde que reescrita com evidências."
+			],
+			"issues": [
+				{
+					"section": "Sobre mim",
+					"problem": "Resumo genérico e cheio de clichês ('proativa, comunicativa, trabalha bem em equipe', 'busco minha primeira oportunidade') sem declarar especialidade, stack ou foco de atuação.",
+					"why": "Recrutadores de backend leem esse bloco em poucos segundos para decidir se o candidato é da área. Sem stack declarada, o CV parece de alguém sem foco técnico, e um ATS não associa o perfil a 'Desenvolvedor Backend'.",
+					"suggestion": "Substitua por uma declaração de especialidade: 'Desenvolvedor backend júnior com formação em Análise e Desenvolvimento de Sistemas, experiência prática com Java e SQL na construção de APIs e sistemas de cadastro, buscando primeira oportunidade em times que trabalham com Java/Spring e bancos relacionais.' Remova os adjetivos genéricos.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Ausente",
+					"problem": "Ausência total de links para LinkedIn, GitHub e portfólio.",
+					"why": "Para uma primeira vaga júnior de backend, o GitHub é a principal evidência de código. Sem ele, o recrutador não tem como validar nenhuma habilidade técnica declarada, e o perfil perde competitividade frente a candidatos com código público.",
+					"suggestion": "Inclua no cabeçalho: 'linkedin.com/in/seu-usuario | github.com/seu-usuario'. Crie repositórios públicos com o sistema de cadastro em Java e um projeto de API (mesmo que simples), com README explicando como executar.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Projetos",
+					"problem": "Projetos descritos de forma vaga, sem tecnologias explícitas na mesma frase da entrega, sem funcionalidades e sem resultados. 'Fiz um sistema de cadastro de clientes em Java' e 'criei telas em HTML e CSS' não mostram o que foi construído nem o que o sistema fazia.",
+					"why": "Em vagas júnior de backend, projetos são a principal comprovação de capacidade. Descrições vagas não permitem ao recrutador avaliar profundidade técnica nem diferenciar o candidato de outros formandos com o mesmo perfil.",
+					"suggestion": "Reescreva com verbo de ação e stack explícita: 'Desenvolvi sistema de cadastro de clientes em Java com persistência em MySQL via JDBC, incluindo CRUD completo, validação de CPF e autenticação básica; código disponível no GitHub.' Se não houver métricas reais, descreva escopo: número de entidades, telas, testes escritos.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Projetos",
+					"problem": "O projeto de receitas é apenas 'telas em HTML e CSS', o que é front-end estático e não se relaciona com a vaga de backend. Não há indicação de back-end nesse projeto.",
+					"why": "Para o objetivo de backend, um projeto apenas de interface reduz o foco técnico do CV e pode sugerir que o candidato não entende a camada de servidor.",
+					"suggestion": "Ou remova a menção, ou transforme em um projeto completo: 'Construí site de receitas com API REST em Java/Spring e banco SQL, consumida por front-end em HTML/CSS/JavaScript.' Só mantenha se houver de fato essa parte de servidor.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Conhecimentos",
+					"problem": "Conhecimentos listados em uma linha solta, sem distribuição pelas seções e sem evidência de uso. Java, SQL e Git aparecem apenas na lista, não nas experiências ou projetos.",
+					"why": "ATS e recrutadores valorizam palavras-chave contextualizadas. Uma lista solta sem prova de uso tem peso baixo na triagem para vagas técnicas.",
+					"suggestion": "Distribua as tecnologias nos projetos e experiências (ex.: 'Java, JDBC, MySQL, Git' dentro do bullet do projeto) e deixe a seção de conhecimentos apenas como resumo, separando 'Backend: Java, SQL' de 'Ferramentas: Git, Docker (se usar)'.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Ausente",
+					"problem": "Ausência de visão do ciclo completo de desenvolvimento: não há menção a testes, banco de dados modelado, versionamento além de 'Git', CI/CD, deploy, APIs ou containers.",
+					"why": "Backend júnior é avaliado por sua capacidade de entregar software funcional de ponta a ponta. A ausência desses sinais sugere um perfil de estudo introdutório, não de quem já pratica desenvolvimento.",
+					"suggestion": "Inclua em algum projeto: testes unitários com JUnit, modelagem de banco com chaves e relacionamentos, uso de Git com branches e pull requests, e deploy simples (ex.: Render, Railway ou Docker local). Mencione explicitamente cada item na frase do projeto.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Distribuidora Boa Vista",
+					"problem": "Experiência como auxiliar administrativo tem descrição sem verbos fortes e sem métricas: 'Ajudava no setor', 'organizava planilhas', 'atendia telefone'. Não há impacto mensurável.",
+					"why": "Recrutadores técnicos leem experiência não técnica como evidência de disciplina e raciocínio lógico. Sem métricas, o bloco não reforça nenhuma competência relevante para backend.",
+					"suggestion": "Reescreva com números e, se possível, tecnologia: 'Automatizei controle de estoque em planilhas Excel com fórmulas e macros VBA, reduzindo em 30% o tempo de conferência semanal.' Use apenas números reais; se não houver, descreva volume: 'Organizei planilhas com cerca de X registros mensais.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Distribuidora Boa Vista",
+					"problem": "A frase 'dei manutenção no computador do escritório' é vaga e aparece como parte da experiência administrativa, sem relação com a vaga pretendida.",
+					"why": "Manutenção de hardware não agrega ao objetivo de backend e ocupa espaço que poderia destacar competências técnicas de software.",
+					"suggestion": "Se relevante, substitua por algo que mostre resolução de problemas com software: 'Diagnostiquei e resolvi incidentes de sistema e rede no escritório, reduzindo chamados recorrentes.' Ou remova se não houver impacto.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Cursos",
+					"problem": "Curso de Montagem e Manutenção de Hardware é irrelevante para a vaga de Desenvolvedor Backend Júnior e ocupa espaço na seção de cursos.",
+					"why": "Certificados sem relação direta com a vaga diluem o foco do CV e fazem o recrutador questionar a clareza do objetivo do candidato.",
+					"suggestion": "Remova o curso de hardware. Substitua por cursos ou estudos ligados ao objetivo, como Spring Boot, SQL, POO em Java ou Docker, e liste apenas se tiver certificado ou projeto correspondente.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Conhecimentos / Cursos",
+					"problem": "Curso de Excel Avançado e 'Pacote Office' listados como conhecimentos técnicos, competindo com as habilidades de programação, sem relação com backend.",
+					"why": "A ordem e a proporção de termos determinam a leitura rápida. Habilidades de escritório no mesmo peso que stack técnica reduzem a percepção de senioridade técnica.",
+					"suggestion": "Mantenha Excel apenas como ferramenta de apoio, em uma linha 'Ferramentas de escritório', e priorize tecnologias de desenvolvimento no topo da seção.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Formação / Experiência",
+					"problem": "Seção 'Experiência' com ordem cronológica correta, mas a experiência formal é não técnica e a única formação está em andamento ou recém-concluída sem detalhamento de disciplinas de programação.",
+					"why": "Para candidato júnior sem experiência técnica formal, a formação é a principal fonte de contexto técnico. Sem ela, o recrutador não confirma a base teórica.",
+					"suggestion": "Na formação, liste disciplinas relevantes como 'Programação Orientada a Objetos, Banco de Dados, Estrutura de Dados' em uma linha, se tiver cursado. Mantenha a ordem cronológica inversa em todas as seções.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Idiomas",
+					"problem": "Idioma listado como 'Inglês básico' sem certificação ou nível padronizado (ex.: CEFR).",
+					"why": "Muitas vagas de backend exigem leitura de documentação em inglês. Um nível vago não permite ao recrutador avaliar essa capacidade.",
+					"suggestion": "Especifique o nível com referência: 'Inglês: leitura técnica (documentação), nível A2/B1 (CEFR)'. Se tiver certificado, inclua.",
+					"severity": "LOW"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever a seção 'Sobre mim' declarando desenvolvedor backend júnior, stack principal (Java, SQL) e foco de atuação, removendo todos os clichês.",
+				"Adicionar links de LinkedIn e GitHub no cabeçalho e publicar hoje o código do sistema de cadastro em Java com README.",
+				"Reescrever a seção 'Projetos' com verbos de ação, stack explícita na mesma frase e funcionalidades concretas (CRUD, persistência, validação, testes).",
+				"Adicionar ao menos um projeto de backend completo com API REST, banco relacional modelado e testes unitários, citando cada tecnologia.",
+				"Remover o curso de hardware e a menção a manutenção de computadores, substituindo por cursos e estudos alinhados a Java, Spring e SQL.",
+				"Reescrever a experiência administrativa com verbos de ação e números reais, mantendo apenas o que gera valor para a vaga.",
+				"Distribuir as tecnologias pelo CV em vez de listá-las soltas, e especificar o nível de inglês com referência padronizada."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Sobre mim",
+					"current": "Sou uma pessoa proativa, comunicativa e que trabalha bem em equipe. Busco minha primeira oportunidade na área de tecnologia para crescer junto com a empresa e aprender cada vez mais.",
+					"proposed": "Desenvolvedor Backend Júnior com formação em Análise e Desenvolvimento de Sistemas e experiência prática com Java e SQL na construção de sistemas de cadastro e APIs. Busco primeira oportunidade em times que trabalhem com Java/Spring e bancos relacionais.",
+					"rationale": "Declara senioridade, stack e foco logo na primeira linha, o que facilita a leitura em poucos segundos e a associação do perfil a Desenvolvedor Backend pelo ATS.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho",
+					"current": "",
+					"proposed": "linkedin.com/in/[seu-usuario] | github.com/[seu-usuario]",
+					"rationale": "Links de GitHub e LinkedIn permitem ao recrutador validar o código e as habilidades declaradas, evidência principal para vaga júnior de backend.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Projetos",
+					"current": "Fiz um sistema de cadastro de clientes em Java para a faculdade.",
+					"proposed": "Desenvolvi sistema de cadastro de clientes em Java com persistência em [banco SQL] via JDBC, incluindo CRUD completo, validação de [campos] e [autenticação, se houver]; código disponível em github.com/[seu-usuario]/[repositorio].",
+					"rationale": "Aplica o Método XYZ: verbo de ação, stack explícita na mesma frase e funcionalidades concretas, além de link para comprovação.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Projetos",
+					"current": "Também criei telas em HTML e CSS para um site de receitas.",
+					"proposed": "Construí site de receitas com API REST em Java/Spring e banco [SQL], consumida por front-end em HTML/CSS/JavaScript.",
+					"rationale": "Projeto apenas de interface não evidencia a camada de servidor; só use se a parte de backend existir de fato.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Projetos",
+					"current": "",
+					"proposed": "Projeto de backend completo: API REST em Java/Spring com banco relacional modelado ([número] tabelas com chaves e relacionamentos), testes unitários com JUnit ([número] testes), versionamento com Git (branches e pull requests) e deploy em [plataforma].",
+					"rationale": "Demonstra visão do ciclo completo de software (testes, modelagem, versionamento, deploy), requisito central para backend júnior.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Distribuidora Boa Vista",
+					"current": "Ajudava no setor administrativo, organizava planilhas e atendia telefone.",
+					"proposed": "Organizei planilhas de [controle] no Excel com fórmulas e [macros/VBA, se houver], reduzindo em [X]% o tempo de [processo]; atendi [N] ligações diárias e registrei informações em [sistema/planilha].",
+					"rationale": "Substitui verbos vagos por ações com ferramenta e resultado, transformando a experiência administrativa em evidência de organização e raciocínio lógico.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Experiência — Distribuidora Boa Vista",
+					"current": "Também dei manutenção no computador do escritório quando precisava.",
+					"proposed": "",
+					"rationale": "Manutenção de hardware não agrega ao objetivo de backend e ocupa espaço que deveria destacar competências de software.",
+					"impact": "LOW"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Cursos",
+					"current": "Curso de Montagem e Manutenção de Hardware (40h)",
+					"proposed": "",
+					"rationale": "Certificado irrelevante para a vaga de Desenvolvedor Backend Júnior, diluindo o foco do CV.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Cursos",
+					"current": "",
+					"proposed": "Cursos e estudos ligados ao objetivo: Spring Boot, SQL e POO em Java, somente se houver certificado ou projeto correspondente [a preencher].",
+					"rationale": "Substitui conteúdo irrelevante por formação alinhada ao stack de backend pretendido, com comprovação.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Conhecimentos",
+					"current": "Java, HTML, CSS, um pouco de SQL, Git, Pacote Office, Excel avançado, montagem e manutenção de computadores.",
+					"proposed": "Backend: Java, SQL ([banco utilizado]), JDBC; Ferramentas: Git, [Docker/Postman, se usar]; Front-end básico: HTML, CSS; Escritório: Pacote Office, Excel avançado.",
+					"rationale": "Agrupa tecnologias por categoria, prioriza o stack de backend no topo e melhora a leitura por ATS.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Idiomas",
+					"current": "Inglês básico",
+					"proposed": "Inglês: leitura técnica de documentação, nível [A2/B1] (CEFR)",
+					"rationale": "Nível padronizado permite ao recrutador avaliar a capacidade de leitura de documentação técnica exigida em vagas de backend.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

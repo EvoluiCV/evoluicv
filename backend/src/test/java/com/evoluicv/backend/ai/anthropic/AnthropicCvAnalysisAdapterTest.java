@@ -102,6 +102,7 @@ class AnthropicCvAnalysisAdapterTest {
         assertThat(req.path("system").get(0).path("cache_control").path("type").asText()).isEqualTo("ephemeral");
         assertThat(req.path("system").get(0).path("text").asText()).contains("recrutador sênior");
         assertThat(req.path("messages").get(0).toString()).contains("CV de teste").contains("Tech Lead Backend");
+        assertThat(req.path("messages").get(0).toString()).contains("every text field of your answer must be in English");
     }
 
     @Test
