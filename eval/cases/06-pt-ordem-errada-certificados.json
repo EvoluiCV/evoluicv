@@ -1,0 +1,13 @@
+{
+	"id": "06-pt-ordem-errada-certificados",
+	"descricao": "PT, pleno: experiências fora da ordem cronológica inversa e certificados irrelevantes para o objetivo",
+	"professionalGoal": "Desenvolvedor Frontend Pleno com React",
+	"targetRole": "Desenvolvedor Frontend Pleno",
+	"expect": {
+		"language": "pt",
+		"scoreMin": 25,
+		"scoreMax": 65,
+		"mustFlag": ["cronol[oó]gic|ordem|recente", "certifica|curso|irrelevante|n[aã]o (tem )?rela"]
+	},
+	"cvText": "Rafael Teixeira Moura\nrafael.moura@example.com | github.com/rafael-moura-exemplo | Recife - PE\n\nResumo\nDesenvolvedor frontend com 4 anos de experiência em React e TypeScript.\n\nExperiência\nAgência Criativa Mar Azul - Estagiário de Desenvolvimento Web (2019 - 2020)\nCriação de landing pages em HTML, CSS e jQuery para clientes da agência.\n\nConecta Saúde - Desenvolvedor Frontend Júnior (2020 - 2022)\nDesenvolvimento de telas do portal do paciente em React. Participação nas cerimônias do Scrum.\n\nViaje Bem Turismo - Desenvolvedor Frontend Pleno (2022 - atual)\nMigrei o site de reservas de JavaScript para TypeScript e Next.js. Implementei testes com Jest e Testing Library. Trabalho junto com o time de design no design system da empresa.\n\nFormação\nCiência da Computação - Universidade Litoral Nordeste (2016 - 2020)\n\nCertificados\nCurso de Instalação de Redes Elétricas Residenciais (80h)\nOperador de Empilhadeira (40h)\nCurso de Manutenção de Notebooks (30h)\nReact Avançado (40h)\n\nHabilidades\nReact, TypeScript, Next.js, Jest, Testing Library, CSS-in-JS, Figma, Git.\n"
+}

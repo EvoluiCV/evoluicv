@@ -1,0 +1,13 @@
+{
+	"id": "02-pt-senior-forte",
+	"descricao": "PT, sênior, bem escrito: métricas, links, método XYZ",
+	"professionalGoal": "Tech Lead em fintech",
+	"targetRole": "Tech Lead Backend",
+	"expect": {
+		"language": "pt",
+		"scoreMin": 65,
+		"scoreMax": 95,
+		"mustFlag": []
+	},
+	"cvText": "Fernanda Lima Rocha\nEngenheira de Software Sênior | Backend Java e plataformas de pagamento\nfernanda.rocha@example.com | linkedin.com/in/fernanda-rocha-exemplo | github.com/fernanda-rocha-exemplo | Belo Horizonte - MG\n\nResumo\nEngenheira de software sênior com 9 anos em backend Java/Spring, 4 deles em pagamentos. Lidero squads de 6 pessoas, desenho arquitetura orientada a eventos e mantenho o foco em confiabilidade (SLO de 99,95%).\n\nExperiência\nPagaLeve Fintech - Engenheira de Software Sênior (2021 - atual)\n- Liderei a migração do processador de PIX de um monolito para 7 microsserviços em Spring Boot e Kafka, elevando a vazão de 800 para 3.200 transações por segundo.\n- Reduzi a latência p99 da autorização de cartão de 420 ms para 180 ms com cache em Redis e revisão de índices no PostgreSQL.\n- Implantei pipeline de CI/CD com GitHub Actions e testes de contrato, diminuindo incidentes em produção em 38% em 12 meses.\n- Mentorei 4 desenvolvedores plenos; 2 foram promovidos a sênior.\n\nLojaNet Varejo - Desenvolvedora Backend Pleno (2017 - 2021)\n- Construí a API de catálogo em Java 11 e Spring, atendendo 2 milhões de requisições por dia.\n- Automatizei a conciliação de pedidos com jobs em Spring Batch, economizando 120 horas de trabalho manual por mês.\n\nTecnoServ Consultoria - Desenvolvedora Júnior (2015 - 2017)\n- Desenvolvi integrações SOAP/REST para clientes do setor financeiro.\n\nFormação\nBacharelado em Sistemas de Informação - Universidade Federal do Vale (2011 - 2015)\n\nCompetências\nJava 21, Spring Boot, Kafka, PostgreSQL, Redis, Docker, Kubernetes, AWS (EKS, SQS, RDS), GitHub Actions, observabilidade com Prometheus e Grafana, arquitetura orientada a eventos, DDD.\n\nCertificações\nAWS Certified Solutions Architect - Associate (2023)\n\nIdiomas\nPortuguês nativo, inglês fluente\n"
+}

@@ -29,6 +29,7 @@ steps:
       - yarn lint
       - ./node_modules/.bin/tsc --noEmit
       - yarn test
+      - node --test ../eval/lib/*.test.mjs
       - yarn build
 
   deploy-staging:

@@ -1,0 +1,13 @@
+{
+	"id": "01-pt-junior-fraco",
+	"descricao": "PT, júnior, mal escrito: clichês, sem métricas, sem links",
+	"professionalGoal": "Primeira vaga como Desenvolvedor Backend Júnior",
+	"targetRole": "Desenvolvedor Backend Júnior",
+	"expect": {
+		"language": "pt",
+		"scoreMin": 10,
+		"scoreMax": 50,
+		"mustFlag": ["linkedin|github|portf[oó]lio", "m[eé]trica|n[uú]mero|resultado|impacto", "clich[eê]|gen[eé]ric|proativ"]
+	},
+	"cvText": "Lucas Pereira Andrade\nlucas.andrade.dev@example.com | São Paulo - SP\n\nSobre mim\nSou uma pessoa proativa, comunicativa e que trabalha bem em equipe. Busco minha primeira oportunidade na área de tecnologia para crescer junto com a empresa e aprender cada vez mais.\n\nFormação\nAnálise e Desenvolvimento de Sistemas - Faculdade Horizonte Digital (2022 - 2024)\n\nExperiência\nAuxiliar administrativo - Distribuidora Boa Vista (2020 - 2022)\nAjudava no setor administrativo, organizava planilhas e atendia telefone. Também dei manutenção no computador do escritório quando precisava.\n\nProjetos\nFiz um sistema de cadastro de clientes em Java para a faculdade. Também criei telas em HTML e CSS para um site de receitas.\n\nConhecimentos\nJava, HTML, CSS, um pouco de SQL, Git, Pacote Office, Excel avançado, montagem e manutenção de computadores.\n\nCursos\nCurso de Montagem e Manutenção de Hardware (40h)\nCurso de Excel Avançado (20h)\nLógica de Programação (30h)\n\nIdiomas\nInglês básico\n"
+}

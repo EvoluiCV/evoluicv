@@ -1,0 +1,63 @@
+{
+	"id": "08-pt-pdf-duas-colunas",
+	"descricao": "PT, PDF em duas colunas com linhas intercaladas no arquivo: testa a extração do Tika",
+	"professionalGoal": "Product Designer Sênior em fintech",
+	"targetRole": "Product Designer Sênior",
+	"file": "08-pt-pdf-duas-colunas.pdf",
+	"expect": {
+		"language": "pt",
+		"scoreMin": 35,
+		"scoreMax": 85,
+		"mustFlag": []
+	},
+	"layout": {
+		"left": [
+			"Juliana Costa Ribeiro",
+			"Designer de Produto",
+			"juliana.ribeiro@example.com",
+			"behance.net/juliana-ribeiro-exemplo",
+			"Porto Alegre - RS",
+			"",
+			"COMPETÊNCIAS",
+			"Figma",
+			"Design System",
+			"Pesquisa com usuários",
+			"Testes de usabilidade",
+			"Prototipação",
+			"Métricas de produto",
+			"",
+			"IDIOMAS",
+			"Português nativo",
+			"Espanhol intermediário",
+			"Inglês avançado",
+			"",
+			"FORMAÇÃO",
+			"Design Gráfico",
+			"Univ. Gaúcha de Artes",
+			"2012 - 2016"
+		],
+		"right": [
+			"RESUMO",
+			"Designer de produto com 7 anos em apps de varejo.",
+			"Conduzo pesquisa, prototipação e handoff para squads.",
+			"",
+			"EXPERIÊNCIA",
+			"Compra Fácil App - Designer de Produto Sênior",
+			"2021 - atual",
+			"Redesenhei o checkout do app e a conversão subiu 18%.",
+			"Criei o design system usado por 5 squads.",
+			"Conduzi 30 entrevistas com clientes por trimestre.",
+			"",
+			"Moda Sul E-commerce - Designer de Produto",
+			"2018 - 2021",
+			"Responsável pelas telas do aplicativo de compras.",
+			"Participei de testes A/B da vitrine.",
+			"",
+			"Estúdio Pixel - Designer Gráfico",
+			"2016 - 2018",
+			"Peças para redes sociais e identidade visual."
+		]
+	},
+	"cvText": "Juliana Costa Ribeiro\nDesigner de Produto\njuliana.ribeiro@example.com\nbehance.net/juliana-ribeiro-exemplo\nPorto Alegre - RS\n\nCOMPETÊNCIAS\nFigma\nDesign System\nPesquisa com usuários\nTestes de usabilidade\nPrototipação\nMétricas de produto\n\nIDIOMAS\nPortuguês nativo\nEspanhol intermediário\nInglês avançado\n\nFORMAÇÃO\nDesign Gráfico\nUniv. Gaúcha de Artes\n2012 - 2016\n\nRESUMO\nDesigner de produto com 7 anos em apps de varejo.\nConduzo pesquisa, prototipação e handoff para squads.\n\nEXPERIÊNCIA\nCompra Fácil App - Designer de Produto Sênior\n2021 - atual\nRedesenhei o checkout do app e a conversão subiu 18%.\nCriei o design system usado por 5 squads.\nConduzi 30 entrevistas com clientes por trimestre.\n\nModa Sul E-commerce - Designer de Produto\n2018 - 2021\nResponsável pelas telas do aplicativo de compras.\nParticipei de testes A/B da vitrine.\n\nEstúdio Pixel - Designer Gráfico\n2016 - 2018\nPeças para redes sociais e identidade visual.\n",
+	"_nota_cvText": "cvText aqui é só a referência para as checagens; o runner envia o PDF."
+}
