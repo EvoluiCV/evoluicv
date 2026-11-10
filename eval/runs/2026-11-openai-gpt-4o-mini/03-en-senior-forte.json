@@ -1,0 +1,108 @@
+{
+	"caseId": "03-en-senior-forte",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T12:36:00.982Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 17250,
+	"body": {
+		"analysis": {
+			"language": "en",
+			"overallScore": 85,
+			"summary": "The CV presents a strong candidate for a Staff Engineer position, showcasing relevant experience and technical skills. However, there are areas for improvement in the summary and the organization of skills to enhance ATS compatibility and impact.",
+			"strengths": [
+				"Strong technical skills in Go and Kotlin relevant to the target role.",
+				"Quantifiable achievements demonstrating impact on performance and cost savings.",
+				"Experience in leading migrations and mentoring, indicating leadership potential."
+			],
+			"issues": [
+				{
+					"section": "Summary",
+					"problem": "The summary contains generic phrases like 'senior engineer' and lacks specificity about the candidate's focus and expertise.",
+					"why": "Generic summaries do not capture the attention of recruiters or ATS systems, which prefer clear declarations of expertise and focus areas.",
+					"suggestion": "Rewrite to specify your role and focus: 'Staff Engineer specializing in distributed systems with expertise in Go and Kotlin.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Skills",
+					"problem": "Skills are listed in a single section without integration into the experience descriptions.",
+					"why": "ATS systems often look for keywords in context; skills should be demonstrated through specific experiences to show practical application.",
+					"suggestion": "Integrate skills into experience descriptions, e.g., 'Designed a multi-region event ingestion platform using Go and Kafka.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experience — DataPoint Labs",
+					"problem": "The description is vague and lacks quantifiable impact or specific technologies used.",
+					"why": "Vague descriptions do not convey the candidate's contributions effectively, reducing perceived value.",
+					"suggestion": "Add metrics and technologies: 'Developed ETL jobs in Python, improving data processing speed by 30% for analytics dashboards.'",
+					"severity": "MEDIUM"
+				}
+			],
+			"recommendedActions": [
+				"Revise the summary to clearly state your specialization and focus area.",
+				"Integrate technical skills into the experience section to demonstrate practical application.",
+				"Enhance the description for the Junior Developer role with metrics and specific technologies used."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Summary",
+					"current": "Senior engineer with 10 years building high-throughput backend systems. I own platform-level technical decisions, run architecture reviews, and care about developer experience and reliability.",
+					"proposed": "Staff Engineer specializing in distributed systems with expertise in Go and Kotlin, leveraging 10 years of experience to drive platform-level technical decisions and enhance developer experience and system reliability.",
+					"rationale": "Clarifies specialization and focus, making it more appealing to recruiters and ATS systems.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Skills",
+					"current": "Go, Kotlin, Java, Python, Kafka, gRPC, PostgreSQL, Cassandra, Kubernetes, Terraform, AWS, GCP, OpenTelemetry, CI/CD with GitLab.",
+					"proposed": "Go, Kotlin, Java, Python, Kafka, gRPC, PostgreSQL, Cassandra, Kubernetes, Terraform, AWS, GCP, OpenTelemetry, CI/CD with GitLab; integrated into experience descriptions for practical application.",
+					"rationale": "Integrating skills into experience descriptions enhances ATS compatibility and demonstrates practical application of skills.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experience — DataPoint Labs",
+					"current": "Developed ETL jobs in Python for analytics dashboards.",
+					"proposed": "Developed ETL jobs in Python, optimizing data processing for analytics dashboards and improving processing speed by [X]% for timely insights.",
+					"rationale": "Adds quantifiable impact and specific technology, enhancing the perceived value of the contribution.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experience — Shopfront",
+					"current": "Built the checkout service in Kotlin and Spring, handling peaks of 5,000 orders per minute on Black Friday.",
+					"proposed": "Engineered a high-performance checkout service in Kotlin and Spring, successfully managing peak loads of 5,000 orders per minute during Black Friday sales, ensuring seamless customer experience.",
+					"rationale": "Uses action-oriented language and quantifies impact, making the contribution clearer and more impressive.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experience — Streamly",
+					"current": "Cut cloud spend by 27% (about USD 410k per year) by moving batch workloads to spot instances with Kubernetes autoscaling.",
+					"proposed": "Reduced cloud expenditure by 27% (approximately USD 410k annually) by migrating batch workloads to spot instances utilizing Kubernetes autoscaling, enhancing cost efficiency.",
+					"rationale": "Clarifies the action taken and its impact, making it more compelling and easier to understand.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Experience — Streamly",
+					"current": null,
+					"proposed": "Implemented CI/CD pipelines using GitLab, reducing deployment times by [X]% and increasing release frequency by [Y] releases per month.",
+					"rationale": "Demonstrates knowledge of CI/CD practices, which is valuable for a Staff Engineer role.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Education",
+					"current": "BSc in Computer Science - University of Coimbra (2010 - 2014)",
+					"proposed": "",
+					"rationale": "The degree is relevant but the dates are not necessary for a senior role; focus on skills and experience instead.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

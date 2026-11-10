@@ -1,0 +1,107 @@
+{
+	"caseId": "08-pt-pdf-duas-colunas",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T12:39:10.668Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 23469,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 60,
+			"summary": "O currículo apresenta algumas conquistas relevantes, mas carece de detalhes e métricas mais robustas que demonstrem o impacto das ações realizadas. A seção de resumo é genérica e não destaca a especialidade do candidato como Product Designer em fintechs.",
+			"strengths": [
+				"Experiência sólida de 7 anos em design de produtos",
+				"Conquistas mensuráveis, como aumento de conversão e criação de design system"
+			],
+			"issues": [
+				{
+					"section": "Resumo",
+					"problem": "A descrição é genérica e não menciona a especialidade em fintechs.",
+					"why": "Robôs de ATS e recrutadores buscam informações específicas que alinhem o candidato ao setor desejado. A falta de foco em fintechs pode fazer com que o currículo não se destaque.",
+					"suggestion": "Reescreva para: 'Product Designer Sênior com 7 anos de experiência em fintechs, especializado em pesquisa, prototipação e design de interfaces.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Compra Fácil App",
+					"problem": "A descrição das responsabilidades e conquistas é vaga e não utiliza verbos de ação fortes.",
+					"why": "Descrições vagas não transmitem claramente o impacto do trabalho realizado, o que pode diminuir a percepção de valor do candidato.",
+					"suggestion": "Utilize verbos de ação e inclua métricas: 'Redesenhei o checkout do app, resultando em um aumento de 18% na taxa de conversão.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Moda Sul E-commerce",
+					"problem": "A descrição é muito superficial e não apresenta resultados ou métricas.",
+					"why": "Sem métricas, o recrutador não consegue avaliar o impacto das suas contribuições, o que é crucial para uma posição sênior.",
+					"suggestion": "Descreva suas ações com resultados: 'Responsável pela criação de telas que aumentaram a taxa de cliques em 25% durante os testes A/B.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Competências",
+					"problem": "As competências estão listadas de forma solta e não estão integradas às experiências.",
+					"why": "Robôs de ATS podem não identificar suas habilidades se não estiverem contextualizadas nas experiências, o que pode prejudicar a visibilidade do currículo.",
+					"suggestion": "Integre as competências nas descrições das experiências, como: 'Utilizei Figma para redesenhar o checkout, aumentando a conversão em 18%.'",
+					"severity": "MEDIUM"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o resumo para incluir a especialidade em fintechs e destacar a experiência relevante.",
+				"Melhorar as descrições das experiências com verbos de ação e métricas específicas de impacto.",
+				"Integrar as competências técnicas nas descrições das experiências para otimizar a leitura pelo ATS.",
+				"Adicionar links para LinkedIn e portfólio, se ainda não estiverem presentes."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo",
+					"current": "Designer de produto com 7 anos em apps de varejo.",
+					"proposed": "Product Designer Sênior com 7 anos de experiência em fintechs, especializado em pesquisa, prototipação e design de interfaces.",
+					"rationale": "Destaca a especialidade em fintechs, alinhando o candidato ao setor desejado e melhorando a visibilidade no ATS.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Compra Fácil App",
+					"current": "Redesenhei o checkout do app e a conversão subiu 18%.",
+					"proposed": "Redesenhei o checkout do app utilizando Figma, resultando em um aumento de 18% na taxa de conversão.",
+					"rationale": "Aplica o método XYZ, tornando a descrição mais clara e impactante, além de incluir a tecnologia utilizada.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Moda Sul E-commerce",
+					"current": "Responsável pelas telas do aplicativo de compras.",
+					"proposed": "Desenvolvi telas para o aplicativo de compras, aumentando a taxa de cliques em 25% durante os testes A/B.",
+					"rationale": "Utiliza verbos de ação fortes e inclui métricas, demonstrando o impacto das contribuições do candidato.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Competências",
+					"current": "Figma, Design System, Pesquisa com usuários, Testes de usabilidade, Prototipação, Métricas de produto",
+					"proposed": "Figma, Design System, Pesquisa com usuários, Testes de usabilidade, Prototipação, Métricas de produto integradas nas experiências.",
+					"rationale": "Integra as competências nas descrições das experiências, melhorando a identificação pelo ATS.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Resumo",
+					"current": null,
+					"proposed": "LinkedIn: [link do LinkedIn] | Portfólio: [link do portfólio]",
+					"rationale": "Adiciona links relevantes que podem aumentar a competitividade do candidato e facilitar a avaliação das habilidades.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Experiência — Estúdio Pixel",
+					"current": "Peças para redes sociais e identidade visual.",
+					"proposed": "",
+					"rationale": "Experiência irrelevante para o objetivo atual de Product Designer Sênior em fintech, que pode prejudicar a leitura do CV.",
+					"impact": "MEDIUM"
+				}
+			]
+		}
+	}
+}

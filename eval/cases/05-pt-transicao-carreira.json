@@ -7,7 +7,7 @@
 		"language": "pt",
 		"scoreMin": 20,
 		"scoreMax": 65,
-		"mustFlag": ["resumo|sobre mim|posicion|headline|t[ií]tulo", "linkedin|github|portf[oó]lio"]
+		"mustFlag": ["resumo|sobre mim|objetivo|posicion|headline|t[ií]tulo", "linkedin|github|portf[oó]lio"]
 	},
 	"cvText": "Patrícia Gomes Nogueira\npatricia.nogueira@example.com | Curitiba - PR\n\nObjetivo\nAtuar na área de dados.\n\nExperiência\nColégio Estadual Monte Claro - Professora de Matemática (2014 - atual)\nResponsável por turmas do ensino médio. Elaboro avaliações e acompanho o desempenho dos alunos. Criei uma planilha no Google Sheets para acompanhar as notas de 6 turmas, que passou a ser usada pela coordenação da escola.\n\nCursinho Pré-Vestibular Rumo Certo - Professora de Matemática (2011 - 2014)\nAulas de matemática e estatística básica para vestibular.\n\nFormação\nLicenciatura em Matemática - Universidade Estadual do Planalto (2007 - 2011)\nEspecialização em Estatística Aplicada (cursando) - Instituto Paranaense de Ensino\n\nCursos\nSQL para Análise de Dados (40h) - 2024\nPython para Dados com Pandas (60h) - 2024\nPower BI Essencial (24h) - 2023\nOratória e Didática (16h) - 2018\n\nCompetências\nEstatística descritiva, SQL básico, Python (pandas), Power BI, Excel e Google Sheets, didática, comunicação.\n"
 }

@@ -1,0 +1,114 @@
+{
+	"caseId": "06-pt-ordem-errada-certificados",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T12:37:57.703Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 26728,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 65,
+			"summary": "O currículo apresenta uma boa base de experiência em desenvolvimento frontend, mas carece de métricas e descrições mais impactantes. Além disso, a seção de certificados inclui cursos irrelevantes para a posição desejada, o que pode prejudicar a percepção do recrutador.",
+			"strengths": [
+				"Experiência prática com React e TypeScript",
+				"Participação em um projeto de design system",
+				"Conhecimento em testes automatizados com Jest e Testing Library"
+			],
+			"issues": [
+				{
+					"section": "Resumo",
+					"problem": "A descrição é genérica e não destaca especializações ou tecnologias específicas.",
+					"why": "Frases como 'desenvolvedor frontend' não capturam a atenção do recrutador e não são otimizadas para ATS, que buscam palavras-chave específicas.",
+					"suggestion": "Reescreva para algo como: 'Desenvolvedor Frontend Pleno com 4 anos de experiência em React e TypeScript, focado em criar interfaces responsivas e escaláveis.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Agência Criativa Mar Azul",
+					"problem": "A descrição das atividades é vaga e não apresenta resultados ou impacto.",
+					"why": "Frases como 'criação de landing pages' não demonstram o valor agregado ao projeto ou à empresa, o que diminui a competitividade do candidato.",
+					"suggestion": "Utilize o método XYZ: 'Desenvolvi landing pages em HTML, CSS e jQuery, aumentando a taxa de conversão em 15% para clientes da agência.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Conecta Saúde",
+					"problem": "Falta de métricas e resultados na descrição das atividades.",
+					"why": "Sem dados quantitativos, o recrutador não consegue avaliar o impacto das suas contribuições, o que pode prejudicar a percepção da sua experiência.",
+					"suggestion": "Adicione resultados: 'Desenvolvi telas do portal do paciente em React, melhorando a usabilidade e reduzindo o tempo de carregamento em 30%.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Viaje Bem Turismo",
+					"problem": "A descrição é um pouco técnica, mas carece de resultados mensuráveis.",
+					"why": "Embora mencione tecnologias, não apresenta o impacto das migrações e implementações, o que é crucial para destacar suas conquistas.",
+					"suggestion": "Reescreva para incluir métricas: 'Migrei o site de reservas de JavaScript para TypeScript e Next.js, melhorando a performance em 25% e a manutenção do código.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Certificados",
+					"problem": "Certificados irrelevantes para a posição de desenvolvedor frontend.",
+					"why": "Cursos como 'Instalação de Redes Elétricas' e 'Operador de Empilhadeira' não têm relação com o cargo desejado e podem desviar a atenção do recrutador.",
+					"suggestion": "Remova os cursos irrelevantes e mantenha apenas o 'React Avançado', que é pertinente à sua área de atuação.",
+					"severity": "HIGH"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o resumo para incluir especializações e foco em resultados.",
+				"Adicionar métricas e resultados nas descrições das experiências profissionais.",
+				"Remover certificados irrelevantes e manter apenas os que se relacionam com desenvolvimento frontend."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo",
+					"current": "Desenvolvedor frontend com 4 anos de experiência em React e TypeScript.",
+					"proposed": "Desenvolvedor Frontend Pleno com 4 anos de experiência em React e TypeScript, focado em criar interfaces responsivas e escaláveis.",
+					"rationale": "Aplica o método XYZ para destacar especializações e otimizar para ATS.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Agência Criativa Mar Azul",
+					"current": "Criação de landing pages em HTML, CSS e jQuery para clientes da agência.",
+					"proposed": "Desenvolvi landing pages em HTML, CSS e jQuery, aumentando a taxa de conversão em 15% para clientes da agência.",
+					"rationale": "Utiliza o método XYZ para demonstrar impacto e resultados mensuráveis.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Conecta Saúde",
+					"current": "Desenvolvimento de telas do portal do paciente em React. Participação nas cerimônias do Scrum.",
+					"proposed": "Desenvolvi telas do portal do paciente em React, melhorando a usabilidade e reduzindo o tempo de carregamento em 30%.",
+					"rationale": "Adiciona métricas que demonstram o impacto das contribuições.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Viaje Bem Turismo",
+					"current": "Migrei o site de reservas de JavaScript para TypeScript e Next.js. Implementei testes com Jest e Testing Library. Trabalho junto com o time de design no design system da empresa.",
+					"proposed": "Migrei o site de reservas de JavaScript para TypeScript e Next.js, melhorando a performance em 25% e a manutenção do código. Implementei testes automatizados com Jest e Testing Library, aumentando a confiabilidade do sistema.",
+					"rationale": "Inclui métricas e resultados que destacam conquistas e impacto.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Certificados",
+					"current": "Curso de Instalação de Redes Elétricas Residenciais (80h)\nOperador de Empilhadeira (40h)\nCurso de Manutenção de Notebooks (30h)",
+					"proposed": "",
+					"rationale": "Remove cursos irrelevantes que não têm relação com a posição desejada, melhorando a percepção do recrutador.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Habilidades",
+					"current": null,
+					"proposed": "CI/CD, Testes Automatizados, GitHub Actions, Copilot, RAG.",
+					"rationale": "Adiciona palavras-chave que demonstram visão do ciclo completo de software e fluência em tecnologias atuais.",
+					"impact": "MEDIUM"
+				}
+			]
+		}
+	}
+}

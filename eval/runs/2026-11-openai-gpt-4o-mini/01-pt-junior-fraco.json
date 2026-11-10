@@ -1,0 +1,123 @@
+{
+	"caseId": "01-pt-junior-fraco",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T12:34:53.051Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 22916,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 35,
+			"summary": "O currículo apresenta uma estrutura básica, mas carece de informações relevantes e específicas que demonstrem habilidades técnicas e experiências práticas. A falta de métricas e descrições concretas limita a competitividade para a vaga desejada.",
+			"strengths": [
+				"Formação em Análise e Desenvolvimento de Sistemas em andamento.",
+				"Conhecimentos em Java, HTML e CSS."
+			],
+			"issues": [
+				{
+					"section": "Sobre mim",
+					"problem": "Frases genéricas como 'sou proativa' e 'trabalho bem em equipe' não agregam valor.",
+					"why": "Essas declarações não destacam suas habilidades técnicas ou seu foco na área de desenvolvimento, o que é crucial para um desenvolvedor backend júnior.",
+					"suggestion": "Reescreva para incluir sua especialidade e stack. Exemplo: 'Desenvolvedor backend júnior com foco em Java e experiência em criação de sistemas.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência",
+					"problem": "Descrição vaga das atividades realizadas como auxiliar administrativo.",
+					"why": "A falta de detalhes específicos e verbos de ação fortes não demonstra suas habilidades técnicas ou experiências relevantes para a vaga de desenvolvedor.",
+					"suggestion": "Use bullet points e verbos de ação. Exemplo: 'Implementei um sistema de organização de dados que melhorou a eficiência em 20%.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Projetos",
+					"problem": "Os projetos não estão descritos de forma a mostrar impacto ou resultados.",
+					"why": "Sem métricas ou resultados, é difícil avaliar suas contribuições e habilidades práticas, essenciais para a posição desejada.",
+					"suggestion": "Adicione resultados e tecnologias utilizadas. Exemplo: 'Desenvolvi um sistema de cadastro de clientes em Java que facilitou o acesso a informações e reduziu o tempo de cadastro em 30%.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Conhecimentos",
+					"problem": "A lista de conhecimentos está muito ampla e inclui habilidades não diretamente relacionadas ao cargo.",
+					"why": "Focar em habilidades relevantes para a vaga de desenvolvedor backend é crucial para atrair a atenção dos recrutadores e ATS.",
+					"suggestion": "Priorize as habilidades mais relevantes. Exemplo: 'Java, SQL, Git, HTML, CSS.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Cursos",
+					"problem": "Cursos de montagem e manutenção de hardware não são relevantes para a vaga de desenvolvedor backend.",
+					"why": "Cursos que não se relacionam diretamente com o cargo desejado podem desviar a atenção do recrutador e não agregar valor à candidatura.",
+					"suggestion": "Remova cursos irrelevantes e considere adicionar cursos de programação ou desenvolvimento web, se houver.",
+					"severity": "HIGH"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o 'Sobre mim' para incluir especialidade e stack.",
+				"Reformular a seção de Experiência com descrições mais detalhadas e impactantes.",
+				"Adicionar métricas aos projetos para demonstrar resultados.",
+				"Revisar a lista de conhecimentos, focando em habilidades relevantes para desenvolvimento backend.",
+				"Remover cursos irrelevantes e considerar adicionar cursos mais pertinentes ao desenvolvimento."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Sobre mim",
+					"current": "Sou uma pessoa proativa, comunicativa e que trabalha bem em equipe. Busco minha primeira oportunidade na área de tecnologia para crescer junto com a empresa e aprender cada vez mais.",
+					"proposed": "Desenvolvedor backend júnior com foco em Java e experiência em criação de sistemas. Busco minha primeira oportunidade na área de tecnologia para aplicar meus conhecimentos e contribuir para o crescimento da equipe.",
+					"rationale": "Aplica o método XYZ para destacar habilidades técnicas e foco na área de desenvolvimento, essencial para a vaga desejada.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência",
+					"current": "Ajudava no setor administrativo, organizava planilhas e atendia telefone. Também dei manutenção no computador do escritório quando precisava.",
+					"proposed": "- Organizei e mantive planilhas que melhoraram a eficiência do setor administrativo em [X]%. \n- Realizei manutenção em computadores, garantindo a continuidade das operações do escritório.",
+					"rationale": "Utiliza verbos de ação fortes e apresenta resultados, demonstrando habilidades relevantes de forma mais impactante.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Projetos",
+					"current": "Fiz um sistema de cadastro de clientes em Java para a faculdade. Também criei telas em HTML e CSS para um site de receitas.",
+					"proposed": "- Desenvolvi um sistema de cadastro de clientes em Java que facilitou o acesso a informações e reduziu o tempo de cadastro em [X]%. \n- Criei interfaces em HTML e CSS para um site de receitas, melhorando a usabilidade e a experiência do usuário em [X]%",
+					"rationale": "Adiciona métricas e resultados, tornando as contribuições mais tangíveis e relevantes para a posição desejada.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Conhecimentos",
+					"current": "Java, HTML, CSS, um pouco de SQL, Git, Pacote Office, Excel avançado, montagem e manutenção de computadores.",
+					"proposed": "Java, SQL, Git, HTML, CSS.",
+					"rationale": "Foca nas habilidades mais relevantes para a vaga de desenvolvedor backend, aumentando a atratividade do CV para recrutadores e ATS.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Cursos",
+					"current": "Curso de Montagem e Manutenção de Hardware (40h)",
+					"proposed": "",
+					"rationale": "Cursos que não se relacionam diretamente com o cargo desejado podem desviar a atenção do recrutador e não agregar valor à candidatura.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Cursos",
+					"current": "Curso de Excel Avançado (20h)",
+					"proposed": "",
+					"rationale": "Cursos que não se relacionam diretamente com o cargo desejado podem desviar a atenção do recrutador e não agregar valor à candidatura.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cursos",
+					"current": null,
+					"proposed": "Curso de Desenvolvimento Web (40h) ou Curso de Java para Iniciantes (40h)",
+					"rationale": "Adicionar cursos relevantes à área de desenvolvimento backend pode aumentar a competitividade do candidato.",
+					"impact": "HIGH"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,131 @@
+{
+	"caseId": "07-pt-bloco-unico",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T12:38:34.192Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 23484,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 45,
+			"summary": "O currículo apresenta informações relevantes, mas carece de estrutura e detalhamento. A falta de métricas e verbos de ação enfraquece a apresentação das experiências e habilidades do candidato.",
+			"strengths": [
+				"Experiência de 6 anos em suporte de TI",
+				"Conhecimento em Windows Server e Active Directory",
+				"Experiência em treinamento de funcionários novos"
+			],
+			"issues": [
+				{
+					"section": "Resumo",
+					"problem": "O resumo não apresenta uma declaração clara de especialidade e foco.",
+					"why": "Frases genéricas como 'gosto de ajudar as pessoas' não agregam valor e não informam ao recrutador sobre a especialidade do candidato.",
+					"suggestion": "Reescreva o resumo para incluir sua especialidade e foco, por exemplo: 'Analista de Suporte de TI com 6 anos de experiência em configuração de redes e suporte a sistemas Windows.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — InfoCenter Serviços",
+					"problem": "A descrição das atividades é vaga e não utiliza verbos de ação fortes.",
+					"why": "Descrições como 'fazia configuração de redes' não demonstram claramente suas contribuições e impacto, o que pode fazer com que o candidato não se destaque.",
+					"suggestion": "Use verbos de ação e inclua métricas, por exemplo: 'Implementei configurações de redes que melhoraram a eficiência em 30% e atendi 100 chamados mensais.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Rede Farma Nordeste",
+					"problem": "Falta de métricas e resultados nas atividades descritas.",
+					"why": "Sem números, o recrutador não consegue avaliar o impacto real do seu trabalho, o que diminui a competitividade do candidato.",
+					"suggestion": "Adicione métricas, por exemplo: 'Atendi 40 lojas, resolvendo 95% dos chamados no primeiro contato, o que melhorou a satisfação do cliente em 20%.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Habilidades",
+					"problem": "As habilidades estão listadas de forma solta e não estão integradas às experiências.",
+					"why": "Robôs de ATS podem não identificar as habilidades se não estiverem contextualizadas nas experiências, o que pode prejudicar a candidatura.",
+					"suggestion": "Integre as habilidades nas descrições das experiências, por exemplo: 'Utilizei o GLPI para gerenciar inventário e atender chamados, aumentando a eficiência do suporte.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Ausente",
+					"problem": "Não há links para LinkedIn, GitHub ou portfólio.",
+					"why": "A ausência de links pode fazer com que o recrutador não consiga verificar suas credenciais e experiências adicionais, o que pode prejudicar a avaliação.",
+					"suggestion": "Adicione links relevantes, como seu perfil no LinkedIn e GitHub, se aplicável.",
+					"severity": "MEDIUM"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o resumo para incluir especialidade e foco.",
+				"Reestruturar as descrições das experiências utilizando verbos de ação e métricas de impacto.",
+				"Integrar habilidades nas descrições das experiências para melhor visibilidade no ATS.",
+				"Adicionar links para LinkedIn e GitHub para validação de experiências."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo",
+					"current": "trabalho com suporte de ti a 6 anos",
+					"proposed": "Analista de Suporte de TI com 6 anos de experiência em configuração de redes e suporte a sistemas Windows.",
+					"rationale": "Declaração clara de especialidade e foco, facilitando a leitura do recrutador.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — InfoCenter Serviços",
+					"current": "fazia configuração de redes",
+					"proposed": "Implementei configurações de redes em servidores Windows, aumentando a eficiência do suporte em 30% e atendendo 100 chamados mensais.",
+					"rationale": "Utiliza verbos de ação fortes e métricas, demonstrando impacto claro.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Rede Farma Nordeste",
+					"current": "atendo os chamados no glpi faço inventario dos equipamentos",
+					"proposed": "Atendi 40 lojas, resolvendo 95% dos chamados no primeiro contato, melhorando a satisfação do cliente em 20% e utilizando o GLPI para gerenciar inventário.",
+					"rationale": "Adiciona métricas e resultados, aumentando a competitividade do candidato.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Habilidades",
+					"current": "conheço windows linux basico redes tcp ip active directory office 365 glpi e um pouco de powershell",
+					"proposed": "Windows Server, Active Directory, Linux básico, Redes TCP/IP, Office 365, GLPI, PowerShell (básico).",
+					"rationale": "Agrupa tecnologias de forma mais clara e organizada, facilitando a leitura.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Links",
+					"current": null,
+					"proposed": "LinkedIn: [seu-linkedin] | GitHub: [seu-github]",
+					"rationale": "Adiciona links relevantes para validação de experiências e credenciais.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Resumo",
+					"current": "gosto de ajudar as pessoas",
+					"proposed": null,
+					"rationale": "Frase genérica que não agrega valor e não informa sobre a especialidade do candidato.",
+					"impact": "LOW"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — InfoCenter Serviços",
+					"current": "comecei na empresa InfoCenter Serviços em 2018 como tecnico de campo atendendo os chamados dos clientes",
+					"proposed": "Iniciei minha carreira na InfoCenter Serviços em 2018 como Técnico de Campo, atendendo chamados de clientes e garantindo a resolução eficiente de problemas.",
+					"rationale": "Utiliza verbos de ação e melhora a clareza da descrição.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Rede Farma Nordeste",
+					"current": "em 2022 fui para a Rede Farma Nordeste onde estou ate hoje como analista de suporte",
+					"proposed": "Desde 2022, atuo como Analista de Suporte na Rede Farma Nordeste, gerenciando o suporte técnico para 40 lojas.",
+					"rationale": "Melhora a clareza e a estrutura da frase, destacando a posição atual.",
+					"impact": "MEDIUM"
+				}
+			]
+		}
+	}
+}
