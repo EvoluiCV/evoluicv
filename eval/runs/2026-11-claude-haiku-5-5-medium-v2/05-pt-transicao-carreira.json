@@ -1,0 +1,189 @@
+{
+	"caseId": "05-pt-transicao-carreira",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:48:26.871Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 31007,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 34,
+			"summary": "O currículo tem uma base quantitativa real (licenciatura em matemática, especialização em estatística e cursos recentes em SQL, Python e Power BI), mas o conteúdo ainda está voltado para a docência e não comprova competências de análise de dados. A ausência de projetos, links para portfólio e métricas nas experiências reduz fortemente a competitividade para uma vaga de Analista de Dados Júnior, e as correções de maior impacto são criar projetos publicados e reescrever a experiência na escola com resultados mensuráveis.",
+			"strengths": [
+				"Experiência de cinco anos como professora de matemática com turmas do ensino médio, o que demonstra capacidade de lidar com dados de desempenho e comunicação com público diverso.",
+				"Iniciativa concreta de criar planilha no Google Sheets para acompanhamento de notas de 6 turmas, adotada pela coordenação da escola.",
+				"Formação em Licenciatura em Matemática, base sólida para raciocínio quantitativo e estatística.",
+				"Especialização em Estatística Aplicada em andamento, alinhada ao objetivo de análise de dados.",
+				"Cursos recentes (2023 e 2024) de SQL, Python com pandas e Power BI, ferramentas centrais para uma vaga de Analista de Dados Júnior.",
+				"Competências em Excel e Google Sheets, relevantes para análises descritivas e relatórios no início da carreira."
+			],
+			"issues": [
+				{
+					"section": "Objetivo",
+					"problem": "O objetivo declarado é 'Atuar na área de dados', uma frase genérica que não define especialidade, ferramenta de preferência nem tipo de análise.",
+					"why": "Recrutadores e ATS usam o objetivo para classificar o perfil logo no início. Um objetivo vago não sinaliza para qual vaga o candidato é indicado e reduz a chance de ser priorizado na triagem de 8 segundos.",
+					"suggestion": "Substitua por uma declaração específica e mensurável. Exemplo: 'Analista de Dados Júnior com foco em análise descritiva e dashboards, com experiência em SQL, Python (pandas) e Power BI, em transição de carreira a partir da docência em matemática e estatística.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Cabeçalho de contato",
+					"problem": "O currículo não contém nenhum link para LinkedIn, GitHub ou portfólio.",
+					"why": "Para vaga de Analista de Dados Júnior, o recrutador precisa verificar código e visualizações reais. Sem links, não há como comprovar as habilidades declaradas nos cursos e nas competências.",
+					"suggestion": "Inclua no cabeçalho o link do LinkedIn, o link do GitHub com ao menos um repositório de análise e, se possível, um portfólio ou perfil público do Power BI. Exemplo: 'linkedin.com/in/patricia-nogueira | github.com/patricianogueira'.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Ausente",
+					"problem": "Não há nenhum projeto de análise de dados (com SQL, Python ou Power BI) apresentado no currículo. As habilidades técnicas existem apenas como certificados e uma lista de competências.",
+					"why": "Analista júnior é contratado por demonstração de capacidade prática. Cursos concluídos não substituem entregas, e o ATS e o recrutador tendem a filtrar candidatos sem evidência de uso das ferramentas.",
+					"suggestion": "Crie de dois a três projetos práticos com bases públicas (ex.: dados do INEP, IBGE ou Kaggle) e documente cada um no GitHub ou em um dashboard publicado. Inclua no currículo uma seção 'Projetos' com a pergunta de negócio, a ferramenta usada e o resultado obtido. Exemplo: 'Análise do desempenho escolar no Paraná (2019-2023) com SQL e Python; identificou três disciplinas com maior evasão e gerou dashboard no Power BI.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência - Colégio Estadual Monte Claro",
+					"problem": "A descrição da experiência no Colégio Estadual Monte Claro é genérica ('Responsável por turmas', 'Elaboro avaliações') e não traz resultado mensurável.",
+					"why": "Sem métricas, a experiência não demonstra impacto. O método XYZ (ação, dado, resultado) é o que o recrutador de dados espera ver para avaliar competência analítica.",
+					"suggestion": "Reescreva em bullets com verbo de ação e número. Exemplo: 'Acompanhei o desempenho de 6 turmas do ensino médio (aprox. 180 alunos) e produzi relatórios de notas por bimestre para a coordenação.' Use apenas números reais.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência - Colégio Estadual Monte Claro",
+					"problem": "A planilha no Google Sheets criada para acompanhar as notas de 6 turmas é o único item da experiência com potencial analítico, mas está escondido no meio de um parágrafo e não tem resultado mensurável.",
+					"why": "Este é o principal argumento de transição do candidato. Ele precisa aparecer com clareza, pois é a única evidência real de uso de dados em contexto profissional.",
+					"suggestion": "Transforme essa entrega em um bullet de destaque com ferramenta e resultado. Exemplo: 'Desenvolvi planilha no Google Sheets com fórmulas e tabelas dinâmicas para monitorar notas de 6 turmas; adotada pela coordenação e usada para identificar alunos em risco de recuperação.' Se possível, acrescente um número como 'reduziu em X% o tempo de consolidação de notas'.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência - Cursinho Pré-Vestibular Rumo Certo",
+					"problem": "A experiência no Cursinho Pré-Vestibular Rumo Certo está descrita em uma linha sem verbos de ação, sem resultados e sem conexão com análise de dados.",
+					"why": "A descrição atual não destaca nenhuma competência transferível para análise de dados. Um recrutador lê essa linha como experiência sem relação com a vaga.",
+					"suggestion": "Reescreva com foco em dados quando houver base real. Exemplo: 'Ministrei aulas de estatística básica para turmas de vestibular, com acompanhamento de desempenho em simulados por meio de planilhas.' Só mencione o que realmente foi feito.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Competências",
+					"problem": "As competências aparecem como uma lista corrida ('Estatística descritiva, SQL básico, Python (pandas), Power BI...') sem nenhuma correspondência com projetos ou experiências.",
+					"why": "O ATS pontua palavras-chave em contexto. Uma lista solta tem peso menor do que habilidades mencionadas em frases de conquista, e 'SQL básico' sem exemplo pode ser interpretado como nível insuficiente.",
+					"suggestion": "Organize as competências por categoria (ex.: Análise: estatística descritiva; Dados: SQL, Python (pandas); Visualização: Power BI, Excel, Google Sheets) e cite cada ferramenta também na seção de experiência ou projetos, quando aplicável. Remova 'didática' e 'comunicação' da lista e demonstre essas habilidades nas entregas.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Cursos",
+					"problem": "Os cursos de SQL, Python e Power BI estão listados sem carga de prática, projeto ou resultado associado. O curso 'Oratória e Didática (16h) - 2018' não tem relação com a vaga de analista de dados.",
+					"why": "Certificados sem evidência prática têm pouco peso para vaga júnior. Cursos fora do objetivo diluem o foco do currículo e dão a impressão de falta de direcionamento.",
+					"suggestion": "Mantenha apenas os cursos relevantes para análise de dados e, para cada um, indique o projeto prático correspondente ou remova. Exemplo: 'SQL para Análise de Dados (40h, 2024), aplicado no projeto de análise de evasão escolar.' Remova o curso de 2018 ou mova-o para a seção de extensão, se fizer sentido.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Formação",
+					"problem": "A especialização em Estatística Aplicada aparece como 'cursando', sem previsão de conclusão, e sem disciplinas ou trabalhos relacionados a dados.",
+					"why": "A especialização é um ponto forte para a transição, mas sem data e sem conteúdo ela perde peso na leitura rápida do recrutador.",
+					"suggestion": "Informe a previsão de conclusão (ex.: 'previsão: 12/2025') e, se houver, cite disciplinas ou um trabalho final ligado a análise de dados.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Competências / Experiência",
+					"problem": "O currículo não menciona nenhuma ferramenta de produtividade ou IA aplicada à análise, como uso de LLMs, Copilot ou automação de tarefas.",
+					"why": "Para vagas júnior atuais, saber usar IA para acelerar tarefas é um diferencial frequentemente avaliado em entrevistas técnicas e no processo de triagem.",
+					"suggestion": "Se você usa essas ferramentas, cite-as com finalidade concreta. Exemplo: 'Utilizo ChatGPT e GitHub Copilot para acelerar a escrita de consultas SQL e revisão de código em Python.' Inclua apenas o que realmente pratica.",
+					"severity": "LOW"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o objetivo profissional com especialidade, ferramentas e foco em análise de dados, eliminando a frase genérica 'Atuar na área de dados'.",
+				"Criar e publicar ao menos dois projetos práticos com SQL, Python e Power BI no GitHub e incluí-los em uma seção 'Projetos' com link.",
+				"Adicionar links de LinkedIn, GitHub e portfólio no cabeçalho do currículo.",
+				"Reescrever a entrega da planilha de notas em formato XYZ, destacando ferramenta, escopo e resultado para a coordenação.",
+				"Transformar as descrições das experiências em bullets com verbos de ação e números reais, mencionando a ferramenta na mesma frase.",
+				"Reorganizar as competências por categoria e remover itens sem relação com análise de dados, como didática e comunicação.",
+				"Remover ou reposicionar o curso de Oratória e Didática de 2018 e informar a previsão de conclusão da especialização.",
+				"Acrescentar menção ao uso prático de ferramentas de IA para produtividade, apenas se a prática for real."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Objetivo",
+					"current": "Atuar na área de dados.",
+					"proposed": "Analista de Dados Júnior com foco em análise descritiva e dashboards, com experiência em SQL, Python (pandas) e Power BI, em transição de carreira a partir da docência em matemática e estatística.",
+					"rationale": "Define especialidade, ferramentas e foco logo no início, facilitando a classificação pelo ATS e a leitura em 8 segundos.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho de contato",
+					"current": "",
+					"proposed": "linkedin.com/in/patricia-nogueira | github.com/patricianogueira | [link do dashboard publicado no Power BI ou portfólio]",
+					"rationale": "Links públicos permitem ao recrutador verificar código e visualizações que comprovam as habilidades declaradas.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Projetos (nova seção)",
+					"current": "",
+					"proposed": "Projetos: [Título do projeto] - Análise de [tema] com [SQL / Python (pandas)] a partir de [fonte de dados pública, ex.: INEP, IBGE, Kaggle]; [principal resultado obtido, com número] e dashboard em Power BI ([link]).",
+					"rationale": "Analista júnior é avaliado por entregas práticas; a seção de projetos comprova o uso das ferramentas que hoje aparecem apenas em cursos e lista de competências.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência - Colégio Estadual Monte Claro",
+					"current": "Criei uma planilha no Google Sheets para acompanhar as notas de 6 turmas, que passou a ser usada pela coordenação da escola.",
+					"proposed": "Desenvolvi planilha no Google Sheets com fórmulas e tabelas dinâmicas para monitorar notas de 6 turmas ([N] alunos), adotada pela coordenação e usada para identificar alunos em risco de recuperação, reduzindo em [X]% o tempo de consolidação de notas.",
+					"rationale": "Aplica o Método XYZ (ação, ferramenta, resultado) e destaca o principal argumento de transição do candidato, hoje escondido no parágrafo.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência - Colégio Estadual Monte Claro",
+					"current": "Responsável por turmas do ensino médio. Elaboro avaliações e acompanho o desempenho dos alunos.",
+					"proposed": "Acompanhei o desempenho de 6 turmas do ensino médio ([N] alunos), produzindo relatórios de notas por bimestre para a coordenação e elaborando avaliações com base nos resultados.",
+					"rationale": "Substitui descrição genérica por bullet com verbo de ação, escopo numérico e produto analítico concreto.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência - Cursinho Pré-Vestibular Rumo Certo",
+					"current": "Aulas de matemática e estatística básica para vestibular.",
+					"proposed": "Ministrei aulas de estatística básica para turmas de vestibular, acompanhando o desempenho em simulados por meio de planilhas de [resultado ou melhoria, se houver].",
+					"rationale": "Conecta a experiência a análise de dados com ferramenta e acompanhamento, sem inventar resultados.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Competências",
+					"current": "Estatística descritiva, SQL básico, Python (pandas), Power BI, Excel e Google Sheets, didática, comunicação.",
+					"proposed": "Análise: estatística descritiva, análise exploratória de dados | Dados: SQL, Python (pandas) | Visualização: Power BI, Excel, Google Sheets",
+					"rationale": "Organiza as competências por categoria e melhora a leitura e a correspondência com palavras-chave de vagas de analista.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Cursos",
+					"current": "Oratória e Didática (16h) - 2018",
+					"proposed": "",
+					"rationale": "Curso antigo e sem relação com a vaga de analista de dados; diluiu o foco do currículo.",
+					"impact": "LOW"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Formação",
+					"current": "Especialização em Estatística Aplicada (cursando) - Instituto Paranaense de Ensino",
+					"proposed": "Especialização em Estatística Aplicada (previsão de conclusão: [mm/aaaa]) - Instituto Paranaense de Ensino",
+					"rationale": "Informar a previsão de conclusão dá datas claras e reforça a formação em estatística para a triagem.",
+					"impact": "LOW"
+				},
+				{
+					"action": "ADD",
+					"section": "Competências",
+					"current": "",
+					"proposed": "Utilizo [ferramenta de IA, ex.: ChatGPT / GitHub Copilot] para acelerar [tarefa concreta, ex.: escrita de consultas SQL e revisão de código Python], com ganho de eficiência de [X]%.",
+					"rationale": "Demonstra fluência em ferramentas de IA para produtividade, diferencial avaliado em triagens de vagas júnior; incluir apenas se a prática for real.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

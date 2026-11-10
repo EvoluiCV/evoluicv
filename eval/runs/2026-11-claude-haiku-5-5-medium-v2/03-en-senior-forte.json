@@ -1,0 +1,189 @@
+{
+	"caseId": "03-en-senior-forte",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:47:03.324Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 25132,
+	"body": {
+		"analysis": {
+			"language": "en",
+			"overallScore": 62,
+			"summary": "O CV demonstra sólida experiência em sistemas distribuídos de alta escala com resultados quantificados, o que é um bom ponto de partida para Staff Engineer. No entanto, o resumo e o título ainda se posicionam como Senior, e falta evidência explícita de escopo de influência técnica cross-team, operação de confiabilidade e papel individual em cada entrega. Ajustes focados nesses pontos têm alto potencial de elevar a competitividade para vagas de Staff em empresas de produto.",
+			"strengths": [
+				"Escala comprovada: processamento de 1,4 bilhão de eventos por dia com 99,99% de disponibilidade em Go e Kafka.",
+				"Impacto financeiro mensurável: redução de 27% no custo de nuvem (cerca de USD 410k por ano) com Kubernetes e spot instances.",
+				"Liderança técnica cross-team: migração REST para gRPC em 23 serviços e estabelecimento do RFC process usado por 9 times.",
+				"Mentoria formal de 6 engenheiros, sinal relevante para o nível Staff.",
+				"Experiência com sistemas distribuídos, Kubernetes, Terraform e múltiplas clouds (AWS e GCP).",
+				"Links para LinkedIn e GitHub presentes no cabeçalho."
+			],
+			"issues": [
+				{
+					"section": "Summary",
+					"problem": "O resumo não declara uma especialidade técnica clara para Staff: diz 'senior engineer' e 'care about developer experience', mas não explicita a área de impacto de plataforma nem o tipo de problema que resolve em escala.",
+					"why": "Para Staff Engineer em empresa de produto, o recrutador precisa ver em 8 segundos que você lidera decisões técnicas de plataforma com escopo cross-team, e o resumo atual soa como um senior genérico.",
+					"suggestion": "Reescreva com foco de Staff: 'Staff-level engineer focused on high-throughput distributed systems and multi-region event platforms, using Go and Kafka; leads cross-team technical strategy and architecture across 20+ services.' Inclua apenas números que você consiga comprovar.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Cabeçalho e Experiência — Streamly",
+					"problem": "O título 'Senior Software Engineer' não corresponde ao cargo alvo 'Staff Software Engineer' e não há evidência explícita de escopo de influência técnica além de times individuais.",
+					"why": "Recrutadores e ATS filtram por nível; sem sinais claros de impacto de Staff (escopo multi-time, arquitetura de longo prazo), o currículo tende a ser classificado como Senior e perde a vaga.",
+					"suggestion": "Se o escopo real for de Staff (decisões que afetam múltiplos times, roadmap técnico, arquitetura de plataforma), descreva isso em bullets com métricas de alcance, por exemplo 'Conduzi a estratégia técnica de 9 times via RFC process'. Se não for, ajuste o alvo para Senior/Principal para evitar rejeição por desalinhamento de nível.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Cabeçalho",
+					"problem": "Ausência de link para portfólio ou projetos técnicos públicos além do GitHub genérico; o GitHub aparece sem evidência de contribuições ou repositórios relevantes.",
+					"why": "Para Staff, recrutadores buscam evidência de pensamento arquitetural publicado; um GitHub sem projetos fixados não sustenta as alegações do CV.",
+					"suggestion": "Inclua um link de portfólio ou página com write-ups de arquitetura (ex.: artigos sobre o event ingestion platform, RFCs públicas ou palestras), e garanta que o GitHub tenha repositórios fixados que demonstrem Go, Kafka ou sistemas distribuídos.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Streamly",
+					"problem": "Os bullets de experiência usam verbos fortes, mas a primeira frase de cada item não deixa claro o papel individual versus o do time (ex.: 'Designed', 'Led', 'Established' sem separar contribuição própria).",
+					"why": "Staff é avaliado pela capacidade de influenciar sem autoridade formal; a ausência de delimitação de papel dificulta a avaliação do impacto individual na entrevista técnica.",
+					"suggestion": "Deixe explícito o seu papel em cada entrega, por exemplo 'Arquitetei sozinho a estratégia de ingestão...' ou 'Liderei, como tech lead, a migração...', mantendo a tecnologia na mesma frase: 'Liderei a migração REST para gRPC em 23 serviços com Go, reduzindo a latência mediana de 35 ms para 12 ms.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Skills / Experiência",
+					"problem": "Falta de visão explícita de IA e eficiência de desenvolvimento (uso de ferramentas como Copilot, LLMs ou automações de produtividade de engenharia).",
+					"why": "Empresas de produto atuais valorizam engenheiros que elevam a produtividade do time com IA, e o CV não sinaliza isso.",
+					"suggestion": "Se você já usa essas ferramentas, adicione uma linha em Skills ou em uma experiência, por exemplo 'Adotei GitHub Copilot e ferramentas internas com LLM para reduzir o tempo de revisão de RFCs em 20%'. Só inclua se for verdadeiro e mensurável.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Skills",
+					"problem": "Seção de Skills é uma lista solta sem agrupamento por área (linguagens, dados, cloud, observabilidade) e não distribui as competências pelas experiências.",
+					"why": "O ATS pontua melhor palavras-chave contextualizadas, e uma lista sem vínculo com resultados é tratada como autodeclaração de baixo peso.",
+					"suggestion": "Agrupe por categoria: 'Linguagens: Go, Kotlin, Java, Python | Dados: Kafka, PostgreSQL, Cassandra | Infra: Kubernetes, Terraform, AWS, GCP | Observabilidade: OpenTelemetry | Entrega: GitLab CI/CD'. Garanta que cada item também apareça em pelo menos um bullet de experiência.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Streamly e Shopfront",
+					"problem": "Ciclo completo de desenvolvimento é pouco evidenciado: testes aparecem apenas com Pact em uma experiência antiga, e não há menção a testes de carga, confiabilidade (SLOs, incidentes) ou práticas de deploy modernas no cargo atual.",
+					"why": "Staff é responsável por confiabilidade e operabilidade do sistema; a falta dessas evidências no cargo atual enfraquece a candidatura.",
+					"suggestion": "Adicione bullets que cubram testes, observabilidade e operação: por exemplo 'Defini SLOs e instrumentei a ingestão com OpenTelemetry, reduzindo MTTR de incidentes em X%'. Use números reais.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — DataPoint Labs",
+					"problem": "Experiência de 2014-2016 em ETL com Python não tem métricas nem resultado e ocupa espaço sem agregar valor ao objetivo Staff.",
+					"why": "Experiências antigas e sem métricas diluem a percepção de senioridade e de impacto recente que um Staff precisa transmitir.",
+					"suggestion": "Reduza para uma linha ou remova se o espaço for necessário. Se mantiver, acrescente um impacto: 'Desenvolvi jobs ETL em Python processando X GB/dia para dashboards analíticos.'",
+					"severity": "LOW"
+				},
+				{
+					"section": "Languages",
+					"problem": "Idiomas e dados pessoais extras (Igbo nativo, Português) ocupam espaço e não se relacionam ao objetivo técnico; o nível de idioma não está alinhado a 'fluent' em inglês como diferencial para vagas de produto global.",
+					"why": "Espaço nobre do CV deve reforçar competências do cargo alvo, não elementos periféricos.",
+					"suggestion": "Mantenha apenas inglês (fluente) e português se a vaga exigir; o Igbo pode ser omitido ou mantido sem destaque, sem prejudicar a leitura.",
+					"severity": "LOW"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o Summary com especialidade explícita (distributed systems, Go, Kafka), escopo de Staff e um ou dois números comprovados, hoje mesmo.",
+				"Ajustar o título e os bullets do cargo atual para evidenciar liderança cross-team (RFC process, mentoria, decisões de arquitetura) com métricas de alcance.",
+				"Adicionar link de portfólio ou write-ups de arquitetura e garantir que o GitHub tenha repositórios fixados relevantes.",
+				"Reescrever bullets do Streamly deixando explícito o seu papel individual e mantendo a tecnologia na mesma frase de cada resultado.",
+				"Acrescentar métricas de confiabilidade e operação (SLOs, incidentes, MTTR, observabilidade com OpenTelemetry) no cargo atual.",
+				"Reorganizar Skills por categoria e garantir que cada tecnologia apareça contextualizada em alguma experiência.",
+				"Encurtar a experiência de 2014-2016 e revisar a seção de Languages para focar no que fortalece a candidatura."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Summary",
+					"current": "Senior engineer with 10 years building high-throughput backend systems. I own platform-level technical decisions, run architecture reviews, and care about developer experience and reliability.",
+					"proposed": "Staff-level engineer with 10 years building high-throughput distributed systems and multi-region event platforms in Go and Kafka. Leads cross-team technical strategy and architecture across [N] services, delivering [X]% availability and [Y] in cost savings.",
+					"rationale": "Declara nível Staff, stack principal e escopo cross-team logo na primeira linha, alinhando o resumo ao objetivo de Staff Engineer em empresa de produto.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Cabeçalho",
+					"current": "Senior Software Engineer | Distributed systems, Go and Kotlin",
+					"proposed": "Staff Software Engineer | Distributed systems, Go, Kafka and Kubernetes",
+					"rationale": "Alinha o título ao cargo alvo e destaca a stack de plataforma que o ATS e o recrutador filtram; se o escopo real for Senior, ajuste o alvo em vez do título.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Streamly",
+					"current": "Designed a multi-region event ingestion platform in Go and Kafka that processes 1.4 billion events per day with 99.99% availability.",
+					"proposed": "Architected alone the multi-region event ingestion platform in Go and Kafka, processing 1.4 billion events per day at 99.99% availability, and defined its [SLO/operational model] for [N] downstream teams.",
+					"rationale": "Deixa explícito o papel individual e o alcance cross-team, sinais centrais de Staff que o bullet atual não delimita.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Streamly",
+					"current": "Led the migration from REST to gRPC across 23 services, reducing median inter-service latency from 35 ms to 12 ms.",
+					"proposed": "Led, as tech lead, the migration from REST to gRPC across 23 services in Go, coordinating [N] teams and reducing median inter-service latency from 35 ms to 12 ms.",
+					"rationale": "Separa o papel de liderança do time e inclui a tecnologia e a coordenação cross-team, aplicando o Método XYZ.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — Streamly",
+					"current": "",
+					"proposed": "Defined SLOs and instrumented the event ingestion pipeline with OpenTelemetry, reducing incident MTTR from [X] to [Y] minutes and [N] Sev-1 incidents per [period].",
+					"rationale": "Staff é responsável por confiabilidade e operabilidade; o cargo atual não mostra métricas de operação, incidentes ou observabilidade.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho",
+					"current": "",
+					"proposed": "Portfolio: [URL com write-ups de arquitetura, RFCs públicas ou palestras]",
+					"rationale": "Fornece evidência publicada de pensamento arquitetural, exigida para validar alegações de nível Staff.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Experiência — Streamly",
+					"current": "Established the RFC process now used by 9 teams; mentored 6 engineers.",
+					"proposed": "Established and led the RFC process adopted by 9 teams, and mentored 6 engineers through [promotion/outcome, ex.: X promoted to Senior].",
+					"rationale": "Transforma a mentoria em resultado mensurável e reforça a influência técnica além do time direto.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Skills",
+					"current": "Go, Kotlin, Java, Python, Kafka, gRPC, PostgreSQL, Cassandra, Kubernetes, Terraform, AWS, GCP, OpenTelemetry, CI/CD with GitLab.",
+					"proposed": "Languages: Go, Kotlin, Java, Python | Data: Kafka, PostgreSQL, Cassandra | Infra & Cloud: Kubernetes, Terraform, AWS, GCP | Observability: OpenTelemetry | Delivery: GitLab CI/CD, [testing tools, ex.: Pact]",
+					"rationale": "Agrupa competências por área para leitura rápida e melhor pontuação ATS, com cada item ligado a experiências.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência — Streamly",
+					"current": "",
+					"proposed": "Adopted [GitHub Copilot / internal LLM tooling] across [N] engineers, reducing [process, ex.: RFC review time] by [X]%.",
+					"rationale": "Sinaliza fluência em IA e ganho de eficiência de engenharia, valorizado por empresas de produto; incluir somente se for verdadeiro.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — DataPoint Labs",
+					"current": "Developed ETL jobs in Python for analytics dashboards.",
+					"proposed": "Developed ETL jobs in Python processing [X] GB/day for analytics dashboards.",
+					"rationale": "Acrescenta escala ao bullet antigo; alternativamente, reduza a experiência a uma linha ou remova-a por falta de relação com o objetivo.",
+					"impact": "LOW"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Languages",
+					"current": "Igbo (native)",
+					"proposed": "",
+					"rationale": "Idioma sem relação com o objetivo técnico; liberar espaço para reforçar competências do cargo alvo.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}
