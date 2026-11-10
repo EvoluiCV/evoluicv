@@ -20,6 +20,12 @@ langchain4j:
       log-requests: false
       log-responses: false
 
+evoluicv:
+  quota:
+    per-ip-daily: ${QUOTA_PER_IP_DAILY:3}
+    global-daily: ${QUOTA_GLOBAL_DAILY:200}
+    zone: America/Sao_Paulo
+
 logging:
   level:
     com.evoluicv.backend: INFO

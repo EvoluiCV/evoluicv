@@ -15,7 +15,7 @@ type Status = 'idle' | 'loading' | 'success' | 'error';
 
 type ErrorState =
 	| { kind: 'generic'; message: string }
-	| { kind: 'rate-limit'; message: string; retryAt: number };
+	| { kind: 'rate-limit'; message: string; retryAt: number; daily: boolean };
 
 export default function Page() {
 	const [status, setStatus] = useState<Status>('idle');
@@ -44,6 +44,7 @@ export default function Page() {
 					kind: 'rate-limit',
 					message: err.message,
 					retryAt: Date.now() + seconds * 1000,
+					daily: err.errorCode === 'daily_quota_exceeded',
 				});
 			} else if (err instanceof ApiError) {
 				setError({ kind: 'generic', message: err.message });
@@ -135,6 +136,24 @@ function ErrorBanner({
 		const interval = setInterval(() => setNow(Date.now()), 1000);
 		return () => clearInterval(interval);
 	}, [error.kind]);
+
+	if (error.kind === 'rate-limit' && error.daily) {
+		return (
+			<div className='flex items-start gap-3 rounded-md border border-amber-500/30 bg-amber-500/5 p-3 text-sm text-amber-700 dark:text-amber-400'>
+				<HugeiconsIcon
+					icon={ClockIcon}
+					className='mt-0.5 h-4 w-4 shrink-0'
+				/>
+				<div className='flex-1'>
+					<p className='font-medium'>Limite diário de análises atingido</p>
+					<p className='mt-0.5 text-xs opacity-80'>
+						Para manter o serviço gratuito, limitamos as análises por dia.
+						Novas análises liberam à meia-noite (horário de Brasília).
+					</p>
+				</div>
+			</div>
+		);
+	}
 
 	if (error.kind === 'rate-limit') {
 		const secondsLeft = Math.max(0, Math.ceil((retryAt - now) / 1000));

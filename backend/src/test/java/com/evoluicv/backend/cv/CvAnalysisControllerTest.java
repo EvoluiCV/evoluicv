@@ -9,6 +9,8 @@ import com.evoluicv.backend.ai.model.ImprovementSuggestion;
 import com.evoluicv.backend.ai.model.ImprovementSuggestions;
 import com.evoluicv.backend.ai.model.Severity;
 import com.evoluicv.backend.error.GlobalExceptionHandler;
+import com.evoluicv.backend.config.ClockConfig;
+import com.evoluicv.backend.quota.DailyQuota;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // RateLimitingFilter is a @Component (Filter), so @WebMvcTest picks it up and shares
 // its buckets across the whole cached test context; disable it here, it has no test of its own yet.
 @AutoConfigureMockMvc(addFilters = false)
-@Import({CvAnalysisService.class, GlobalExceptionHandler.class})
+@Import({CvAnalysisService.class, GlobalExceptionHandler.class, DailyQuota.class, ClockConfig.class})
 class CvAnalysisControllerTest {
 
     @Autowired

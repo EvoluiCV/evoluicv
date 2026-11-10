@@ -8,7 +8,7 @@ Evolui CV: análise de currículo com IA simulando um recrutador sênior. Monoli
 - O pipeline fica em `.woodpecker.yml`: PRs rodam os testes, `develop` publica o staging e a produção sai por deploy manual.
 - Segredos ficam fora do repositório. Aqui ficam só os nomes, em `.env.example`.
 - `docker-compose.yml` é endurecido (read-only, `cap_drop: ALL`, `no-new-privileges`, limites de recurso, nenhuma porta publicada). Mantenha esse padrão em toda alteração.
-- `scripts/ci/smoke.sh` faz no máximo 2 POSTs por execução para não esgotar o rate limit.
+- `scripts/ci/smoke.sh` faz no máximo 2 POSTs por execução, ambos reprovados na validação, para não gastar cota nem chamar a IA.
 
 ## Caminho de uma requisição
 
@@ -16,7 +16,9 @@ Evolui CV: análise de currículo com IA simulando um recrutador sênior. Monoli
 navegador → Next /api/cv/analyze (route.ts, proxy) → backend BACKEND_INTERNAL_URL/api/cv/analyze
 ```
 
-Só o Next alcança o backend. O `RateLimitingFilter` identifica o cliente pelo `X-Forwarded-For`, então o proxy precisa repassar o IP real (issue #8).
+Só o Next alcança o backend. O proxy repassa só o `X-Real-IP` gravado pelo proxy de borda e descarta o `X-Forwarded-For` do navegador, que é forjável. O backend identifica o cliente por `ClientIp`.
+
+Duas camadas de limite: o `RateLimitingFilter` barra rajadas (5/min, 30/h por IP), e a `DailyQuota` conta análises válidas por IP e no total do dia (`QUOTA_PER_IP_DAILY`, `QUOTA_GLOBAL_DAILY`; zera 00:00 America/Sao_Paulo; fica em memória). A cota é reservada no `CvAnalysisService` depois da validação, então pedidos 422/400 não a consomem.
 
 ## Contratos
 
@@ -33,7 +35,7 @@ Só o Next alcança o backend. O `RateLimitingFilter` identifica o cliente pelo 
 
 ## Frontend
 
-- Use **Yarn**, que é o dono do `yarn.lock`.
+- Use **Yarn**, que é o dono do `yarn.lock`. Testes: `yarn test` (Vitest).
 - `.tsx` são indentados com tabs.
 - O React Compiler está ativo e cuida da memoização, então o código fica sem `useMemo`/`useCallback` manuais.
 - Componentes de `src/components/ui/` vêm do shadcn CLI (style `radix-mira`, ícones HugeIcons). Adicione novos com `npx shadcn@latest add <componente>`.
