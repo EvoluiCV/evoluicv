@@ -102,7 +102,31 @@ class AnthropicCvAnalysisAdapterTest {
         assertThat(req.path("system").get(0).path("cache_control").path("type").asText()).isEqualTo("ephemeral");
         assertThat(req.path("system").get(0).path("text").asText()).contains("recrutador sênior");
         assertThat(req.path("messages").get(0).toString()).contains("CV de teste").contains("Tech Lead Backend");
-        assertThat(req.path("messages").get(0).toString()).contains("every text field of your answer must be in English");
+    }
+
+    @Test
+    void cvEmInglesRecebeOrdemDeIdiomaEmInglesNaMensagem() throws IOException {
+        nextResponse = message(ANALISE_JSON, "end_turn");
+
+        adapter.analyze("Staff Engineer", "", """
+                Senior engineer with 10 years building backend systems. I led the migration of the
+                checkout service and mentored the team. Experience at a streaming company where I
+                designed the event platform that is used by all of the product teams.""");
+
+        assertThat(requests.getFirst().path("messages").get(0).toString())
+                .contains("The CV is written in English")
+                .doesNotContain("O CV está em português");
+    }
+
+    @Test
+    void cvEmPortuguesRecebeOrdemDeIdiomaEmPortugues() throws IOException {
+        nextResponse = message(ANALISE_JSON, "end_turn");
+
+        adapter.analyze("Tech Lead", "", "Engenheira de software com 9 anos de experiência em backend Java e que lidera um time de pagamentos.");
+
+        assertThat(requests.getFirst().path("messages").get(0).toString())
+                .contains("O CV está em português")
+                .doesNotContain("The CV is written in English");
     }
 
     @Test

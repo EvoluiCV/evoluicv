@@ -30,7 +30,8 @@ export function detectLanguage(text) {
 export function inventedNumbers(generated, cvText) {
 	const cvNumbers = new Set((cvText.match(/\d+(?:[.,]\d+)*/g) ?? []).map(canonicalNumber));
 	const semPlaceholders = (generated ?? '').replace(/\[[^\]]*\]/g, ' ');
-	const found = semPlaceholders.match(/\d+(?:[.,]\d+)*\s?%?/g) ?? [];
+	// número colado em letra é nome, não métrica: p95, S3, EC2, Java21
+	const found = semPlaceholders.match(/(?<![\p{L}\d])\d+(?:[.,]\d+)*\s?%?/gu) ?? [];
 	return [
 		...new Set(
 			found
@@ -107,6 +108,8 @@ export function checkCase(caso, response) {
 	if (!body?.analysis) return results;
 
 	const texto = analysisText(body);
+	// PDF: o modelo vê o texto extraído (colunas intercaladas), não o de referência
+	const textoDoCv = caso.extractedText ?? caso.cvText;
 	const declarado = body.analysis.language;
 	const detectado = detectLanguage(texto);
 	results.push({
@@ -128,14 +131,14 @@ export function checkCase(caso, response) {
 		...(body.analysis.strengths ?? []),
 		...(body.improvements?.items ?? []).map((i) => i.proposed),
 	].join(' \n');
-	const inventados = inventedNumbers(factual, caso.cvText);
+	const inventados = inventedNumbers(factual, textoDoCv);
 	results.push({
 		id: 'sem-invencao',
 		ok: inventados.length === 0,
 		detalhe: inventados.length ? `números fora do CV: ${inventados.join(', ')}` : 'ok',
 	});
 
-	const { found, total } = quoteFidelity(body.improvements?.items ?? [], caso.cvText);
+	const { found, total } = quoteFidelity(body.improvements?.items ?? [], textoDoCv);
 	results.push({
 		id: 'citacao',
 		ok: total === 0 || found / total >= 0.8,

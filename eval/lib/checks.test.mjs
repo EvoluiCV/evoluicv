@@ -12,6 +12,10 @@ test('placeholders entre colchetes e números pequenos não contam como invenç�
 	assert.deepEqual(inventedNumbers('Reduzi [X]% do tempo em [Processo 40%], 3 squads.', CV), []);
 });
 
+test('número colado em letra (p95, EC2) é nome, não métrica', () => {
+	assert.deepEqual(inventedNumbers('latência p95 de [X] ms em instâncias EC2', CV), []);
+});
+
 test('número com separador de milhar diferente do CV não é invenção', () => {
 	assert.deepEqual(inventedNumbers('atendendo 2,000,000 requisições', CV), []);
 });
@@ -50,4 +54,18 @@ test('score fora da faixa esperada reprova a checagem de score', () => {
 	};
 	const score = checkCase(caso, { status: 200, body }).find((r) => r.id === 'score');
 	assert.equal(score.ok, false);
+});
+
+test('em caso de PDF, citação e números são conferidos contra o texto extraído', () => {
+	const caso = {
+		expect: { language: 'pt', scoreMin: 0, scoreMax: 100, mustFlag: [] },
+		cvText: 'Figma (coluna esquerda)\nRedesenhei o checkout (coluna direita)',
+		extractedText: 'Figma Redesenhei o checkout',
+	};
+	const body = {
+		analysis: { language: 'pt', overallScore: 50, summary: 'O currículo de design tem resultados.', strengths: [], issues: [{ section: 'a', problem: 'p', why: 'w', suggestion: 's', severity: 'LOW' }], recommendedActions: ['a'] },
+		improvements: { items: [{ action: 'REWRITE', current: 'Figma Redesenhei o checkout', proposed: 'x', rationale: 'r', impact: 'LOW' }, ...Array.from({ length: 4 }, () => ({ action: 'ADD', current: '', proposed: 'x', rationale: 'r', impact: 'LOW' }))] },
+	};
+	const citacao = checkCase(caso, { status: 200, body }).find((r) => r.id === 'citacao');
+	assert.equal(citacao.ok, true);
 });

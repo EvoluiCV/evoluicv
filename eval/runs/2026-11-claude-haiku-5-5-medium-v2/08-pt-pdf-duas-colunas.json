@@ -1,0 +1,195 @@
+{
+	"caseId": "08-pt-pdf-duas-colunas",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:50:56.580Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 32436,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 48,
+			"summary": "O currículo mostra uma trajetória sólida em produto digital de varejo, com alguns resultados quantificados e prática de pesquisa e design system. Para a vaga de Product Designer Sênior em fintech, porém, ele não sinaliza nenhuma experiência no setor, traz bullets vagos na Moda Sul e carece de links profissionais e de métricas de negócio. Com reescrita direcionada ao objetivo e inclusão de cases financeiros, o perfil pode ganhar competitividade de forma relevante.",
+			"strengths": [
+				"Experiência de 7 anos com apps de varejo, com passagem por empresas de e-commerce e app de compras.",
+				"Resultado quantificado de conversão (+18%) no redesenho do checkout.",
+				"Atuação em design system usado por 5 squads, indicando escala e colaboração entre times.",
+				"Rotina de pesquisa com usuários (30 entrevistas por trimestre) e testes A/B, o que demonstra prática de decisão baseada em dados.",
+				"Inglês avançado e espanhol intermediário, relevantes para times distribuídos em fintechs."
+			],
+			"issues": [
+				{
+					"section": "Resumo",
+					"problem": "O resumo começa com o cargo genérico 'Designer de Produto' repetido e não declara especialidade, stack ou foco de atuação em fintech; a frase 'Conduzo pesquisa, prototipação e handoff para squads' é descritiva e não diferencia o candidato.",
+					"why": "Recrutores de fintech e robôs de ATS buscam sinais imediatos de senioridade e de domínio do setor; sem menção a fintech, o currículo parece genérico para o objetivo informado e perde a leitura de 8 segundos.",
+					"suggestion": "Reescreva como posicionamento claro, por exemplo: 'Product Designer Sênior com 7 anos em produtos digitais de varejo, focado em otimização de conversão e design systems escaláveis; busco atuar em fintech com foco em onboarding, crédito e pagamentos, com Figma e métricas de produto no centro do processo.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Ausente",
+					"problem": "Não há menção a nenhuma experiência, projeto ou repertório em fintech, pagamentos, crédito, investimentos ou meios de pagamento, embora o objetivo seja exatamente essa área.",
+					"why": "O filtro de palavras-chave e a triagem do recrutador vão procurar termos como fintech, pagamentos, compliance ou regulação; a ausência deles elimina a candidatura para vagas de fintech.",
+					"suggestion": "Se houver qualquer projeto relacionado a pagamentos, Pix, checkout com cartão, carteira digital ou crédito, inclua-o com contexto e métricas. Caso não haja, crie um case de estudo público (por exemplo, redesenho de um fluxo de pagamento) e linke no portfólio, deixando claro que é um estudo independente.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Compra Fácil App",
+					"problem": "Os bullets de conquista não citam as ferramentas e tecnologias na mesma frase do resultado; 'Figma' aparece isolado na lista de competências e a frase de conversão não explica o método nem o período.",
+					"why": "O método XYZ exige que a tecnologia e o resultado estejam juntos; sem isso, o candidato não comprova o uso prático das competências listadas.",
+					"suggestion": "Explicite método e ferramenta na mesma frase: 'Redesenhei o fluxo de checkout no Figma após testes de usabilidade com 12 usuários, elevando a conversão em 18% em 3 meses.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Compra Fácil App e Moda Sul E-commerce",
+					"problem": "As métricas são poucas e pouco contextualizadas: apenas a conversão de 18% e o design system usado por 5 squads aparecem com números; não há impacto em receita, retenção, tempo de tarefa, NPS ou redução de retrabalho.",
+					"why": "Em produtos financeiros, o valor do designer é medido por impacto de negócio; sem números além da conversão, o perfil fica abaixo do esperado para sênior.",
+					"suggestion": "Acrescente ao design system uma métrica de eficiência, por exemplo: 'Criei design system no Figma com 120 componentes, reduzindo em 35% o tempo de entrega de telas em 5 squads.' Para testes A/B, informe a variação obtida e o impacto em receita ou ativação.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — Moda Sul E-commerce",
+					"problem": "A experiência na Moda Sul E-commerce descreve atividades vagas: 'Responsável pelas telas do aplicativo de compras' e 'Participei de testes A/B da vitrine' não dizem o que foi entregue, qual ferramenta foi usada nem qual o resultado.",
+					"why": "Descrições vagas como 'responsável por' são automaticamente lidas como baixa senioridade e não geram confiança no recrutador técnico.",
+					"suggestion": "Troque por entregas com verbo de ação e resultado: 'Projetei a vitrine do app de compras no Figma e conduzi testes A/B que aumentaram o clique em produto em 12%.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — Estúdio Pixel",
+					"problem": "A experiência na Estúdio Pixel como Designer Gráfico ocupa espaço sem relação com product design, e a descrição 'Peças para redes sociais e identidade visual' não traz nenhum vínculo com produtos digitais.",
+					"why": "Experiências distantes do objetivo diluem o foco de um currículo sênior e ocupam a leitura inicial do recrutador.",
+					"suggestion": "Reduza para uma linha com o título e período, ou remova se o espaço for necessário. Se quiser manter, mencione apenas o que tem relação com produto, como 'identidade visual aplicada a interfaces'.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Competências",
+					"problem": "A seção de competências é uma lista solta de palavras (Figma, Design System, Pesquisa com usuários, Testes de usabilidade, Prototipação, Métricas de produto) sem distribuição pelas experiências e sem ferramentas de dados, acessibilidade, handoff ou ferramentas de IA.",
+					"why": "O ATS pontua palavras-chave contextualizadas; listas isoladas valem menos e não mostram visão de ciclo completo exigida em produtos fintech.",
+					"suggestion": "Distribua as competências nos bullets de experiência e adicione ferramentas atuais do ciclo de design: 'Maze', 'Hotjar', 'Amplitude', 'Jira', 'Storybook', 'Tokens de design' e uso de IA generativa como 'Figma AI' ou 'ChatGPT' para síntese de pesquisas, sempre com contexto real.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Cabeçalho / Contato",
+					"problem": "Não há links para LinkedIn nem GitHub; o único link é o Behance, sem indicação de portfólio específico de fintech ou de estudos de caso.",
+					"why": "Recrutores de fintech validam o trabalho antes de agendar entrevistas; a ausência de LinkedIn e de cases direcionados reduz a credibilidade.",
+					"suggestion": "Inclua URL do LinkedIn personalizada e o link direto do portfólio com 2 a 3 cases de produto mais relevantes, preferencialmente de fluxos financeiros. Substitua o link genérico por um caso específico.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Formação",
+					"problem": "A formação em Design Gráfico (2012-2016) está presente, mas não há cursos, certificações ou especializações em UX, produto, pesquisa, dados ou finanças.",
+					"why": "Para senioridade em product design, formação complementar em UX e produto reforça o perfil; a falta dela não é eliminatória mas enfraquece a comparação com outros candidatos.",
+					"suggestion": "Adicione certificações relevantes ao objetivo, como cursos de UX research, produto digital ou noções de regulação financeira, e remova qualquer curso sem relação com a vaga.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência",
+					"problem": "A ordem cronológica está correta (2021 atual, 2018-2021, 2016-2018), mas as datas estão sem mês e o título 'Designer de Produto Sênior' aparece na Compra Fácil enquanto a Moda Sul usa 'Designer de Produto' sem indicação de nível, dificultando a leitura da progressão.",
+					"why": "Inconsistências de formato atrapalham a leitura automatizada e a percepção de evolução de carreira.",
+					"suggestion": "Padronize datas no formato 'mm/aaaa' e mantenha o nível de senioridade coerente em todas as funções, indicando progressão de responsabilidade em cada bullet.",
+					"severity": "LOW"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o resumo com cargo, anos de experiência, foco em fintech e duas ferramentas centrais, eliminando a repetição de 'Designer de Produto'.",
+				"Reescrever os bullets da Moda Sul E-commerce com verbo de ação, ferramenta e resultado mensurável.",
+				"Adicionar métricas de impacto de negócio (receita, retenção, tempo de tarefa) a todas as experiências, especialmente ao design system e aos testes A/B.",
+				"Incluir links para LinkedIn e para um portfólio com cases de fintech ou fluxos de pagamento, substituindo o link genérico do Behance.",
+				"Criar ou destacar um case de produto financeiro, mesmo que de estudo independente, e incluí-lo no portfólio e no resumo.",
+				"Distribuir as competências técnicas pelos bullets de experiência e acrescentar ferramentas do ciclo completo (pesquisa, dados, handoff, design system) e uso de IA com contexto real.",
+				"Reduzir ou remover a experiência como designer gráfico para dar mais espaço ao histórico de produto digital."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo",
+					"current": "Designer de Produto Designer de produto com 7 anos em apps de varejo. Conduzo pesquisa, prototipação e handoff para squads.",
+					"proposed": "Product Designer Sênior com 7 anos em produtos digitais de varejo, focado em otimização de conversão e design systems escaláveis. Busco atuar em fintech nas frentes de [onboarding / crédito / pagamentos], com Figma e métricas de produto no centro do processo de decisão.",
+					"rationale": "Declara senioridade, stack e foco de atuação na primeira linha, elimina a repetição do cargo e sinaliza a intenção em fintech para a triagem de 8 segundos.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência / Projetos",
+					"current": "",
+					"proposed": "[Projeto em fintech / pagamentos / crédito / Pix]: [papel exercido], redesenho de [fluxo] no Figma com [N] testes com usuários, resultando em [métrica de negócio, ex.: +X% de ativação ou -X% de abandono].",
+					"rationale": "Não há nenhuma experiência em fintech no CV; um case com contexto e métrica é o principal sinal de aderência ao objetivo e ao filtro de palavras-chave do setor.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho / Contato",
+					"current": "",
+					"proposed": "linkedin.com/in/[seu-perfil-personalizado]",
+					"rationale": "A ausência de LinkedIn reduz a credibilidade na validação prévia de candidatos de fintech.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Cabeçalho / Contato",
+					"current": "behance.net/juliana-ribeiro-exemplo",
+					"proposed": "behance.net/juliana-ribeiro-exemplo (cases em destaque: [Case fintech 1], [Case fintech 2])",
+					"rationale": "Direciona o recrutador para cases relevantes ao objetivo, em vez de um link genérico sem indicação de estudos de caso.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Moda Sul E-commerce",
+					"current": "Responsável pelas telas do aplicativo de compras.",
+					"proposed": "Projetei as telas do app de compras no Figma em colaboração com [N] engenheiros e [N] PMs, entregando [N] fluxos em [período].",
+					"rationale": "Substitui a descrição passiva de responsabilidade por uma entrega com verbo de ação, ferramenta e escopo mensurável, conforme o método XYZ.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Moda Sul E-commerce",
+					"current": "Participei de testes A/B da vitrine.",
+					"proposed": "Conduzi testes A/B na vitrine do app, obtendo variação de [X]% no clique em produto e impacto de [X]% em [receita / ativação].",
+					"rationale": "Atrela a ação a um resultado e a uma métrica de negócio, demonstrando decisão baseada em dados.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Compra Fácil App",
+					"current": "Redesenhei o checkout do app e a conversão subiu 18%.",
+					"proposed": "Redesenhei o checkout do app no Figma após testes de usabilidade com [N] usuários, elevando a conversão em 18% em [N] meses.",
+					"rationale": "Une método, ferramenta e resultado na mesma frase, comprovando o uso prático do Figma e da pesquisa.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — Compra Fácil App",
+					"current": "Criei o design system usado por 5 squads.",
+					"proposed": "Criei design system no Figma com [N] componentes e tokens, adotado por 5 squads e reduzindo em [X]% o tempo de entrega de telas.",
+					"rationale": "Acrescenta escala e uma métrica de eficiência, que é o tipo de impacto esperado em um perfil sênior.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Competências",
+					"current": "",
+					"proposed": "Ferramentas de dados e IA: [Amplitude / Hotjar / Maze], [Figma AI / ChatGPT] para síntese de pesquisas, com contexto de uso em [projeto] e ganho de [X]% em [tempo de análise].",
+					"rationale": "Inclui palavras-chave de ATS sobre dados e IA, contextualizadas com ganho de eficiência, o que reforça a visão de ciclo completo.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Experiência — Estúdio Pixel",
+					"current": "Peças para redes sociais e identidade visual.",
+					"proposed": "",
+					"rationale": "A descrição não tem relação com product design e ocupa espaço da leitura inicial; se mantida, deve ser reduzida a uma linha.",
+					"impact": "LOW"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Experiência",
+					"current": "2021 - atual",
+					"proposed": "01/2021 - atual",
+					"rationale": "Padroniza as datas no formato mm/aaaa para melhorar a leitura automatizada e a percepção de progressão.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

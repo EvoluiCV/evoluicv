@@ -1,0 +1,233 @@
+{
+	"caseId": "06-pt-ordem-errada-certificados",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T13:49:16.856Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 36981,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 48,
+			"summary": "O currículo tem base técnica compatível com a vaga de Desenvolvedor Frontend Pleno em React, especialmente pela migração para TypeScript e Next.js e pelo trabalho com testes e design system. No entanto, as descrições são vagas e sem métricas, o resumo é genérico e inconsistente com as datas, e há certificados irrelevantes que enfraquecem a candidatura. Com métricas, links de portfólio e ajuste de conteúdo, o perfil pode competir bem por vagas Pleno.",
+			"strengths": [
+				"Experiência em React e TypeScript aparece de forma consistente nas experiências, o que é o núcleo da vaga.",
+				"Migração de JavaScript para TypeScript e Next.js no Viaje Bem Turismo mostra evolução técnica relevante.",
+				"Uso de Jest e Testing Library indica preocupação com testes automatizados.",
+				"Trabalho com design system em parceria com o time de design, com Figma nas habilidades, mostra colaboração com design.",
+				"Experiência em times ágeis com Scrum na Conecta Saúde.",
+				"Tempo de carreira de quase 6 anos em empresas diferentes, com progressão de Estagiário a Pleno."
+			],
+			"issues": [
+				{
+					"section": "Resumo",
+					"problem": "O resumo afirma 4 anos de experiência, mas a linha do tempo mostra atuação desde 2019 (cerca de 6 anos) e cargo Pleno desde 2022. A inconsistência gera desconfiança na primeira leitura.",
+					"why": "Recrutores e ATS cruzam o resumo com as datas. Número inconsistente reduz a credibilidade do candidato para a vaga Pleno.",
+					"suggestion": "Alinhe o tempo de carreira à linha do tempo ou explique o período. Exemplo: Desenvolvedor Frontend Pleno com mais de 5 anos de experiência, com foco em React e TypeScript em produtos web de saúde e turismo.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Resumo",
+					"problem": "O resumo é genérico e não define um foco claro de atuação, como interfaces de alta performance, design systems ou arquitetura de componentes. Só lista tecnologias sem dizer o que o candidato entrega.",
+					"why": "Para a vaga de React Pleno, o resumo precisa responder em poucos segundos qual é o foco técnico do candidato. Hoje ele não se diferencia de outros perfis.",
+					"suggestion": "Declare especialidade, stack e entrega. Exemplo: Desenvolvedor Frontend Pleno focado em React e TypeScript, com experiência em migração de aplicações para Next.js, testes automatizados com Jest e Testing Library e construção de design system em parceria com o time de design.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Cabeçalho",
+					"problem": "Ausência de links para LinkedIn e portfólio. Só há GitHub, e não há evidência de projetos publicados nem de demos de componentes ou do design system.",
+					"why": "Para desenvolvedor frontend, o recrutador costuma validar o código e as interfaces antes de chamar. Sem portfólio e LinkedIn, a candidatura perde força no processo de triagem.",
+					"suggestion": "Inclua LinkedIn (linkedin.com/in/seu-perfil), GitHub com 2 a 3 repositórios relevantes em React e TypeScript e um portfólio com demos de interfaces ou do design system. Use links curtos e ativos.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência - Viaje Bem Turismo",
+					"problem": "A experiência atual descreve atividades sem resultados mensuráveis. Frases como 'Migrei o site de reservas' e 'Implementei testes' não mostram impacto em performance, bugs, tempo de carregamento, cobertura de testes ou conversão.",
+					"why": "A descrição sem métricas não comprova senioridade. Para o nível Pleno, o recrutador espera ver resultados quantificados que justifiquem o salário e o cargo.",
+					"suggestion": "Reescreva em formato de conquista com métrica e tecnologia na mesma frase. Exemplo: Migrei o site de reservas de JavaScript para TypeScript e Next.js, reduzindo em 35% o tempo de carregamento da página de busca e os bugs em produção em 40%.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência - Viaje Bem Turismo",
+					"problem": "A frase 'Trabalho junto com o time de design no design system da empresa' é vaga. Não mostra o papel do candidato, o escopo do trabalho nem o resultado.",
+					"why": "Design system é uma área muito valorizada em vagas Pleno. Descrever apenas a colaboração não diferencia o candidato de quem só consome componentes.",
+					"suggestion": "Descreva a contribuição concreta. Exemplo: Construí componentes reutilizáveis de design system com React, TypeScript e CSS-in-JS, em parceria com o time de design no Figma, reduzindo em 30% o tempo de desenvolvimento de novas telas.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência - Conecta Saúde",
+					"problem": "A descrição da experiência em Conecta Saúde é pobre em verbos de ação e resultados. 'Desenvolvimento de telas do portal do paciente em React' e 'Participação nas cerimônias do Scrum' são atividades genéricas, sem volume de telas, usuários atendidos ou impacto.",
+					"why": "Sem números, o recrutador não consegue medir a escala da entrega. Cargos Pleno precisam mostrar autonomia e escala.",
+					"suggestion": "Use verbo de ação e número. Exemplo: Desenvolvi 15 telas do portal do paciente em React e TypeScript, atendendo mais de 20 mil usuários ativos, e colaborei na entrega quinzenal do time via Scrum.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência - Agência Criativa Mar Azul",
+					"problem": "A descrição da experiência em Agência Criativa Mar Azul é muito básica, com foco em landing pages em HTML, CSS e jQuery, sem quantidade, prazo ou resultado.",
+					"why": "Por ser a experiência mais antiga e distante do React, ela pode ser resumida. Ocupar espaço com descrições genéricas dilui o foco do currículo.",
+					"suggestion": "Se a experiência for relevante, resuma em uma linha com verbo de ação e número. Exemplo: Criei 12 landing pages responsivas em HTML, CSS e jQuery para clientes da agência, com entrega média de 5 dias por projeto.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experiência",
+					"problem": "A ordem das experiências está cronológica direta (da mais antiga para a mais recente), contrariando a prática de ordem cronológica inversa.",
+					"why": "O recrutador lê primeiro a experiência mais recente, que é a mais relevante para a vaga Pleno. Na ordem atual, a experiência mais forte aparece por último.",
+					"suggestion": "Reordene do cargo mais recente para o mais antigo: Viaje Bem Turismo (2022 - atual), Conecta Saúde (2020 - 2022) e Agência Criativa Mar Azul (2019 - 2020).",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Certificados",
+					"problem": "Os certificados não têm relação com desenvolvimento frontend: instalação de redes elétricas, operação de empilhadeira e manutenção de notebooks. Eles ocupam espaço e sugerem falta de foco.",
+					"why": "Certificados fora da área reduzem a percepção de especialização e podem ser lidos como preenchimento. Para uma vaga de React, isso enfraquece a candidatura.",
+					"suggestion": "Remova todos os certificados sem relação com a vaga. Mantenha apenas certificações de React, TypeScript, testes, cloud ou arquitetura frontend. Se não houver, remova a seção.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Certificados",
+					"problem": "O único certificado relevante, React Avançado (40h), está no final, junto dos irrelevantes, e não tem instituição nem data.",
+					"why": "Certificados relevantes precisam de contexto para comprovar valor. Sem instituição e ano, o recrutador não consegue verificar.",
+					"suggestion": "Mantenha apenas React Avançado, com instituição e ano. Exemplo: React Avançado - Nome da Instituição (2023, 40h).",
+					"severity": "LOW"
+				},
+				{
+					"section": "Habilidades",
+					"problem": "As habilidades aparecem em uma lista solta no final e não são distribuídas nas experiências. Não há menção a CI/CD, cloud, deploy, otimização de performance, acessibilidade ou ferramentas de IA.",
+					"why": "Sistemas ATS e recrutadores técnicos valorizam palavras-chave contextualizadas e visão do ciclo completo. Lista solta vale menos do que tecnologias ligadas a resultados.",
+					"suggestion": "Distribua as tecnologias nas experiências, com contexto de uso. Inclua o ciclo completo: CI/CD (ex.: GitHub Actions), deploy (ex.: Vercel), testes e monitoramento. Se usar ferramentas de IA, como GitHub Copilot, cite no contexto de produtividade.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Ausente",
+					"problem": "O currículo não demonstra visão do ciclo completo de desenvolvimento nem uso de ferramentas de eficiência ou IA. Não há menção a CI/CD, deploy, cloud, performance ou acessibilidade.",
+					"why": "Para Pleno, o recrutador espera autonomia do desenvolvimento ao deploy. A ausência desses termos reduz as palavras-chave que o ATS pode identificar.",
+					"suggestion": "Acrescente um ponto na experiência atual sobre pipeline de deploy, por exemplo: Configurei pipeline de CI/CD com GitHub Actions para deploy automático na Vercel, reduzindo o tempo de entrega em produção de 2 dias para 20 minutos. Se aplicável, cite o uso de Copilot ou outra ferramenta de IA com ganho de produtividade mensurado.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Ausente",
+					"problem": "Não há menção a Core Web Vitals, acessibilidade (WCAG), SEO técnico ou performance de renderização, temas centrais para desenvolvedores frontend Pleno.",
+					"why": "Esses temas diferenciam um Pleno de um Júnior e são palavras-chave comuns em vagas de React.",
+					"suggestion": "Se o candidato trabalhou com esses temas, cite com métrica. Exemplo: Otimizei o LCP da home do site de reservas de 4,2s para 2,1s com lazy loading e Next.js Image.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Formação",
+					"problem": "A seção de formação não tem informações complementares. Não há menção a projetos acadêmicos relevantes, por exemplo.",
+					"why": "Como a formação está mais distante da vaga, o recrutador dá peso às experiências. Projetos relevantes ajudariam a reforçar a base técnica.",
+					"suggestion": "Se houver projetos de conclusão ou trabalhos relacionados a web, inclua uma linha. Se não houver, mantenha a seção curta e sem comentários.",
+					"severity": "LOW"
+				}
+			],
+			"recommendedActions": [
+				"Remover os certificados sem relação com desenvolvimento frontend e manter apenas React Avançado, com instituição e ano.",
+				"Reescrever a experiência do Viaje Bem Turismo com métricas de performance, bugs, cobertura de testes ou entrega, citando React, TypeScript e Next.js na mesma frase.",
+				"Reescrever o resumo com foco claro em React e TypeScript e tempo de carreira coerente com a linha do tempo.",
+				"Adicionar LinkedIn, portfólio e 2 a 3 repositórios relevantes no GitHub no cabeçalho.",
+				"Reordenar as experiências em ordem cronológica inversa.",
+				"Quantificar as entregas da Conecta Saúde, com número de telas e usuários atendidos.",
+				"Distribuir as habilidades nas experiências e incluir CI/CD, deploy e, se aplicável, ferramentas de IA com ganho de produtividade.",
+				"Resumir a experiência da Agência Criativa Mar Azul para liberar espaço ao conteúdo mais relevante."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo",
+					"current": "Desenvolvedor frontend com 4 anos de experiência em React e TypeScript.",
+					"proposed": "Desenvolvedor Frontend Pleno com mais de [X] anos de experiência em React e TypeScript, focado em [interfaces de alta performance / design systems / arquitetura de componentes], com migração de aplicações para Next.js e testes automatizados com Jest e Testing Library.",
+					"rationale": "Alinha o tempo de carreira à linha do tempo, declara senioridade, stack e foco logo na primeira linha para leitura em poucos segundos.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Cabeçalho",
+					"current": "",
+					"proposed": "linkedin.com/in/[seu-perfil] | [seu-portfolio.com]",
+					"rationale": "Adiciona LinkedIn e portfólio com demos de interfaces e do design system, permitindo ao recrutador validar o trabalho antes da triagem.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência - Viaje Bem Turismo",
+					"current": "Migrei o site de reservas de JavaScript para TypeScript e Next.js.",
+					"proposed": "Migrei o site de reservas de JavaScript para TypeScript e Next.js, reduzindo em [X]% o tempo de carregamento da página de busca e os bugs em produção em [Y]%.",
+					"rationale": "Aplica o Método XYZ, atrelando a ação à tecnologia e a um resultado mensurável que comprova senioridade Pleno.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Certificados",
+					"current": "Curso de Instalação de Redes Elétricas Residenciais (80h); Operador de Empilhadeira (40h); Curso de Manutenção de Notebooks (30h)",
+					"proposed": "",
+					"rationale": "Certificados sem relação com frontend diluem o foco da candidatura e podem ser lidos como preenchimento; manter apenas React Avançado com instituição e ano.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência - Viaje Bem Turismo",
+					"current": "Trabalho junto com o time de design no design system da empresa.",
+					"proposed": "Construí componentes reutilizáveis do design system com React, TypeScript e CSS-in-JS, em parceria com o time de design no Figma, reduzindo em [X]% o tempo de desenvolvimento de novas telas.",
+					"rationale": "Mostra contribuição concreta e escopo, diferenciando o candidato de quem apenas consome componentes; design system é valorizado em vagas Pleno.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência - Conecta Saúde",
+					"current": "Desenvolvimento de telas do portal do paciente em React.",
+					"proposed": "Desenvolvi [N] telas do portal do paciente em React e TypeScript, atendendo [N] usuários ativos, com entregas quinzenais via Scrum.",
+					"rationale": "Usa verbo de ação, tecnologia e escala numérica para demonstrar autonomia e volume de entrega.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência - Viaje Bem Turismo",
+					"current": "",
+					"proposed": "Configurei pipeline de CI/CD com [GitHub Actions] para deploy automático em [plataforma de deploy], reduzindo o tempo de entrega em produção de [X] para [Y].",
+					"rationale": "Demonstra visão do ciclo completo de software e inclui palavras-chave de CI/CD e deploy que o ATS pode identificar.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência - Viaje Bem Turismo",
+					"current": "",
+					"proposed": "Utilizo [GitHub Copilot] no desenvolvimento diário, com ganho de produtividade de [X]% em [tipo de tarefa].",
+					"rationale": "Evidencia fluência em ferramentas de IA com resultado mensurado, um diferencial competitivo para vagas Pleno.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência",
+					"current": "Ordem atual: Agência Criativa Mar Azul (2019 - 2020), Conecta Saúde (2020 - 2022), Viaje Bem Turismo (2022 - atual)",
+					"proposed": "Viaje Bem Turismo (2022 - atual), Conecta Saúde (2020 - 2022), Agência Criativa Mar Azul (2019 - 2020)",
+					"rationale": "A ordem cronológica inversa coloca a experiência mais relevante para a vaga Pleno no início da leitura.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Habilidades",
+					"current": "React, TypeScript, Next.js, Jest, Testing Library, CSS-in-JS, Figma, Git.",
+					"proposed": "Frontend: React, TypeScript, Next.js, CSS-in-JS | Testes: Jest, Testing Library | Ferramentas: Git, Figma, [CI/CD], [cloud/deploy]",
+					"rationale": "Agrupa tecnologias por categoria e acrescenta lacunas de ciclo completo, melhorando a leitura e a indexação pelo ATS.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Experiência - Viaje Bem Turismo",
+					"current": "",
+					"proposed": "Otimizei o LCP da [página] de [X]s para [Y]s com [lazy loading / Next.js Image], impactando [métrica de negócio].",
+					"rationale": "Core Web Vitals e performance são temas centrais para Pleno e palavras-chave comuns em vagas de React, se o candidato tiver trabalhado com eles.",
+					"impact": "LOW"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência - Agência Criativa Mar Azul",
+					"current": "Criação de landing pages em HTML, CSS e jQuery para clientes da agência.",
+					"proposed": "Criei [N] landing pages responsivas em HTML, CSS e jQuery para clientes da agência, com entrega média de [X] dias por projeto.",
+					"rationale": "Resume a experiência mais antiga com verbo de ação e número, liberando espaço para o conteúdo mais relevante.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}
