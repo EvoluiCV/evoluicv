@@ -1,0 +1,13 @@
+{
+	"id": "07-pt-bloco-unico",
+	"descricao": "PT, mal formatado: um bloco de texto sem seções, com erros de digitação",
+	"professionalGoal": "Analista de Suporte de TI Pleno",
+	"targetRole": "Analista de Suporte Pleno",
+	"expect": {
+		"language": "pt",
+		"scoreMin": 10,
+		"scoreMax": 50,
+		"mustFlag": ["se[cç][aã]o|estrutur|formata|bloco|leitura|organiz"]
+	},
+	"cvText": "Marcos Vinicius Albuquerque marcos.albuquerque@example.com Fortaleza CE trabalho com suporte de ti a 6 anos comecei na empresa InfoCenter Serviços em 2018 como tecnico de campo atendendo os chamados dos clientes e depois passei para o suporte nivel 2 onde fazia configuração de redes e servidores windows server e active directory tambem cuidava do backup e das impressoras e em 2022 fui para a Rede Farma Nordeste onde estou ate hoje como analista de suporte cuidando de 40 lojas atendo os chamados no glpi faço inventario dos equipamentos e treino os funcionarios novos nos sistemas tenho curso tecnico em informatica pelo Instituto Tecnico do Ceara e estou fazendo faculdade de redes de computadores na Faculdade Sertão Digital termino em 2025 conheço windows linux basico redes tcp ip active directory office 365 glpi e um pouco de powershell sou responsavel e pontual e gosto de ajudar as pessoas tenho disponibilidade para viagens e CNH B\n"
+}

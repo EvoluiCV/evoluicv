@@ -1,0 +1,108 @@
+{
+	"caseId": "02-pt-senior-forte",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T12:35:30.717Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 24650,
+	"body": {
+		"analysis": {
+			"language": "pt",
+			"overallScore": 85,
+			"summary": "O currículo apresenta uma boa estrutura e experiências relevantes, mas pode ser otimizado em termos de clareza e impacto. Algumas descrições carecem de verbos de ação mais fortes e a seção de resumo pode ser mais específica sobre a especialidade e foco.",
+			"strengths": [
+				"Experiência sólida em backend com Java e Spring, alinhada ao objetivo de Tech Lead.",
+				"Resultados quantificáveis nas experiências, demonstrando impacto direto nas operações da fintech.",
+				"Certificação recente em AWS, relevante para o setor financeiro."
+			],
+			"issues": [
+				{
+					"section": "Resumo",
+					"problem": "A descrição é genérica e não menciona diretamente a especialidade ou foco em fintech.",
+					"why": "Frases genéricas não capturam a atenção de recrutadores e ATS, que buscam clareza sobre a especialidade do candidato.",
+					"suggestion": "Reescreva para algo como: 'Engenheira de Software Sênior com foco em backend Java em fintechs, especializada em arquitetura orientada a eventos e otimização de sistemas de pagamento.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experiência — PagaLeve Fintech",
+					"problem": "A primeira frase é boa, mas poderia ser mais impactante com um verbo de ação mais forte.",
+					"why": "Usar verbos de ação mais fortes aumenta a percepção de liderança e impacto nas entregas.",
+					"suggestion": "Reescreva como: 'Liderei a transformação do processador de PIX, migrando de um monolito para 7 microsserviços, aumentando a vazão de 800 para 3.200 transações por segundo.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experiência — LojaNet Varejo",
+					"problem": "A descrição da construção da API é vaga e não menciona a tecnologia utilizada.",
+					"why": "Descrever a tecnologia utilizada junto com a entrega ajuda a demonstrar a competência técnica e a relevância da experiência.",
+					"suggestion": "Reescreva como: 'Desenvolvi a API de catálogo em Java 11 e Spring, que suportou 2 milhões de requisições diárias, melhorando a performance do sistema.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Competências",
+					"problem": "As competências estão listadas, mas não estão integradas às experiências.",
+					"why": "Integrar as competências nas descrições das experiências ajuda a reforçar a proficiência e a relevância das habilidades para o cargo desejado.",
+					"suggestion": "Inclua as tecnologias diretamente nas descrições das experiências, como: 'Implantei pipeline de CI/CD com GitHub Actions, reduzindo incidentes em produção em 38%.'",
+					"severity": "MEDIUM"
+				}
+			],
+			"recommendedActions": [
+				"Reescrever o resumo para incluir especialidade e foco em fintech.",
+				"Fortalecer as descrições das experiências com verbos de ação mais impactantes.",
+				"Integrar as competências técnicas nas descrições das experiências.",
+				"Revisar a formatação para garantir clareza e legibilidade."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Resumo",
+					"current": "Engenheira de software sênior com 9 anos em backend Java/Spring, 4 deles em pagamentos. Lidero squads de 6 pessoas, desenho arquitetura orientada a eventos e mantenho o foco em confiabilidade (SLO de 99,95%).",
+					"proposed": "Engenheira de Software Sênior com 9 anos de experiência em backend Java em fintechs, especializada em arquitetura orientada a eventos e otimização de sistemas de pagamento, liderando squads de 6 pessoas com foco em confiabilidade (SLO de 99,95%).",
+					"rationale": "Aumenta a clareza sobre a especialidade e foco em fintech, capturando melhor a atenção de recrutadores e ATS.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — PagaLeve Fintech",
+					"current": "Liderei a migração do processador de PIX de um monolito para 7 microsserviços em Spring Boot e Kafka, elevando a vazão de 800 para 3.200 transações por segundo.",
+					"proposed": "Liderei a transformação do processador de PIX, migrando de um monolito para 7 microsserviços em Spring Boot e Kafka, aumentando a vazão de 800 para 3.200 transações por segundo.",
+					"rationale": "Usa um verbo de ação mais forte, aumentando a percepção de liderança e impacto nas entregas.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experiência — LojaNet Varejo",
+					"current": "Construí a API de catálogo em Java 11 e Spring, atendendo 2 milhões de requisições por dia.",
+					"proposed": "Desenvolvi a API de catálogo em Java 11 e Spring, que suportou 2 milhões de requisições diárias, melhorando a performance do sistema.",
+					"rationale": "Descreve a tecnologia utilizada junto com a entrega, demonstrando competência técnica e relevância da experiência.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Experiência — PagaLeve Fintech",
+					"current": "Implantei pipeline de CI/CD com GitHub Actions e testes de contrato, diminuindo incidentes em produção em 38% em 12 meses.",
+					"proposed": "Implantei pipeline de CI/CD com GitHub Actions, reduzindo incidentes em produção em 38% em 12 meses, melhorando a eficiência do desenvolvimento.",
+					"rationale": "Integra a competência técnica diretamente na descrição da experiência, reforçando a proficiência e relevância das habilidades.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Competências",
+					"current": "Java 21, Spring Boot, Kafka, PostgreSQL, Redis, Docker, Kubernetes, AWS (EKS, SQS, RDS), GitHub Actions, observabilidade com Prometheus e Grafana, arquitetura orientada a eventos, DDD.",
+					"proposed": "Java 21, Spring Boot, Kafka, PostgreSQL, Redis, Docker, Kubernetes, AWS (EKS, SQS, RDS), GitHub Actions, observabilidade com Prometheus e Grafana, arquitetura orientada a eventos, DDD, CI/CD.",
+					"rationale": "Adiciona CI/CD como uma competência, alinhando com as experiências e aumentando a relevância para o cargo desejado.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Certificações",
+					"current": "AWS Certified Solutions Architect - Associate (2023)",
+					"proposed": "",
+					"rationale": "A certificação é relevante, mas pode ser movida para uma seção de 'Formação e Certificações' para melhor organização.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

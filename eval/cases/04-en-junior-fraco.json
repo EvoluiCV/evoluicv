@@ -1,0 +1,13 @@
+{
+	"id": "04-en-junior-fraco",
+	"descricao": "EN, júnior, mal escrito: bootcamp, frases vagas, sem links",
+	"professionalGoal": "Junior Frontend Developer role",
+	"targetRole": "Junior Frontend Developer",
+	"expect": {
+		"language": "en",
+		"scoreMin": 10,
+		"scoreMax": 50,
+		"mustFlag": ["linkedin|github|portfolio", "metric|number|result|impact|quantif"]
+	},
+	"cvText": "Emily Carter\nemily.carter.web@example.com | Manchester, UK\n\nAbout me\nHard-working and passionate person who loves learning new things. I am a team player and a fast learner looking for an opportunity to start my career in tech.\n\nEducation\nFull Stack Web Development Bootcamp - CodeRise Academy (2024, 12 weeks)\nBA in History - Northfield University (2019 - 2022)\n\nExperience\nSales Assistant - Corner Books (2022 - 2024)\nHelped customers, worked at the till and organised shelves. Responsible for social media posts sometimes.\n\nProjects\nMade a to-do app with React. Did a weather website using an API. Worked on a group project for the bootcamp.\n\nSkills\nHTML, CSS, JavaScript, React, a bit of Node, teamwork, communication, Microsoft Word.\n\nHobbies\nReading, hiking, baking\n"
+}

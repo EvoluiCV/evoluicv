@@ -1,0 +1,115 @@
+{
+	"caseId": "04-en-junior-fraco",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-10T12:36:35.609Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 21613,
+	"body": {
+		"analysis": {
+			"language": "en",
+			"overallScore": 45,
+			"summary": "The CV lacks specificity and measurable achievements, which are crucial for a Junior Frontend Developer role. The 'About me' section is generic and does not highlight relevant skills or technologies.",
+			"strengths": [
+				"Completed a Full Stack Web Development Bootcamp, indicating recent and relevant education.",
+				"Experience with React and API integration in projects."
+			],
+			"issues": [
+				{
+					"section": "About me",
+					"problem": "The section contains generic phrases like 'hard-working' and 'team player' without specifying relevant skills or technologies.",
+					"why": "Generic statements do not convey your specific qualifications for a Junior Frontend Developer role, making it harder for recruiters to see your fit for the position.",
+					"suggestion": "Rewrite to specify your focus and skills, e.g., 'Aspiring Junior Frontend Developer skilled in HTML, CSS, and JavaScript, with a passion for building responsive web applications.'",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experience - Sales Assistant",
+					"problem": "The description is vague and does not relate to frontend development or technical skills.",
+					"why": "Without relevant experience or technical achievements, it is difficult for recruiters to assess your suitability for a Junior Frontend Developer role.",
+					"suggestion": "Focus on transferable skills or any technical tasks, e.g., 'Managed social media posts using design tools, enhancing my understanding of user engagement and digital communication.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Projects",
+					"problem": "Descriptions of projects are too brief and lack details about technologies used and outcomes.",
+					"why": "Vague project descriptions do not demonstrate your technical capabilities or the impact of your work, which is critical for a Junior Frontend Developer role.",
+					"suggestion": "Expand on each project with specifics, e.g., 'Developed a to-do app using React, which improved task management for users, and integrated a weather API to display real-time data.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Skills",
+					"problem": "Skills are listed but not integrated into the experience or projects, making them feel disconnected.",
+					"why": "Recruiters look for evidence of skills in context; listing them without context reduces their impact and relevance.",
+					"suggestion": "Integrate skills into project descriptions, e.g., 'Utilized HTML, CSS, and JavaScript to create a responsive weather website that fetches data from an API.'",
+					"severity": "MEDIUM"
+				}
+			],
+			"recommendedActions": [
+				"Revise the 'About me' section to clearly state your career focus and relevant skills.",
+				"Enhance the experience section to highlight any transferable skills or relevant tasks.",
+				"Provide detailed descriptions of your projects, including technologies used and their impact.",
+				"Integrate your skills into project descriptions to demonstrate practical application."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "About me",
+					"current": "Hard-working and passionate person who loves learning new things. I am a team player and a fast learner looking for an opportunity to start my career in tech.",
+					"proposed": "Aspiring Junior Frontend Developer skilled in HTML, CSS, and JavaScript, with a passion for building responsive web applications and a strong foundation in React.",
+					"rationale": "Specifies relevant skills and career focus, making it easier for recruiters to assess fit for the role.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experience - Sales Assistant",
+					"current": "Helped customers, worked at the till and organised shelves. Responsible for social media posts sometimes.",
+					"proposed": "Managed social media posts using design tools, enhancing my understanding of user engagement and digital communication, which developed my skills in visual presentation and audience interaction.",
+					"rationale": "Highlights transferable skills relevant to tech and frontend development, improving the relevance of the experience.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Projects",
+					"current": "Made a to-do app with React. Did a weather website using an API. Worked on a group project for the bootcamp.",
+					"proposed": "Developed a to-do app using React, improving task management for users. Created a weather website that fetches real-time data from an API, enhancing user experience through dynamic content.",
+					"rationale": "Provides specific details about technologies used and the impact of the projects, demonstrating technical capabilities.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Projects",
+					"current": "Made a to-do app with React. Did a weather website using an API. Worked on a group project for the bootcamp.",
+					"proposed": "Developed a to-do app using React and integrated a weather API to display real-time data, showcasing my ability to create interactive applications.",
+					"rationale": "Integrates technologies and outcomes, making project descriptions more impactful and relevant to the role.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Skills",
+					"current": "HTML, CSS, JavaScript, React, a bit of Node, teamwork, communication, Microsoft Word.",
+					"proposed": "HTML, CSS, JavaScript, React, Node.js; strong teamwork and communication skills demonstrated through collaborative projects.",
+					"rationale": "Groups related skills together and emphasizes practical application, enhancing clarity and relevance.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Projects",
+					"current": null,
+					"proposed": "[Link to GitHub or portfolio showcasing projects]",
+					"rationale": "Provides a direct way for recruiters to view your work, enhancing credibility and demonstrating your skills in practice.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Hobbies",
+					"current": "Reading, hiking, baking",
+					"proposed": "",
+					"rationale": "Hobbies do not contribute to the professional narrative for a Junior Frontend Developer role and can detract from more relevant content.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

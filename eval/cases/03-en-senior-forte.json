@@ -1,0 +1,13 @@
+{
+	"id": "03-en-senior-forte",
+	"descricao": "EN, sênior, bem escrito: resposta precisa vir em inglês",
+	"professionalGoal": "Staff Engineer at a product company",
+	"targetRole": "Staff Software Engineer",
+	"expect": {
+		"language": "en",
+		"scoreMin": 65,
+		"scoreMax": 95,
+		"mustFlag": []
+	},
+	"cvText": "Daniel Okafor\nSenior Software Engineer | Distributed systems, Go and Kotlin\ndaniel.okafor@example.com | linkedin.com/in/daniel-okafor-example | github.com/dokafor-example | Lisbon, Portugal\n\nSummary\nSenior engineer with 10 years building high-throughput backend systems. I own platform-level technical decisions, run architecture reviews, and care about developer experience and reliability.\n\nExperience\nStreamly (video streaming) - Senior Software Engineer (2020 - present)\n- Designed a multi-region event ingestion platform in Go and Kafka that processes 1.4 billion events per day with 99.99% availability.\n- Cut cloud spend by 27% (about USD 410k per year) by moving batch workloads to spot instances with Kubernetes autoscaling.\n- Led the migration from REST to gRPC across 23 services, reducing median inter-service latency from 35 ms to 12 ms.\n- Established the RFC process now used by 9 teams; mentored 6 engineers.\n\nShopfront - Software Engineer (2016 - 2020)\n- Built the checkout service in Kotlin and Spring, handling peaks of 5,000 orders per minute on Black Friday.\n- Introduced contract testing with Pact, lowering integration bugs found in staging by 45%.\n\nDataPoint Labs - Junior Developer (2014 - 2016)\n- Developed ETL jobs in Python for analytics dashboards.\n\nEducation\nBSc in Computer Science - University of Coimbra (2010 - 2014)\n\nSkills\nGo, Kotlin, Java, Python, Kafka, gRPC, PostgreSQL, Cassandra, Kubernetes, Terraform, AWS, GCP, OpenTelemetry, CI/CD with GitLab.\n\nLanguages\nEnglish (fluent), Portuguese (professional), Igbo (native)\n"
+}
