@@ -1,7 +1,6 @@
 package com.evoluicv.backend.cv;
 
-import com.evoluicv.backend.ai.agent.ImprovementSuggestionsAgent;
-import com.evoluicv.backend.ai.agent.RecruiterAnalystAgent;
+import com.evoluicv.backend.ai.CvAnalysisPort;
 import com.evoluicv.backend.ai.model.CvAnalysis;
 import com.evoluicv.backend.ai.model.ImprovementSuggestions;
 import com.evoluicv.backend.cv.dto.AnalysisResponse;
@@ -17,21 +16,18 @@ public class CvAnalysisService {
 
     private static final int MIN_TEXT_LENGTH = 200;
 
-    private final RecruiterAnalystAgent recruiterAnalystAgent;
-    private final ImprovementSuggestionsAgent improvementSuggestionsAgent;
+    private final CvAnalysisPort cvAnalysisPort;
     private final CvTextExtractor cvTextExtractor;
     private final ObjectMapper objectMapper;
     private final DailyQuota dailyQuota;
 
     public CvAnalysisService(
-            RecruiterAnalystAgent recruiterAnalystAgent,
-            ImprovementSuggestionsAgent improvementSuggestionsAgent,
+            CvAnalysisPort cvAnalysisPort,
             CvTextExtractor cvTextExtractor,
             ObjectMapper objectMapper,
             DailyQuota dailyQuota
     ) {
-        this.recruiterAnalystAgent = recruiterAnalystAgent;
-        this.improvementSuggestionsAgent = improvementSuggestionsAgent;
+        this.cvAnalysisPort = cvAnalysisPort;
         this.cvTextExtractor = cvTextExtractor;
         this.objectMapper = objectMapper;
         this.dailyQuota = dailyQuota;
@@ -58,8 +54,8 @@ public class CvAnalysisService {
 
         String role = targetRole == null ? "" : targetRole;
 
-        CvAnalysis analysis = recruiterAnalystAgent.analyze(professionalGoal, role, normalized);
-        ImprovementSuggestions improvements = improvementSuggestionsAgent.suggest(
+        CvAnalysis analysis = cvAnalysisPort.analyze(professionalGoal, role, normalized);
+        ImprovementSuggestions improvements = cvAnalysisPort.suggest(
                 analysis.language(),
                 professionalGoal,
                 role,

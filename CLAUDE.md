@@ -30,8 +30,9 @@ Duas camadas de limite: o `RateLimitingFilter` barra rajadas (5/min, 30/h por IP
 
 - Os prompts ficam em `backend/src/main/resources/prompts/`. Toda análise cita evidência do CV e nunca inventa experiência, número ou qualificação.
 - A resposta segue o idioma do CV. `CvAnalysis.language` é a fonte da verdade, e o segundo agente a recebe.
-- Os testes mockam os agentes (hoje via `@MockitoBean`; depois da issue #10, mockam o port de IA). Chamadas reais à API custam dinheiro: elas acontecem só no eval e com aprovação de quem mantém o projeto.
-- Migração em andamento (issue #10): sai LangChain4j + OpenAI e entra o SDK oficial da Anthropic com `claude-haiku-5-5`. Enquanto o LangChain4j existir, o projeto fica no Spring Boot 3.x, porque o starter dele não roda no SB4.
+- O serviço só conhece o `CvAnalysisPort`. O `AnthropicCvAnalysisAdapter` (SDK oficial, `claude-haiku-5-5`) é o único que sabe de modelo, effort (`AI_*_MODEL`/`AI_*_EFFORT`), cache do system prompt e schema de saída derivado dos records. Não envie `temperature`/`top_p`: o modelo rejeita.
+- `stop_reason` `refusal` vira 422 `ai_refused`; `max_tokens` ou JSON fora do schema viram 502 `ai_invalid_response`. O log do adapter traz só contagem de tokens, nunca conteúdo.
+- Os testes mockam o `CvAnalysisPort` com `@MockitoBean`; o adapter é testado contra uma API da Anthropic falsa local. Chamadas reais custam dinheiro: acontecem só no eval (`eval/`) e com aprovação de quem mantém o projeto.
 
 ## Frontend
 

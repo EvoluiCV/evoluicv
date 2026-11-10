@@ -1,7 +1,6 @@
 package com.evoluicv.backend.quota;
 
-import com.evoluicv.backend.ai.agent.ImprovementSuggestionsAgent;
-import com.evoluicv.backend.ai.agent.RecruiterAnalystAgent;
+import com.evoluicv.backend.ai.CvAnalysisPort;
 import com.evoluicv.backend.ai.model.CvAnalysis;
 import com.evoluicv.backend.ai.model.ImprovementSuggestions;
 import com.evoluicv.backend.cv.CvAnalysisController;
@@ -71,19 +70,16 @@ class DailyQuotaTest {
     private MutableClock clock;
 
     @MockitoBean
-    private RecruiterAnalystAgent recruiterAnalystAgent;
-
-    @MockitoBean
-    private ImprovementSuggestionsAgent improvementSuggestionsAgent;
+    private CvAnalysisPort cvAnalysisPort;
 
     @MockitoBean
     private CvTextExtractor cvTextExtractor;
 
     @BeforeEach
     void agentesRespondem() {
-        given(recruiterAnalystAgent.analyze(any(), any(), any())).willReturn(
+        given(cvAnalysisPort.analyze(any(), any(), any())).willReturn(
                 new CvAnalysis("pt", 70, "ok", List.of(), List.of(), List.of()));
-        given(improvementSuggestionsAgent.suggest(any(), any(), any(), any(), any())).willReturn(
+        given(cvAnalysisPort.suggest(any(), any(), any(), any(), any())).willReturn(
                 new ImprovementSuggestions(List.of()));
     }
 

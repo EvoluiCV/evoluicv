@@ -1,7 +1,8 @@
 package com.evoluicv.backend.error;
 
 import com.evoluicv.backend.quota.DailyQuotaExceededException;
-import dev.langchain4j.exception.LangChain4jException;
+import com.anthropic.errors.AnthropicException;
+import com.evoluicv.backend.ai.AiResponseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -73,8 +74,20 @@ public class GlobalExceptionHandler {
                 .body(response.getBody());
     }
 
-    @ExceptionHandler(LangChain4jException.class)
-    public ResponseEntity<Map<String, Object>> handleLangChain4j(LangChain4jException ex) {
+    @ExceptionHandler(AiResponseException.class)
+    public ResponseEntity<Map<String, Object>> handleAiResponse(AiResponseException ex) {
+        // sem o conteúdo da resposta no log: pode trazer trechos do CV (LGPD)
+        log.warn("Resposta inutilizável do provedor de IA: {}", ex.reason());
+        return switch (ex.reason()) {
+            case REFUSED -> body(HttpStatus.UNPROCESSABLE_ENTITY, "ai_refused",
+                    "Não foi possível analisar este conteúdo. Confira se o texto enviado é um currículo.");
+            case TRUNCATED, INVALID -> body(HttpStatus.BAD_GATEWAY, "ai_invalid_response",
+                    "A análise veio incompleta. Tente novamente em instantes.");
+        };
+    }
+
+    @ExceptionHandler(AnthropicException.class)
+    public ResponseEntity<Map<String, Object>> handleAnthropic(AnthropicException ex) {
         log.error("Falha ao chamar o provedor de IA", ex);
         return body(HttpStatus.BAD_GATEWAY, "ai_upstream_error",
                 "Falha ao consultar o provedor de IA. Tente novamente em instantes.");
