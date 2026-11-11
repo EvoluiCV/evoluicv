@@ -1,0 +1,188 @@
+{
+	"caseId": "04-en-junior-fraco",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-11T00:58:49.406Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 23949,
+	"body": {
+		"analysis": {
+			"language": "en",
+			"overallScore": 34,
+			"summary": "The CV is generic in its positioning and presents its frontend skills and projects without depth, metrics or links, which makes it hard for a recruiter or ATS to match the candidate to a Junior Frontend Developer role. The core stack (HTML, CSS, JavaScript, React) and bootcamp training are relevant and can be competitive, but only after the summary is specific, the projects are documented with GitHub and live demos, and the experience is rewritten with measurable outcomes. The current overall score reflects a weak but fixable profile.",
+			"strengths": [
+				"Clear target of a frontend stack relevant to junior roles: HTML, CSS, JavaScript and React appear in the Skills section.",
+				"Recent, structured bootcamp training (2024, Full Stack Web Development) that shows an active, current learning path.",
+				"Two concrete personal projects are listed (to-do app with React and weather website using an API), which show practical use of React and API integration.",
+				"The candidate has customer-facing and retail experience (2022-2024), which can support communication and collaboration in a team context if rewritten with results."
+			],
+			"issues": [
+				{
+					"section": "About me",
+					"problem": "The 'About me' section is a generic cliché ('Hard-working and passionate person', 'team player', 'fast learner', 'looking for an opportunity to start my career in tech') and does not declare a specialization, stack of preference or focus area.",
+					"why": "Recruiters and ATS keyword filters for a Junior Frontend role look for a stated specialization and stack in the first lines. A generic summary gives the 8-second reader nothing to match against the job, so the CV is likely skipped.",
+					"suggestion": "Replace with a specific positioning statement. Example: 'Junior Frontend Developer focused on responsive, accessible interfaces with React, JavaScript (ES6+) and CSS. Completed a 12-week full stack bootcamp and built data-driven web apps consuming third-party REST APIs.' Remove 'hard-working', 'passionate' and 'team player'.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Header (Ausente)",
+					"problem": "The CV has no LinkedIn, GitHub or portfolio links. Only an email and a city are provided.",
+					"why": "For a frontend role, the hiring manager needs to see working code and live UIs. Without GitHub and a portfolio, the candidate cannot prove any of the claimed skills, which is decisive for junior candidates with no professional experience in tech.",
+					"suggestion": "Add a header line such as: 'LinkedIn: linkedin.com/in/emily-carter | GitHub: github.com/emilycarter | Portfolio: emilycarter.dev'. Make sure the GitHub repositories for the to-do app and weather app are public, with READMEs, live demo links and clean commit history.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Projects",
+					"problem": "The Projects section is vague and unquantified: 'Made a to-do app with React', 'Did a weather website using an API', 'Worked on a group project for the bootcamp'. It does not describe features, decisions, the APIs used, deployment or the candidate's specific contribution.",
+					"why": "These projects are the only technical evidence on the CV. In their current form they read like tutorial exercises, and ATS and recruiters cannot judge the depth of the React, API or state-management skills claimed.",
+					"suggestion": "Turn each project into a bullet with action verb, stack and outcome. Example: 'Built a weather dashboard in React that consumes the OpenWeatherMap REST API, with city search, async state handling and loading/error states; deployed on Netlify and used by 50+ test users.' Replace the group project line with: 'Contributed the responsive navigation and form validation (React, CSS Grid) in a 4-person bootcamp team project; delivered on schedule via Git/GitHub pull requests.' Use only real numbers.",
+					"severity": "HIGH"
+				},
+				{
+					"section": "Experience - Corner Books",
+					"problem": "The Experience section (Sales Assistant) describes only duties with no measurable results and no technical content: 'Helped customers, worked at the till and organised shelves. Responsible for social media posts sometimes.'",
+					"why": "A junior frontend candidate with no tech job needs to show ownership, problem solving and digital skills. Passive duty lists do not demonstrate these, and the social media work is the one item that could connect to frontend or digital content.",
+					"suggestion": "Rewrite with action verbs and metrics, highlighting transferable skills. Example: 'Managed daily till operations and inventory for a bookshop, handling 80+ transactions per day; created weekly social media posts (Canva, Instagram) that grew followers by 25% in 6 months.' Only use figures you can verify. Also remove the vague phrase 'sometimes'.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Skills",
+					"problem": "The skills list is a flat, unstructured list that mixes technologies with soft skills ('teamwork', 'communication') and irrelevant tools ('Microsoft Word'). It also includes 'a bit of Node', which weakens the stack statement.",
+					"why": "ATS keyword matching for junior frontend roles relies on specific technologies. A grouped stack with tools (Git, npm, DevTools) also signals the development workflow, which is missing from the current list.",
+					"suggestion": "Group skills by category and remove non-differentiating items. Example: 'Frontend: React, JavaScript (ES6+), HTML5, CSS3, Responsive Design, REST APIs (Fetch/Axios). Tools: Git/GitHub, npm, Vite, Chrome DevTools. Backend (basic): Node.js, Express. Testing: Jest (if used).' Remove 'Microsoft Word' and generic soft skills, and state the level for Node honestly (e.g. 'Node.js (basic)').",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Ausente (Projects / Skills)",
+					"problem": "The CV lacks evidence of the full development cycle: no version control workflow, testing, deployment, CI/CD or build tools are mentioned, despite the bootcamp context.",
+					"why": "Junior frontend job descriptions commonly ask for Git, deployment and basic testing. Their absence makes the candidate look like someone who only followed tutorials.",
+					"suggestion": "Mention in the project bullets how each app was deployed (e.g. Netlify, Vercel, GitHub Pages), which tooling was used (Git, npm, Vite or Create React App) and whether any tests or responsive/accessibility checks were done. Only list what was actually done.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Education - CodeRise Academy",
+					"problem": "The bootcamp is listed with only the name and duration, with no content, technologies or outcomes. The 2024 bootcamp is also not described as a distinct technical training.",
+					"why": "For a career changer, the bootcamp is the main proof of technical training. Listing only the title gives recruiters no way to judge its depth or match it to frontend requirements.",
+					"suggestion": "Add two or three lines of relevant content. Example: 'Full Stack Web Development Bootcamp, CodeRise Academy (2024, 12 weeks, intensive): HTML, CSS, JavaScript, React, Node.js/Express, REST APIs, Git; delivered 3 projects, including a team project.'",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Ausente (Skills / Projects)",
+					"problem": "The CV contains no AI or productivity tool keywords such as use of GitHub Copilot, ChatGPT or other LLMs for debugging or development efficiency, even though these are expected signals of current junior candidates.",
+					"why": "Mentioning responsible use of AI tools signals up-to-date practice and productivity, which is increasingly valued in junior frontend hiring.",
+					"suggestion": "If it has been used in real work, add a bullet such as: 'Use GitHub Copilot and ChatGPT to accelerate component prototyping and debugging, while reviewing all generated code for correctness and accessibility.' Only include it if it reflects actual practice.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Layout / Estrutura geral",
+					"problem": "The CV has no clear chronological structure for technical experience and no professional tech experience, so the layout puts the non-tech sales job first and the projects in a plain list without dates or links.",
+					"why": "Recruiters scan for technical evidence first. Placing projects and skills at the top, with dates and links, makes the frontend profile visible within the 8-second read.",
+					"suggestion": "Order sections for a career changer: Summary, Technical Skills, Projects (with links and dates, most recent first), Education and Certifications (bootcamp), then Experience. Keep reverse chronological order inside each section and add dates to each project.",
+					"severity": "LOW"
+				}
+			],
+			"recommendedActions": [
+				"Replace the 'About me' cliché with a specific summary stating Junior Frontend Developer, React and JavaScript focus, and bootcamp background, and remove 'hard-working', 'passionate' and 'team player'.",
+				"Add LinkedIn, GitHub and portfolio links to the header and make the GitHub repositories public with README files and live demo links.",
+				"Rewrite each project as a bullet with action verb, stack (React, APIs, CSS), features delivered and deployment platform, with real figures where possible.",
+				"Rewrite the Sales Assistant experience with action verbs and measurable results, and remove the vague 'sometimes' phrase.",
+				"Reorganize the Skills section into categories (Frontend, Tools, Testing/Deployment) and remove Microsoft Word and generic soft skills.",
+				"Expand the bootcamp entry with stack, outcomes and projects delivered.",
+				"Mention Git workflow, deployment and any testing used in the projects to show the full development cycle.",
+				"Reorder the CV to put Summary, Skills and Projects before Experience, with dates on all projects."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "About me",
+					"current": "Hard-working and passionate person who loves learning new things. I am a team player and a fast learner looking for an opportunity to start my career in tech.",
+					"proposed": "Junior Frontend Developer focused on responsive, accessible interfaces with React, JavaScript (ES6+) and CSS. Completed a 12-week Full Stack Web Development bootcamp and built web apps that consume third-party REST APIs, with a focus on [specific area of interest].",
+					"rationale": "Declares seniority, stack and focus in the first lines so the ATS and the recruiter can match the profile to the Junior Frontend Developer role.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Header",
+					"current": "",
+					"proposed": "LinkedIn: linkedin.com/in/emily-carter | GitHub: github.com/emilycarter | Portfolio: [portfolio URL]",
+					"rationale": "Frontend hiring depends on verifiable code and live UIs; the header currently has no links to evidence the claimed skills.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Projects",
+					"current": "Made a to-do app with React. Did a weather website using an API. Worked on a group project for the bootcamp.",
+					"proposed": "Built a to-do app in React with [state management approach, e.g. useState/useReducer] and [key features, e.g. filtering, persistence in localStorage], deployed on [Netlify/Vercel] (live demo: [URL]). Built a weather dashboard in React consuming the [API name] REST API, with city search and loading/error states (repo: [GitHub URL]). Contributed [feature, e.g. responsive navigation and form validation] using React and CSS Grid in a [4]-person bootcamp team project, delivering via Git/GitHub pull requests.",
+					"rationale": "Applies the XYZ method (what was built + technology + outcome) so the projects show depth instead of tutorial-level descriptions.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experience — Corner Books",
+					"current": "Helped customers, worked at the till and organised shelves. Responsible for social media posts sometimes.",
+					"proposed": "Managed daily till operations and stock organisation at a bookshop, handling [X] transactions per day; created [X] social media posts per week (Canva, Instagram), growing followers by [X]% over [X] months.",
+					"rationale": "Replaces passive duties with action verbs and measurable results, and links the social media work to digital content skills.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Skills",
+					"current": "HTML, CSS, JavaScript, React, a bit of Node, teamwork, communication, Microsoft Word.",
+					"proposed": "Frontend: React, JavaScript (ES6+), HTML5, CSS3, Responsive Design, REST APIs (Fetch/Axios). Tools: Git/GitHub, npm, Vite, Chrome DevTools. Backend (basic): Node.js. Testing: [Jest, if used].",
+					"rationale": "Groups skills by category for ATS keyword matching and removes non-differentiating items such as Microsoft Word and generic soft skills.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Skills",
+					"current": "Microsoft Word",
+					"proposed": "",
+					"rationale": "Generic office tool that does not differentiate a frontend candidate and dilutes the technical keyword set.",
+					"impact": "LOW"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Education",
+					"current": "Full Stack Web Development Bootcamp - CodeRise Academy (2024, 12 weeks)",
+					"proposed": "Full Stack Web Development Bootcamp - CodeRise Academy (2024, 12 weeks, intensive): HTML, CSS, JavaScript, React, Node.js/Express, REST APIs, Git; delivered [X] projects, including a team project.",
+					"rationale": "Adds stack and outcomes to the bootcamp, the main proof of technical training for a career changer.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Projects",
+					"current": "",
+					"proposed": "Add to the Projects bullets: deployment platform (e.g. Netlify, Vercel, GitHub Pages), tooling used (Git, npm, Vite or Create React App) and any testing or responsive/accessibility checks performed: [list what was actually done].",
+					"rationale": "Demonstrates the full development cycle (version control, deployment, testing) that ATS keywords and junior job descriptions commonly ask for.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Hobbies",
+					"current": "Hobbies\nReading, hiking, baking",
+					"proposed": "",
+					"rationale": "Hobbies add no value to a frontend role and take space that should go to technical content.",
+					"impact": "LOW"
+				},
+				{
+					"action": "ADD",
+					"section": "Skills / Projects",
+					"current": "",
+					"proposed": "Use GitHub Copilot and ChatGPT to accelerate component prototyping and debugging, while reviewing all generated code for correctness and accessibility. (Include only if this reflects actual practice.)",
+					"rationale": "Signals current productivity practice with AI tools, increasingly valued in junior frontend hiring.",
+					"impact": "LOW"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Layout / Structure",
+					"current": "Experience (first)\nProjects (after Education, plain list without dates or links)",
+					"proposed": "Order sections as: Summary, Technical Skills, Projects (with dates and links, most recent first), Education and Certifications (bootcamp), then Experience.",
+					"rationale": "Places technical evidence in the first scan area so the frontend profile is visible within the 8-second read.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}
