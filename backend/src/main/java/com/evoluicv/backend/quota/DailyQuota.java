@@ -2,7 +2,7 @@ package com.evoluicv.backend.quota;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import java.time.Clock;
@@ -18,6 +18,7 @@ import java.util.Map;
  * Fica em memória: um restart zera a contagem, o que é aceitável enquanto há uma réplica só.
  */
 @Component
+@EnableConfigurationProperties(QuotaProperties.class)
 public class DailyQuota {
 
     private final Clock clock;
@@ -31,17 +32,11 @@ public class DailyQuota {
     private int usedGlobal;
     private final Map<String, Integer> usedByIp = new HashMap<>();
 
-    public DailyQuota(
-            Clock clock,
-            @Value("${evoluicv.quota.zone:America/Sao_Paulo}") String zone,
-            @Value("${evoluicv.quota.per-ip-daily:3}") int perIpDaily,
-            @Value("${evoluicv.quota.global-daily:200}") int globalDaily,
-            MeterRegistry registry
-    ) {
+    public DailyQuota(Clock clock, QuotaProperties props, MeterRegistry registry) {
         this.clock = clock;
-        this.zone = ZoneId.of(zone);
-        this.perIpDaily = perIpDaily;
-        this.globalDaily = globalDaily;
+        this.zone = props.zone();
+        this.perIpDaily = props.perIpDaily();
+        this.globalDaily = props.globalDaily();
         this.rejectedByIp = rejected(registry, "ip");
         this.rejectedGlobal = rejected(registry, "global");
     }

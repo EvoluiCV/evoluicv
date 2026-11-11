@@ -12,12 +12,6 @@ public interface CvAnalysisPort {
     /** Parecer do recrutador sobre o CV, no idioma do próprio CV. */
     CvAnalysis analyze(String professionalGoal, String targetRole, String cvText);
 
-    /** Edições concretas derivadas do parecer, no idioma informado. */
-    ImprovementSuggestions suggest(
-            String language,
-            String professionalGoal,
-            String targetRole,
-            String analysisJson,
-            String cvText
-    );
+    /** Edições concretas derivadas do parecer, no idioma do parecer ({@link CvAnalysis#language()}). */
+    ImprovementSuggestions suggest(CvAnalysis analysis, String professionalGoal, String targetRole, String cvText);
 }

@@ -91,7 +91,7 @@ class DailyQuotaTest {
     void agentesRespondem() {
         given(cvAnalysisPort.analyze(any(), any(), any())).willReturn(
                 new CvAnalysis("pt", 70, "ok", List.of(), List.of(), List.of()));
-        given(cvAnalysisPort.suggest(any(), any(), any(), any(), any())).willReturn(
+        given(cvAnalysisPort.suggest(any(), any(), any(), any())).willReturn(
                 new ImprovementSuggestions(List.of()));
     }
 

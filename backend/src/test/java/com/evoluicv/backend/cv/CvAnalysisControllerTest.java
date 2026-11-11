@@ -99,7 +99,7 @@ class CvAnalysisControllerTest {
         ));
 
         given(cvAnalysisPort.analyze(eq("Tech Lead fintech"), any(), any())).willReturn(analise);
-        given(cvAnalysisPort.suggest(any(), any(), any(), any(), any())).willReturn(sugestoes);
+        given(cvAnalysisPort.suggest(any(), any(), any(), any())).willReturn(sugestoes);
 
         String body = objectMapper.writeValueAsString(new java.util.LinkedHashMap<>() {{
             put("cvText", LONG_CV.repeat(3));
