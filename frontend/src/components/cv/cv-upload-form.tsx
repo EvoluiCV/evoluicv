@@ -21,6 +21,7 @@ import {
 	File02Icon,
 	Loading03Icon,
 	MagicWand01Icon,
+	SecurityCheckIcon,
 	Target02Icon,
 } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
@@ -369,7 +370,37 @@ export function CvUploadForm({ onSubmit, isLoading }: Props) {
 						</div>
 					)}
 
-					<Button type='submit' disabled={isLoading} className='w-full'>
+					<p
+						id='privacy-notice'
+						className='flex gap-2 rounded-md bg-muted/50 px-3 py-2 text-xs leading-relaxed text-muted-foreground'
+					>
+						<HugeiconsIcon
+							icon={SecurityCheckIcon}
+							className='mt-0.5 h-3.5 w-3.5 shrink-0'
+						/>
+						<span>
+							<strong className='font-medium text-foreground'>Privacidade:</strong>{' '}
+							o texto do seu CV é enviado à API da Anthropic (Claude) só para gerar esta
+							análise. O Evolui CV não armazena o CV nem o resultado: não há banco de
+							dados, e o conteúdo não vai para os logs. Seu endereço IP é usado apenas
+							para limitar o número de análises por dia.{' '}
+							<a
+								href='https://www.anthropic.com/legal/privacy'
+								target='_blank'
+								rel='noopener noreferrer'
+								className='underline underline-offset-2 hover:text-foreground'
+							>
+								Política de privacidade da Anthropic
+							</a>
+						</span>
+					</p>
+
+					<Button
+						type='submit'
+						disabled={isLoading}
+						className='w-full'
+						aria-describedby='privacy-notice'
+					>
 						{isLoading ? (
 							<>
 								<HugeiconsIcon

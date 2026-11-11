@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -19,7 +20,12 @@ import java.time.Instant;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+/**
+ * Converte exceções no envelope de erro. LGPD: mensagens de exceção podem carregar trechos do CV
+ * (parser de JSON, provedor de IA), então o log registra só o tipo e o local da falha, via {@link #semConteudo}.
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -31,6 +37,12 @@ public class GlobalExceptionHandler {
                 .map(err -> err.getField() + ": " + err.getDefaultMessage())
                 .collect(Collectors.joining("; "));
         return body(HttpStatus.BAD_REQUEST, "validation_error", message);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<Map<String, Object>> handleUnreadable(HttpMessageNotReadableException ex) {
+        // a mensagem do Jackson cita o trecho do corpo que não parseou: não vai para a resposta nem para o log
+        return body(HttpStatus.BAD_REQUEST, "bad_request", "Corpo da requisição inválido.");
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
@@ -88,16 +100,26 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(AnthropicException.class)
     public ResponseEntity<Map<String, Object>> handleAnthropic(AnthropicException ex) {
-        log.error("Falha ao chamar o provedor de IA", ex);
+        log.error("Falha ao chamar o provedor de IA: {}", semConteudo(ex));
         return body(HttpStatus.BAD_GATEWAY, "ai_upstream_error",
                 "Falha ao consultar o provedor de IA. Tente novamente em instantes.");
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGeneric(Exception ex) {
-        log.error("Erro não tratado", ex);
+        log.error("Erro não tratado: {}", semConteudo(ex));
         return body(HttpStatus.INTERNAL_SERVER_ERROR, "internal_error",
                 "Erro interno inesperado.");
+    }
+
+    /** Tipo de cada exceção da cadeia e o ponto onde foi lançada, sem a mensagem. */
+    static String semConteudo(Throwable ex) {
+        return Stream.iterate(ex, e -> e != null, Throwable::getCause)
+                .limit(5)
+                .map(e -> e.getClass().getName() + Stream.of(e.getStackTrace()).findFirst()
+                        .map(f -> " em " + f.getClassName() + "." + f.getMethodName() + ":" + f.getLineNumber())
+                        .orElse(""))
+                .collect(Collectors.joining(" <- causa: "));
     }
 
     private ResponseEntity<Map<String, Object>> body(HttpStatus status, String error, String message) {
