@@ -8,6 +8,7 @@ import com.evoluicv.backend.ai.model.ImprovementSuggestions;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpServer;
+import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -42,6 +44,7 @@ class AnthropicCvAnalysisAdapterTest {
     private final List<JsonNode> requests = new ArrayList<>();
     private volatile String nextResponse;
     private AnthropicCvAnalysisAdapter adapter;
+    private final SimpleMeterRegistry metrics = new SimpleMeterRegistry();
 
     @BeforeEach
     void startFakeApi() throws IOException {
@@ -63,9 +66,11 @@ class AnthropicCvAnalysisAdapterTest {
                 .build();
         AiProperties props = new AiProperties(
                 new AiProperties.Agent("claude-haiku-5-5", "low", 8000),
-                new AiProperties.Agent("claude-haiku-5-5", "medium", 12000)
+                new AiProperties.Agent("claude-haiku-5-5", "medium", 12000),
+                // preços de teste (US$ por milhão de tokens), escolhidos para dar contas redondas
+                Map.of("claude-haiku-5-5", new AiProperties.Price(1.0, 5.0, 0.1, 1.25))
         );
-        adapter = new AnthropicCvAnalysisAdapter(client, props);
+        adapter = new AnthropicCvAnalysisAdapter(client, props, metrics);
     }
 
     @AfterEach
@@ -78,7 +83,8 @@ class AnthropicCvAnalysisAdapterTest {
                 {"id":"msg_test","type":"message","role":"assistant","model":"claude-haiku-5-5",
                  "content":[{"type":"text","text":%s}],
                  "stop_reason":"%s","stop_sequence":null,
-                 "usage":{"input_tokens":1200,"output_tokens":300}}
+                 "usage":{"input_tokens":1200,"output_tokens":300,
+                          "cache_read_input_tokens":2000,"cache_creation_input_tokens":0}}
                 """.formatted(JSON.writeValueAsString(text), stopReason)));
     }
 
@@ -158,5 +164,40 @@ class AnthropicCvAnalysisAdapterTest {
         assertThatThrownBy(() -> adapter.analyze("Tech Lead", "", "CV de teste"))
                 .isInstanceOfSatisfying(AiResponseException.class,
                         e -> assertThat(e.reason()).isEqualTo(AiResponseException.Reason.TRUNCATED));
+    }
+
+    @Test
+    void cadaChamadaContaTokensPorTipoECustoEstimadoPorAgente() throws IOException {
+        nextResponse = message(ANALISE_JSON, "end_turn");
+
+        adapter.analyze("Tech Lead", "", "CV de teste");
+
+        assertThat(tokens("analyst", "input")).isEqualTo(1200);
+        assertThat(tokens("analyst", "output")).isEqualTo(300);
+        assertThat(tokens("analyst", "cache_read")).isEqualTo(2000);
+        assertThat(tokens("analyst", "cache_write")).isEqualTo(0);
+        // 1200 x 1,00 + 300 x 5,00 + 2000 x 0,10 = 2900 por milhão
+        assertThat(metrics.get("evoluicv.ai.cost").tag("agent", "analyst").tag("model", "claude-haiku-5-5")
+                .counter().count()).isCloseTo(0.0029, org.assertj.core.data.Offset.offset(1e-9));
+    }
+
+    private double tokens(String agent, String type) {
+        return metrics.get("evoluicv.ai.tokens").tag("agent", agent).tag("type", type).counter().count();
+    }
+
+    @Test
+    void latenciaPorAgenteSeparaChamadaOkDeRecusada() throws IOException {
+        nextResponse = message(SUGESTOES_JSON, "end_turn");
+        adapter.suggest("pt", "Tech Lead", "", "{}", "CV de teste");
+        nextResponse = message("", "refusal");
+        assertThatThrownBy(() -> adapter.analyze("Tech Lead", "", "CV de teste"));
+
+        assertThat(calls("suggestions", "ok")).isEqualTo(1);
+        assertThat(calls("analyst", "refused")).isEqualTo(1);
+        assertThat(metrics.find("evoluicv.ai.calls").tag("agent", "analyst").tag("outcome", "ok").timer()).isNull();
+    }
+
+    private long calls(String agent, String outcome) {
+        return metrics.get("evoluicv.ai.calls").tag("agent", agent).tag("outcome", outcome).timer().count();
     }
 }

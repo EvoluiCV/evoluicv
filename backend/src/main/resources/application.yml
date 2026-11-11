@@ -21,6 +21,15 @@ evoluicv:
       model: ${AI_SUGGESTIONS_MODEL:claude-haiku-5-5}
       effort: ${AI_SUGGESTIONS_EFFORT:medium}
       max-tokens: ${AI_SUGGESTIONS_MAX_TOKENS:16000}
+    # US$ por milhão de tokens, só para o custo estimado nas métricas (evoluicv_ai_cost_usd_total).
+    # Haiku 5.5 com prompt até 100K tokens; cache: escrita 1,25x e leitura 0,1x da entrada.
+    # Confira na página de preços da Anthropic ao trocar de modelo; modelo fora da tabela conta custo zero.
+    pricing:
+      "[claude-haiku-5-5]":
+        input: 0.10
+        output: 0.50
+        cache-read: 0.01
+        cache-write: 0.125
   quota:
     per-ip-daily: ${QUOTA_PER_IP_DAILY:3}
     global-daily: ${QUOTA_GLOBAL_DAILY:200}
@@ -41,3 +50,7 @@ management:
   metrics:
     tags:
       application: evoluicv-backend
+    distribution:
+      # buckets para p50/p95 de latência por agente no Grafana
+      percentiles-histogram:
+        evoluicv.ai.calls: true
