@@ -8,7 +8,7 @@ O backend expõe métricas Micrometer em `/actuator/prometheus` (porta interna 8
 |---|---|---|
 | `evoluicv_ai_tokens_total` | `agent`, `model`, `type` (`input`, `output`, `cache_read`, `cache_write`) | tokens cobrados pela API, por chamada |
 | `evoluicv_ai_cost_usd_total` | `agent`, `model` | custo estimado pela tabela `evoluicv.ai.pricing` do `application.yml` |
-| `evoluicv_ai_calls_seconds_*` (histograma) | `agent`, `model`, `outcome` (`ok`, `refused`, `truncated`, `invalid`, `error`) | duração e resultado de cada chamada |
+| `evoluicv_ai_calls_seconds_*` (histograma) | `agent`, `model`, `outcome` (`ok`, `refused`, `truncated`, `invalid`, `upstream`, `error`) | duração e resultado de cada chamada |
 | `evoluicv_quota_rejected_total` | `scope` (`ip`, `global`) | análises barradas pela cota diária |
 
 `agent` é `analyst` (recrutador) ou `suggestions` (revisor). Uma análise completa faz uma chamada de cada.

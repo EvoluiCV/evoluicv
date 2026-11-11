@@ -189,7 +189,7 @@
         "graphMode": "none",
         "textMode": "auto"
       },
-      "description": "Chamadas do agente recrutador: ok, refused (recusa do provedor), truncated, invalid, error (falha HTTP)."
+      "description": "Chamadas do agente recrutador: ok, refused (recusa do provedor), truncated, invalid, upstream (falha HTTP/rede), error (inesperado)."
     },
     {
       "id": 4,

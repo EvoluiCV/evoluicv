@@ -1,5 +1,6 @@
 package com.evoluicv.backend.quota;
 
+import com.evoluicv.backend.ai.AiResponseException;
 import com.evoluicv.backend.ai.CvAnalysisPort;
 import com.evoluicv.backend.ai.model.CvAnalysis;
 import com.evoluicv.backend.ai.model.ImprovementSuggestions;
@@ -160,6 +161,33 @@ class DailyQuotaTest {
         for (int i = 0; i < 3; i++) {
             analisar("203.0.113.10").andExpect(status().isOk());
         }
+    }
+
+    @Test
+    void falhaDoProvedorDevolveACota() throws Exception {
+        // 2 falhas + 3 sucessos = 5, dentro da rajada; sem devolução, a terceira válida já seria barrada.
+        given(cvAnalysisPort.analyze(any(), any(), any()))
+                .willThrow(new AiResponseException(AiResponseException.Reason.UPSTREAM, "529"))
+                .willThrow(new AiResponseException(AiResponseException.Reason.INVALID, "schema"))
+                .willReturn(new CvAnalysis("pt", 70, "ok", List.of(), List.of(), List.of()));
+
+        analisar("203.0.113.10").andExpect(status().isBadGateway());
+        analisar("203.0.113.10").andExpect(status().isBadGateway());
+        for (int i = 0; i < 3; i++) {
+            analisar("203.0.113.10").andExpect(status().isOk());
+        }
+    }
+
+    @Test
+    void recusaDoProvedorGastaACota() throws Exception {
+        // recusa é sobre o conteúdo enviado: devolver a cota deixaria repetir sem limite
+        given(cvAnalysisPort.analyze(any(), any(), any()))
+                .willThrow(new AiResponseException(AiResponseException.Reason.REFUSED, "refusal"));
+
+        for (int i = 0; i < 3; i++) {
+            analisar("203.0.113.10").andExpect(status().isUnprocessableEntity());
+        }
+        analisar("203.0.113.10").andExpect(status().isTooManyRequests());
     }
 
     @Test

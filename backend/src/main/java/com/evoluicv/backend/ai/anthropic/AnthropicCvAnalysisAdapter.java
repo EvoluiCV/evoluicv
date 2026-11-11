@@ -1,6 +1,7 @@
 package com.evoluicv.backend.ai.anthropic;
 
 import com.anthropic.client.AnthropicClient;
+import com.anthropic.errors.AnthropicException;
 import com.anthropic.models.messages.CacheControlEphemeral;
 import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.OutputConfig;
@@ -118,16 +119,22 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
     }
 
     private <T> T send(String agent, AiProperties.Agent cfg, StructuredMessageCreateParams<T> params, Class<T> type) {
-        StructuredMessage<T> response = client.messages().create(params);
-        var usage = response.rawMessage().usage();
+        StructuredMessage<T> response;
+        try {
+            response = client.messages().create(params);
+        } catch (AnthropicException e) {
+            throw new AiResponseException(Reason.UPSTREAM, "Falha ao chamar o provedor (agent=" + agent + ").", e);
+        }
+        var raw = response.rawMessage();
+        var usage = raw.usage();
+        StopReason stop = raw.stopReason().orElse(null);
         usageMetrics.record(agent, cfg.model(), usage);
         // só contagens: nada do conteúdo vai para o log (LGPD)
         log.info("ia agent={} model={} stop={} input={} output={} cache_read={} cache_write={}",
-                agent, cfg.model(), response.rawMessage().stopReason().map(Object::toString).orElse("-"),
+                agent, cfg.model(), stop == null ? "-" : stop,
                 usage.inputTokens(), usage.outputTokens(),
                 usage.cacheReadInputTokens().orElse(0L), usage.cacheCreationInputTokens().orElse(0L));
 
-        StopReason stop = response.rawMessage().stopReason().orElse(null);
         if (StopReason.REFUSAL.equals(stop)) {
             throw new AiResponseException(Reason.REFUSED, "O provedor recusou o conteúdo (agent=" + agent + ").");
         }

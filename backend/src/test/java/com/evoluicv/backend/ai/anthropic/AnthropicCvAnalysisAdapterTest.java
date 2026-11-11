@@ -43,6 +43,7 @@ class AnthropicCvAnalysisAdapterTest {
     private HttpServer server;
     private final List<JsonNode> requests = new ArrayList<>();
     private volatile String nextResponse;
+    private volatile int nextStatus = 200;
     private AnthropicCvAnalysisAdapter adapter;
     private final SimpleMeterRegistry metrics = new SimpleMeterRegistry();
 
@@ -53,7 +54,7 @@ class AnthropicCvAnalysisAdapterTest {
             requests.add(JSON.readTree(exchange.getRequestBody()));
             byte[] body = nextResponse.getBytes(StandardCharsets.UTF_8);
             exchange.getResponseHeaders().add("Content-Type", "application/json");
-            exchange.sendResponseHeaders(200, body.length);
+            exchange.sendResponseHeaders(nextStatus, body.length);
             exchange.getResponseBody().write(body);
             exchange.close();
         });
@@ -199,5 +200,17 @@ class AnthropicCvAnalysisAdapterTest {
 
     private long calls(String agent, String outcome) {
         return metrics.get("evoluicv.ai.calls").tag("agent", agent).tag("outcome", outcome).timer().count();
+    }
+
+    @Test
+    void falhaHttpDoProvedorViraErroUpstreamSemExporOSdkEContaNaMetrica() {
+        nextStatus = 529;
+        nextResponse = """
+                {"type":"error","error":{"type":"overloaded_error","message":"Overloaded"}}""";
+
+        assertThatThrownBy(() -> adapter.analyze("Tech Lead", "", "CV de teste"))
+                .isInstanceOfSatisfying(AiResponseException.class,
+                        e -> assertThat(e.reason()).isEqualTo(AiResponseException.Reason.UPSTREAM));
+        assertThat(calls("analyst", "upstream")).isEqualTo(1);
     }
 }

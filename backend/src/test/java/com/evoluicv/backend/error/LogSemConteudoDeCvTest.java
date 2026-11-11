@@ -1,6 +1,7 @@
 package com.evoluicv.backend.error;
 
 import com.anthropic.errors.AnthropicException;
+import com.evoluicv.backend.ai.AiResponseException;
 import com.evoluicv.backend.ai.CvAnalysisPort;
 import com.evoluicv.backend.config.ClockConfig;
 import com.evoluicv.backend.cv.CvAnalysisController;
@@ -75,7 +76,8 @@ class LogSemConteudoDeCvTest {
     @Test
     void falhaDoProvedorComTrechoDoCvNaMensagemNaoVaiParaOLog(CapturedOutput log) throws Exception {
         given(cvAnalysisPort.analyze(any(), any(), any()))
-                .willThrow(new AnthropicException("400: input rejected near '" + MARCA + "'"));
+                .willThrow(new AiResponseException(AiResponseException.Reason.UPSTREAM, "falha",
+                        new AnthropicException("400: input rejected near '" + MARCA + "'")));
 
         analisar().andExpect(status().isBadGateway());
 

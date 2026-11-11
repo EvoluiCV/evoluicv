@@ -66,6 +66,19 @@ public class DailyQuota {
         usedGlobal++;
     }
 
+    /**
+     * Devolve uma análise reservada hoje, quando a falha não foi do cliente (provedor fora, resposta inválida).
+     * Reserva de um dia anterior já foi zerada à meia-noite e não é devolvida.
+     */
+    public synchronized void release(String clientKey) {
+        LocalDate today = ZonedDateTime.now(clock).withZoneSameInstant(zone).toLocalDate();
+        if (!today.equals(day)) {
+            return;
+        }
+        usedByIp.computeIfPresent(clientKey, (k, used) -> used > 1 ? used - 1 : null);
+        usedGlobal = Math.max(0, usedGlobal - 1);
+    }
+
     private static Counter rejected(MeterRegistry registry, String scope) {
         return Counter.builder("evoluicv.quota.rejected")
                 .description("Análises barradas pela cota diária, por teto atingido")
