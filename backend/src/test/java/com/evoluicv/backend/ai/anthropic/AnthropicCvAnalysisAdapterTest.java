@@ -40,6 +40,8 @@ class AnthropicCvAnalysisAdapterTest {
             {"items":[{"action":"ADD","section":"Contato","current":"","proposed":"github.com/[usuario]",\
             "rationale":"r","impact":"HIGH"}]}""";
 
+    private static final CvAnalysis ANALISE_PT = new CvAnalysis("pt", 72, "Bom CV.", List.of("Java"), List.of(), List.of());
+
     private HttpServer server;
     private final List<JsonNode> requests = new ArrayList<>();
     private volatile String nextResponse;
@@ -140,7 +142,7 @@ class AnthropicCvAnalysisAdapterTest {
     void sugestoesUsamModeloEEffortDoProprioAgente() throws IOException {
         nextResponse = message(SUGESTOES_JSON, "end_turn");
 
-        ImprovementSuggestions sugestoes = adapter.suggest("pt", "Tech Lead", "", "{}", "CV de teste");
+        ImprovementSuggestions sugestoes = adapter.suggest(ANALISE_PT, "Tech Lead", "", "CV de teste");
 
         assertThat(sugestoes.items()).hasSize(1);
         JsonNode req = requests.getFirst();
@@ -189,7 +191,7 @@ class AnthropicCvAnalysisAdapterTest {
     @Test
     void latenciaPorAgenteSeparaChamadaOkDeRecusada() throws IOException {
         nextResponse = message(SUGESTOES_JSON, "end_turn");
-        adapter.suggest("pt", "Tech Lead", "", "{}", "CV de teste");
+        adapter.suggest(ANALISE_PT, "Tech Lead", "", "CV de teste");
         nextResponse = message("", "refusal");
         assertThatThrownBy(() -> adapter.analyze("Tech Lead", "", "CV de teste"));
 

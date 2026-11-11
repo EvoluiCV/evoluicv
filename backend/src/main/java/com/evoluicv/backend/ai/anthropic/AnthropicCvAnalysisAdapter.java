@@ -15,6 +15,8 @@ import com.evoluicv.backend.ai.AiResponseException.Reason;
 import com.evoluicv.backend.ai.CvAnalysisPort;
 import com.evoluicv.backend.ai.model.CvAnalysis;
 import com.evoluicv.backend.ai.model.ImprovementSuggestions;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +36,7 @@ import java.util.Locale;
 public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
 
     private static final Logger log = LoggerFactory.getLogger(AnthropicCvAnalysisAdapter.class);
+    private static final ObjectMapper JSON = new ObjectMapper();
 
     private final AnthropicClient client;
     private final AiProperties props;
@@ -68,8 +71,8 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
     }
 
     @Override
-    public ImprovementSuggestions suggest(String language, String professionalGoal, String targetRole,
-                                          String analysisJson, String cvText) {
+    public ImprovementSuggestions suggest(CvAnalysis analysis, String professionalGoal, String targetRole, String cvText) {
+        String language = analysis.language();
         String user = """
                 Idioma alvo (mesmo do CV original): %s
                 Objetivo profissional do candidato: %s
@@ -85,7 +88,7 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
                 Gere entre 5 e 12 sugestões pontuais de melhoria, priorizadas por impacto, no idioma informado. Cada sugestão deve ser cirúrgica e acionável, sem inventar informações.
 
                 %s
-                """.formatted(language, professionalGoal, targetRole, analysisJson, cvText, CvLanguage.directive(language, cvText));
+                """.formatted(language, professionalGoal, targetRole, toJson(analysis), cvText, CvLanguage.directive(language, cvText));
         return call("suggestions", props.suggestions(), suggestionsPrompt, user, ImprovementSuggestions.class);
     }
 
@@ -155,6 +158,14 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
         } catch (RuntimeException e) {
             throw new AiResponseException(Reason.INVALID,
                     "JSON da resposta não casa com " + type.getSimpleName() + " (agent=" + agent + ").", e);
+        }
+    }
+
+    private static String toJson(CvAnalysis analysis) {
+        try {
+            return JSON.writeValueAsString(analysis);
+        } catch (JsonProcessingException e) {
+            throw new IllegalStateException("CvAnalysis não serializa em JSON", e);
         }
     }
 
