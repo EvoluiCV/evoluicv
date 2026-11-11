@@ -1,0 +1,190 @@
+{
+	"caseId": "03-en-senior-forte",
+	"base": "https://evoluicv-staging.luanderson.dev.br",
+	"at": "2026-11-11T00:58:12.449Z",
+	"status": 200,
+	"retryAfter": null,
+	"latencyMs": 31441,
+	"body": {
+		"analysis": {
+			"language": "en",
+			"overallScore": 68,
+			"summary": "Daniel shows strong senior backend and distributed systems credentials with measurable impact in scale, latency, and cloud cost. The CV still reads more as a Senior IC than a Staff Engineer, because the summary and bullets do not make cross-team scope, architectural ownership, and product outcomes explicit enough for a Staff-level product company.",
+			"strengths": [
+				"Strong scale and reliability evidence: 1.4 billion events/day with 99.99% availability in Go and Kafka.",
+				"Quantified cost impact: 27% cloud spend reduction (about USD 410k per year) via spot instances and Kubernetes autoscaling.",
+				"Clear cross-team technical leadership signals: REST to gRPC migration across 23 services with latency reduction from 35 ms to 12 ms.",
+				"Evidence of process leadership and mentorship: RFC process adopted by 9 teams and 6 engineers mentored.",
+				"Consistent reverse-chronological experience with a clear growth path from junior to senior engineer.",
+				"Relevant full-cycle signals including Kubernetes, Terraform, AWS, GCP, OpenTelemetry, CI/CD and contract testing with Pact.",
+				"Complete professional links including LinkedIn and GitHub."
+			],
+			"issues": [
+				{
+					"section": "Summary",
+					"problem": "The summary is a generic opener that never names a clear specialization or stack focus beyond a list, and claims 'care about developer experience' without evidence; it does not position the candidate for a Staff-level product company role.",
+					"why": "Staff recruiters at product companies screen in 8 seconds for scope of influence and product impact; a summary that reads as a senior IC profile with no product outcome signals a Senior rather than Staff level.",
+					"suggestion": "Rewrite as a positioning statement: 'Staff-track backend engineer (10 yrs) designing multi-region, event-driven platforms in Go and Kafka at 1B+ events/day; drive cross-team architecture decisions, reliability (99.99%) and cloud cost efficiency for product teams.' Name the scope of influence (teams, services, product outcomes).",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experience - Streamly",
+					"problem": "Experience bullets do not state the team size, product area or business outcome of the platform beyond infrastructure metrics; the scope of ownership (what you decided vs. what you executed) is unclear for several items.",
+					"why": "Staff Engineer evaluation focuses on cross-team technical leadership and business impact; the current bullets show strong execution but do not make the leadership scope and product link visible.",
+					"suggestion": "Make ownership explicit: 'Architected and led delivery of a multi-region event ingestion platform (Go, Kafka, Kubernetes) with 4 teams, processing 1.4B events/day at 99.99% availability; defined partitioning and replay strategy adopted company-wide.' Add which product features or user metrics depended on it.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Experience - Streamly",
+					"problem": "The Streamly bullets mention the migration of 23 services to gRPC and the RFC process, but there is no explicit verb-and-technology-in-same-sentence structure for the mentorship and RFC bullet, and no measure of adoption or outcome of the RFC process beyond '9 teams'.",
+					"why": "Staff candidates are expected to show multiplier impact; process bullets without outcome metrics read as activity rather than leverage.",
+					"suggestion": "Rewrite: 'Established an RFC process in Go/Kubernetes-based architecture decisions adopted by 9 teams, cutting design-review cycle time by X%; mentored 6 engineers, 3 promoted to senior (replace with real numbers).' Only use real numbers.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experience - Shopfront and DataPoint Labs",
+					"problem": "Experience at Shopfront and DataPoint Labs is described with very few bullets and little detail on technologies used per achievement beyond the first, and the DataPoint Labs bullet ('Developed ETL jobs in Python for analytics dashboards') is vague with no metric.",
+					"why": "Vague older bullets dilute the strength of the recent experience and weaken the narrative of a consistent growth trajectory toward Staff.",
+					"suggestion": "Add at least one metric per role. Example for DataPoint: 'Developed Python ETL pipelines feeding analytics dashboards, reducing report refresh time from X to Y hours.' For Shopfront, add the impact of the checkout service on revenue or conversion.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Skills",
+					"problem": "Skills are presented as a flat list without distribution across the experience bullets, which weakens ATS keyword relevance for specific domains (e.g., distributed systems patterns, observability, testing) and leaves the list appearing generic.",
+					"why": "ATS and recruiters weigh keywords in context; a flat list without corroboration in experience reduces match scoring for Staff-level distributed systems roles.",
+					"suggestion": "Group skills by domain (Distributed systems: Kafka, gRPC, Cassandra; Cloud/Infra: Kubernetes, Terraform, AWS, GCP; Observability & Quality: OpenTelemetry, Pact, CI/CD GitLab) and ensure each key technology appears in at least one experience bullet.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Summary / Skills / Experience",
+					"problem": "AI and efficiency-related keywords (e.g., use of AI coding assistants, LLMs, developer productivity tooling) are absent, even though the summary claims interest in developer experience.",
+					"why": "Current product company hiring increasingly screens for AI-driven productivity and developer tooling impact, and its absence leaves a gap against modern expectations.",
+					"suggestion": "If accurate, add a concrete line such as 'Adopted AI-assisted development tooling (e.g., GitHub Copilot) across 2 teams, reducing boilerplate and review time by X%.' Only include if true.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Experience / Ausente",
+					"problem": "Missing evidence of testing strategy and full development lifecycle beyond one contract testing bullet; no mention of ownership of on-call, incident management, or production operations outcomes except availability figure.",
+					"why": "Staff roles require demonstrated ownership of the full lifecycle, including reliability and quality practices, which the CV only partially shows.",
+					"suggestion": "Add a bullet on operational ownership: 'Led incident response and postmortems for the ingestion platform, reducing Sev-1 incidents by X% through SLO-based alerting (OpenTelemetry, Prometheus).' Include testing scope (unit, integration, load) for the platform.",
+					"severity": "MEDIUM"
+				},
+				{
+					"section": "Header / Ausente",
+					"problem": "The CV lacks a link to a portfolio or personal project showcasing architecture work; LinkedIn and GitHub are present but the GitHub link is only a stub and no public technical artifacts (design docs, talks, open source) are referenced.",
+					"why": "Staff-level hiring at product companies often reviews public technical writing or code to validate architecture judgment beyond claims.",
+					"suggestion": "Add a link to public artifacts such as architecture writeups, conference talks, or RFC templates. If none exist, mention a published blog post or open-source contribution.",
+					"severity": "LOW"
+				},
+				{
+					"section": "Education",
+					"problem": "Section order and cross-company timeline are correct (reverse chronological), but the Education section is placed after experience with no supporting detail; this is acceptable, yet the CV has no certifications or conference references to reinforce expertise.",
+					"why": "At Staff level, education matters less; the more valuable signal is external recognition of technical leadership, which is currently absent.",
+					"suggestion": "Keep Education brief. Optionally add a relevant certification or speaking engagement if one exists, e.g. a cloud architecture certification, only if directly related to the goal.",
+					"severity": "LOW"
+				}
+			],
+			"recommendedActions": [
+				"Rewrite the summary as a Staff-level positioning statement naming scope, stack, and product/business outcomes.",
+				"Rewrite the Streamly bullets to make cross-team architectural ownership explicit, with team counts, product dependencies, and only real metrics.",
+				"Add an operational ownership bullet (incidents, SLOs, observability) with a measurable outcome.",
+				"Add outcome metrics to the RFC and mentorship bullet, such as design-review cycle time or promotions among mentees, using real figures.",
+				"Add at least one metric to each Shopfront and DataPoint Labs bullet with the technology explicit in the same sentence.",
+				"Regroup skills by domain and ensure each key technology appears in an experience bullet.",
+				"Add public technical artifacts (design docs, talks, open source) and a working GitHub link with relevant projects."
+			]
+		},
+		"improvements": {
+			"items": [
+				{
+					"action": "REWRITE",
+					"section": "Summary",
+					"current": "Senior engineer with 10 years building high-throughput backend systems. I own platform-level technical decisions, run architecture reviews, and care about developer experience and reliability.",
+					"proposed": "Staff-track backend engineer with 10 years designing multi-region, event-driven platforms in Go and Kafka at 1.4B+ events/day; drive cross-team architecture decisions across [N] teams, sustaining 99.99% availability and cloud cost efficiency for product teams serving [X] users.",
+					"rationale": "Positions the candidate at Staff scope by naming stack, cross-team influence and product outcomes in the first line, which recruiters screen for in 8 seconds.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experience - Streamly",
+					"current": "Designed a multi-region event ingestion platform in Go and Kafka that processes 1.4 billion events per day with 99.99% availability.",
+					"proposed": "Architected and led delivery of a multi-region event ingestion platform in Go, Kafka and Kubernetes with [N] teams, processing 1.4B events/day at 99.99% availability; defined partitioning and replay strategy adopted by [N] services, enabling [product feature/user metric].",
+					"rationale": "Makes architectural ownership and cross-team scope explicit and links the platform to a product outcome, which Staff evaluations prioritize.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Experience - Streamly",
+					"current": "",
+					"proposed": "Led incident response and postmortems for the ingestion platform, reducing Sev-1 incidents by [X]% through SLO-based alerting built on OpenTelemetry and Prometheus, with unit, integration and load testing coverage of [X]%.",
+					"rationale": "Demonstrates full-lifecycle ownership of reliability and quality, a core Staff expectation that the CV currently only implies through the availability figure.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "ADD",
+					"section": "Header",
+					"current": "",
+					"proposed": "github.com/dokafor-example: pinned repositories with [project name] showing [architecture/tooling]; link to [architecture writeup / conference talk / RFC template].",
+					"rationale": "Public technical artifacts let Staff hiring managers validate architecture judgment beyond claims; the GitHub link is currently a stub.",
+					"impact": "HIGH"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experience - Streamly",
+					"current": "Established the RFC process now used by 9 teams; mentored 6 engineers.",
+					"proposed": "Established an RFC process for Go and Kubernetes architecture decisions, adopted by 9 teams and cutting design-review cycle time by [X]%; mentored 6 engineers, [N] promoted to senior.",
+					"rationale": "Adds outcome metrics to process and mentorship work, shifting it from activity to measurable leverage.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "IMPROVE",
+					"section": "Experience - Streamly",
+					"current": "Led the migration from REST to gRPC across 23 services, reducing median inter-service latency from 35 ms to 12 ms.",
+					"proposed": "Led the migration from REST to gRPC across 23 services in [N] teams, reducing median inter-service latency from 35 ms to 12 ms and [reliability/cost outcome].",
+					"rationale": "Adds team count and a second outcome, strengthening cross-team leadership evidence without changing verified figures.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experience - DataPoint Labs",
+					"current": "Developed ETL jobs in Python for analytics dashboards.",
+					"proposed": "Developed Python ETL pipelines feeding analytics dashboards, reducing report refresh time from [X] to [Y] hours.",
+					"rationale": "Adds a measurable outcome to an old, vague bullet and keeps the technology explicit in the same sentence.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Experience - Shopfront",
+					"current": "Built the checkout service in Kotlin and Spring, handling peaks of 5,000 orders per minute on Black Friday.",
+					"proposed": "Built the checkout service in Kotlin and Spring handling peaks of 5,000 orders/min on Black Friday, [increasing conversion by X% / contributing USD X in revenue].",
+					"rationale": "Connects the technical achievement to a business metric, reinforcing the product impact that Staff roles require.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REWRITE",
+					"section": "Skills",
+					"current": "Go, Kotlin, Java, Python, Kafka, gRPC, PostgreSQL, Cassandra, Kubernetes, Terraform, AWS, GCP, OpenTelemetry, CI/CD with GitLab.",
+					"proposed": "Distributed systems: Kafka, gRPC, Cassandra, PostgreSQL | Languages: Go, Kotlin, Java, Python | Cloud & infrastructure: Kubernetes, Terraform, AWS, GCP | Observability & delivery: OpenTelemetry, Pact, CI/CD (GitLab).",
+					"rationale": "Grouping by domain improves ATS keyword context and makes distributed systems expertise scannable.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "ADD",
+					"section": "Summary / Skills / Experience",
+					"current": "",
+					"proposed": "Adopted AI-assisted development tooling (e.g., GitHub Copilot) across [N] teams, reducing boilerplate and code review time by [X]%.",
+					"rationale": "Adds AI productivity keywords and developer tooling impact, which current product company hiring screens for; include only if accurate.",
+					"impact": "MEDIUM"
+				},
+				{
+					"action": "REMOVE",
+					"section": "Summary",
+					"current": "I own platform-level technical decisions, run architecture reviews, and care about developer experience and reliability.",
+					"proposed": "",
+					"rationale": "Generic self-description claims without evidence add length without value; replaced by the stronger positioning statement.",
+					"impact": "LOW"
+				}
+			]
+		}
+	}
+}

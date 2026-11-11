@@ -35,3 +35,11 @@ Relatório: [`…__vs__2026-11-claude-haiku-5-5-medium-v2.md`](./2026-11-openai-
 - Sobram duas reprovações:
   - o score 62 do caso 03, que fica para decisão humana;
   - o "Windows 10/11" do caso 07, uma invenção leve e real.
+
+## Rodada v3 (ordem de idioma no idioma do CV): 12/12 nos casos em inglês
+
+Relatório: [`…-v2__vs__…-v3.md`](./2026-11-claude-haiku-5-5-medium-v2__vs__2026-11-claude-haiku-5-5-medium-v3.md). Só os casos 03 e 04 rodaram, porque a mudança afeta só o idioma.
+
+- Os dois casos responderam inteiramente em inglês, com `language` `en`: parecer, problemas, justificativas e textos propostos. Nenhuma palavra funcional em português na saída.
+- O caso 03 subiu de 62 para 68 e entrou na faixa de 65 a 95. A severidade continua (o parecer ainda o lê como Senior, não Staff), mas agora fica dentro do esperado.
+- Fica aberto só o "Windows 10/11" do caso 07 (v2), invenção leve. Não justifica mudar o prompt agora; volta a ser observado na próxima rodada completa.
