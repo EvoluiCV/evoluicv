@@ -32,6 +32,7 @@ Duas camadas de limite: o `RateLimitingFilter` barra rajadas (5/min, 30/h por IP
 - A resposta segue o idioma do CV. `CvAnalysis.language` é a fonte da verdade, e o segundo agente a recebe.
 - O serviço só conhece o `CvAnalysisPort`. O `AnthropicCvAnalysisAdapter` (SDK oficial, `claude-haiku-5-5`) é o único que sabe de modelo, effort (`AI_*_MODEL`/`AI_*_EFFORT`), cache do system prompt e schema de saída derivado dos records. Não envie `temperature`/`top_p`: o modelo rejeita.
 - `stop_reason` `refusal` vira 422 `ai_refused`; `max_tokens` ou JSON fora do schema viram 502 `ai_invalid_response`. O log do adapter traz só contagem de tokens, nunca conteúdo.
+- Cada chamada à IA alimenta as métricas `evoluicv_ai_*` (tokens, custo estimado, latência por resultado), e a cota alimenta `evoluicv_quota_rejected_total`. Labels só com valores de conjunto fechado (agente, modelo, tipo, resultado), nunca dado do usuário. Ao trocar de modelo, atualize `evoluicv.ai.pricing`. Referência e painel: `observability/`.
 - Os testes mockam o `CvAnalysisPort` com `@MockitoBean`; o adapter é testado contra uma API da Anthropic falsa local. Chamadas reais custam dinheiro: acontecem só no eval (`eval/`) e com aprovação de quem mantém o projeto.
 
 ## Frontend

@@ -3,6 +3,7 @@ package com.evoluicv.backend.ai.anthropic;
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import com.evoluicv.backend.ai.CvAnalysisPort;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +26,7 @@ public class AnthropicConfig {
     }
 
     @Bean
-    public CvAnalysisPort cvAnalysisPort(AnthropicClient client, AiProperties props) {
-        return new AnthropicCvAnalysisAdapter(client, props);
+    public CvAnalysisPort cvAnalysisPort(AnthropicClient client, AiProperties props, MeterRegistry registry) {
+        return new AnthropicCvAnalysisAdapter(client, props, registry);
     }
 }

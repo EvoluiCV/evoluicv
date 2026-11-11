@@ -7,6 +7,8 @@ import com.evoluicv.backend.cv.CvAnalysisController;
 import com.evoluicv.backend.cv.CvAnalysisService;
 import com.evoluicv.backend.cv.CvTextExtractor;
 import com.evoluicv.backend.error.GlobalExceptionHandler;
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,7 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -61,6 +64,11 @@ class DailyQuotaTest {
         MutableClock clock() {
             return new MutableClock(ONZE_DA_NOITE_SP);
         }
+
+        @Bean
+        MeterRegistry meterRegistry() {
+            return new SimpleMeterRegistry();
+        }
     }
 
     @Autowired
@@ -68,6 +76,9 @@ class DailyQuotaTest {
 
     @Autowired
     private MutableClock clock;
+
+    @Autowired
+    private MeterRegistry metrics;
 
     @MockitoBean
     private CvAnalysisPort cvAnalysisPort;
@@ -107,6 +118,7 @@ class DailyQuotaTest {
                 .andExpect(status().isTooManyRequests())
                 .andExpect(header().string("Retry-After", "3600"))
                 .andExpect(jsonPath("$.error").value("daily_quota_exceeded"));
+        assertThat(rejeitadas("ip")).isEqualTo(1);
     }
 
     @Test
@@ -130,6 +142,12 @@ class DailyQuotaTest {
                 .andExpect(status().isTooManyRequests())
                 .andExpect(header().string("Retry-After", "3600"))
                 .andExpect(jsonPath("$.error").value("daily_quota_exceeded"));
+        assertThat(rejeitadas("global")).isEqualTo(1);
+        assertThat(rejeitadas("ip")).isZero();
+    }
+
+    private double rejeitadas(String scope) {
+        return metrics.get("evoluicv.quota.rejected").tag("scope", scope).counter().count();
     }
 
     @Test

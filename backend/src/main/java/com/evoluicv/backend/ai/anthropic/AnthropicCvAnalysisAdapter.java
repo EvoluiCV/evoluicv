@@ -6,6 +6,7 @@ import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.OutputConfig;
 import com.anthropic.models.messages.StopReason;
 import com.anthropic.models.messages.StructuredMessage;
+import com.anthropic.models.messages.StructuredMessageCreateParams;
 import com.anthropic.models.messages.StructuredOutputConfig;
 import com.anthropic.models.messages.TextBlockParam;
 import com.evoluicv.backend.ai.AiResponseException;
@@ -13,6 +14,7 @@ import com.evoluicv.backend.ai.AiResponseException.Reason;
 import com.evoluicv.backend.ai.CvAnalysisPort;
 import com.evoluicv.backend.ai.model.CvAnalysis;
 import com.evoluicv.backend.ai.model.ImprovementSuggestions;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -21,6 +23,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Os dois agentes (recrutador e revisor) sobre a Messages API: system prompt com cache,
@@ -35,10 +38,12 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
     private final AiProperties props;
     private final String recruiterPrompt;
     private final String suggestionsPrompt;
+    private final AiUsageMetrics usageMetrics;
 
-    public AnthropicCvAnalysisAdapter(AnthropicClient client, AiProperties props) {
+    public AnthropicCvAnalysisAdapter(AnthropicClient client, AiProperties props, MeterRegistry registry) {
         this.client = client;
         this.props = props;
+        this.usageMetrics = new AiUsageMetrics(registry, props);
         this.recruiterPrompt = resource("prompts/recruiter-persona.txt");
         this.suggestionsPrompt = resource("prompts/improvement-suggestions-persona.txt");
     }
@@ -84,7 +89,7 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
     }
 
     private <T> T call(String agent, AiProperties.Agent cfg, String system, String user, Class<T> type) {
-        var params = MessageCreateParams.builder()
+        StructuredMessageCreateParams<T> params = MessageCreateParams.builder()
                 .model(cfg.model())
                 .maxTokens(cfg.maxTokens())
                 .systemOfTextBlockParams(List.of(TextBlockParam.builder()
@@ -98,8 +103,24 @@ public class AnthropicCvAnalysisAdapter implements CvAnalysisPort {
                 .addUserMessage(user)
                 .build();
 
+        long start = System.nanoTime();
+        String outcome = "error";
+        try {
+            T result = send(agent, cfg, params, type);
+            outcome = "ok";
+            return result;
+        } catch (AiResponseException e) {
+            outcome = e.reason().name().toLowerCase(Locale.ROOT);
+            throw e;
+        } finally {
+            usageMetrics.call(agent, cfg.model(), outcome, System.nanoTime() - start);
+        }
+    }
+
+    private <T> T send(String agent, AiProperties.Agent cfg, StructuredMessageCreateParams<T> params, Class<T> type) {
         StructuredMessage<T> response = client.messages().create(params);
         var usage = response.rawMessage().usage();
+        usageMetrics.record(agent, cfg.model(), usage);
         // só contagens: nada do conteúdo vai para o log (LGPD)
         log.info("ia agent={} model={} stop={} input={} output={} cache_read={} cache_write={}",
                 agent, cfg.model(), response.rawMessage().stopReason().map(Object::toString).orElse("-"),
