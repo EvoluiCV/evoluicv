@@ -18,7 +18,7 @@ navegador → Next /api/cv/analyze (route.ts, proxy) → backend BACKEND_INTERNA
 
 Só o Next alcança o backend. O proxy repassa só o `X-Real-IP` gravado pelo proxy de borda e descarta o `X-Forwarded-For` do navegador, que é forjável. O backend identifica o cliente por `ClientIp`.
 
-Duas camadas de limite: o `RateLimitingFilter` barra rajadas (5/min, 30/h por IP), e a `DailyQuota` conta análises válidas por IP e no total do dia (`QUOTA_PER_IP_DAILY`, `QUOTA_GLOBAL_DAILY`; zera 00:00 America/Sao_Paulo; fica em memória). A cota é reservada no `CvAnalysisService` depois da validação, então pedidos 422/400 não a consomem.
+Duas camadas de limite: o `RateLimitingFilter` barra rajadas (5/min, 30/h por IP), e a `DailyQuota` conta análises válidas por IP e no total do dia (`QUOTA_PER_IP_DAILY`, `QUOTA_GLOBAL_DAILY`; zera 00:00 America/Sao_Paulo; fica em memória). A cota é reservada no `CvAnalysisService` depois da validação, então pedidos 422/400 não a consomem. Falha do provedor (502) devolve a cota; recusa (422 `ai_refused`) gasta, porque é sobre o conteúdo enviado.
 
 ## Contratos
 
@@ -31,7 +31,7 @@ Duas camadas de limite: o `RateLimitingFilter` barra rajadas (5/min, 30/h por IP
 - Os prompts ficam em `backend/src/main/resources/prompts/`. Toda análise cita evidência do CV e nunca inventa experiência, número ou qualificação.
 - A resposta segue o idioma do CV. `CvAnalysis.language` é a fonte da verdade, e o segundo agente a recebe.
 - O serviço só conhece o `CvAnalysisPort`. O `AnthropicCvAnalysisAdapter` (SDK oficial, `claude-haiku-5-5`) é o único que sabe de modelo, effort (`AI_*_MODEL`/`AI_*_EFFORT`), cache do system prompt e schema de saída derivado dos records. Não envie `temperature`/`top_p`: o modelo rejeita.
-- `stop_reason` `refusal` vira 422 `ai_refused`; `max_tokens` ou JSON fora do schema viram 502 `ai_invalid_response`. O log do adapter traz só contagem de tokens, nunca conteúdo. Mensagem de exceção pode carregar trecho do CV: o `GlobalExceptionHandler` loga só tipo e local (`semConteudo`), e o `LogSemConteudoDeCvTest` cobre isso.
+- `stop_reason` `refusal` vira 422 `ai_refused`; `max_tokens` ou JSON fora do schema viram 502 `ai_invalid_response`; falha HTTP ou de rede vira 502 `ai_upstream_error`. O adapter converte toda exceção do SDK em `AiResponseException`, e nada fora de `ai/anthropic` importa `com.anthropic`. O log do adapter traz só contagem de tokens, nunca conteúdo. Mensagem de exceção pode carregar trecho do CV: o `GlobalExceptionHandler` loga só tipo e local (`semConteudo`), e o `LogSemConteudoDeCvTest` cobre isso.
 - Cada chamada à IA alimenta as métricas `evoluicv_ai_*` (tokens, custo estimado, latência por resultado), e a cota alimenta `evoluicv_quota_rejected_total`. Labels só com valores de conjunto fechado (agente, modelo, tipo, resultado), nunca dado do usuário. Ao trocar de modelo, atualize `evoluicv.ai.pricing`. Referência e painel: `observability/`.
 - Os testes mockam o `CvAnalysisPort` com `@MockitoBean`; o adapter é testado contra uma API da Anthropic falsa local. Chamadas reais custam dinheiro: acontecem só no eval (`eval/`) e com aprovação de quem mantém o projeto.
 

@@ -34,7 +34,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(controllers = CvAnalysisController.class)
 // RateLimitingFilter is a @Component (Filter), so @WebMvcTest picks it up and shares
-// its buckets across the whole cached test context; disable it here, it has no test of its own yet.
+// its buckets across the whole cached test context; disable it here. RateLimitingFilterTest covers it.
 @AutoConfigureMockMvc(addFilters = false)
 @Import({CvAnalysisService.class, GlobalExceptionHandler.class, DailyQuota.class, ClockConfig.class, SimpleMeterRegistry.class})
 class CvAnalysisControllerTest {

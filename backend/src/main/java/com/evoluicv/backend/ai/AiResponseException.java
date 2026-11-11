@@ -1,6 +1,9 @@
 package com.evoluicv.backend.ai;
 
-/** O provedor respondeu, mas sem uma análise utilizável (recusa, resposta truncada ou fora do schema). */
+/**
+ * Falha do provedor de IA em termos do domínio: recusa, resposta truncada ou fora do schema, ou falha de
+ * transporte. O adapter converte as exceções do SDK nesta, para nada fora de {@code ai/anthropic} depender dele.
+ */
 public class AiResponseException extends RuntimeException {
 
     public enum Reason {
@@ -9,7 +12,9 @@ public class AiResponseException extends RuntimeException {
         /** stop_reason "max_tokens": a resposta foi cortada antes de fechar o JSON. */
         TRUNCATED,
         /** Resposta sem bloco de texto ou com JSON que não casa com o record. */
-        INVALID
+        INVALID,
+        /** Falha HTTP, de rede ou de timeout ao falar com o provedor. */
+        UPSTREAM
     }
 
     private final Reason reason;

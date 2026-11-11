@@ -45,7 +45,7 @@ final class AiUsageMetrics {
                 .increment(cost);
     }
 
-    /** @param outcome ok | refused | truncated | invalid | error (falha HTTP ou de rede com o provedor) */
+    /** @param outcome ok | refused | truncated | invalid | upstream (falha HTTP ou de rede) | error (inesperado) */
     void call(String agent, String model, String outcome, long nanos) {
         Timer.builder("evoluicv.ai.calls")
                 .description("Duração das chamadas à IA por agente e resultado")

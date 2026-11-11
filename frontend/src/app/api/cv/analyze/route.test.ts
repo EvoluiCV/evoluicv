@@ -61,6 +61,24 @@ describe('POST /api/cv/analyze (proxy)', () => {
 		expect(await resposta.json()).toEqual(corpo);
 	});
 
+	it('repassa o X-RateLimit-Remaining do backend, no sucesso e no erro', async () => {
+		backendFetch.mockResolvedValueOnce(
+			Response.json({ ok: true }, { headers: { 'X-RateLimit-Remaining': '4' } }),
+		);
+		backendFetch.mockResolvedValueOnce(
+			Response.json(
+				{ error: 'empty_cv' },
+				{ status: 422, headers: { 'X-RateLimit-Remaining': '3' } },
+			),
+		);
+
+		const sucesso = await POST(requisicaoDoNavegador());
+		const erro = await POST(requisicaoDoNavegador());
+
+		expect(sucesso.headers.get('x-ratelimit-remaining')).toBe('4');
+		expect(erro.headers.get('x-ratelimit-remaining')).toBe('3');
+	});
+
 	it('quando o backend está fora do ar, responde 500 sem expor o erro interno', async () => {
 		vi.spyOn(console, 'error').mockImplementation(() => {});
 		backendFetch.mockRejectedValue(

@@ -1,5 +1,6 @@
 package com.evoluicv.backend.cv;
 
+import com.evoluicv.backend.ai.AiResponseException;
 import com.evoluicv.backend.ai.CvAnalysisPort;
 import com.evoluicv.backend.ai.model.CvAnalysis;
 import com.evoluicv.backend.ai.model.ImprovementSuggestions;
@@ -52,8 +53,18 @@ public class CvAnalysisService {
         // Só análises válidas gastam cota: pedidos que falham na validação (ex.: smoke 422/400) não chamam a IA.
         dailyQuota.acquire(clientKey);
 
-        String role = targetRole == null ? "" : targetRole;
+        try {
+            return callAgents(normalized, professionalGoal, targetRole == null ? "" : targetRole);
+        } catch (AiResponseException e) {
+            // falha do provedor não é culpa de quem enviou: devolve a cota. Recusa é sobre o conteúdo e gasta.
+            if (e.reason() != AiResponseException.Reason.REFUSED) {
+                dailyQuota.release(clientKey);
+            }
+            throw e;
+        }
+    }
 
+    private AnalysisResponse callAgents(String normalized, String professionalGoal, String role) {
         CvAnalysis analysis = cvAnalysisPort.analyze(professionalGoal, role, normalized);
         ImprovementSuggestions improvements = cvAnalysisPort.suggest(
                 analysis.language(),
